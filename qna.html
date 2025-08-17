@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Solar System Q&A</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    .wrap {
+      background: #fff;
+    }
+    
+    .title {
+      font-size: clamp(22px, 3.2vw, 40px);
+      font-weight: 800;
+      letter-spacing: .4px;
+    }
+    
+    .subtitle { color: var(--muted); font-size: .98rem; margin-top: 6px; }
+
+    .btn {
+      background: linear-gradient(180deg, #1a2557, #151b3b);
+      color: var(--text);
+      border: 1px solid #26306b;
+      padding: 10px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform .05s ease, box-shadow .15s ease, background .2s ease;
+    }
+    
+    .btn:hover { box-shadow: 0 6px 18px rgba(0,0,0,.35), 0 0 0 1px #2a3c88 inset; }
+    .btn:active { transform: translateY(1px); }
+
+    .searchbar {
+      position: relative;
+      width: 19em;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #007bff;
+      border-radius: 7px;
+      padding: 10px 12px;
+    }
+    
+    .searchbar input {
+      width: 100%; border: 0;
+      outline: none;
+      background: transparent;
+      font-size: 15px;
+    }
+    
+.horizontal-list {
+  display: flex;
+  gap: 0.6em;
+  overflow-x: auto;
+  padding: 0.4em 0.4em 1.4em;
+  scrollbar-width: none;
+}
+.horizontal-list::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  border-radius: 7px;
+  border: none;
+  background: #f0f0fa;
+  cursor: pointer;
+  font-size: 0.9rem;
+  user-select: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.chip.active {
+  background: #007bff;
+  color: #fff;
+}
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.2em;
+      margin: 0.8em 0 2em;
+    }
+
+    details.qa {
+      grid-column: span 12;
+      border-radius: 7px;
+      padding: 0;
+    }
+
+    summary {
+      color: #000;
+      padding: 0.4em 1em;
+      display: flex;
+      gap: 1em;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .q-icon {
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2em;
+      background: transparent;
+    }
+    
+    .answer {
+      padding: 1em 1em 1.4em;
+      font-size: 0.98rem;
+      color: #000;
+      border-bottom: 0.1px solid #000;
+    }
+    
+    .answer p {
+      margin: 0 0 1.2em;
+      text-align: justify;
+    }
+    
+    .meta {
+      display: flex;
+      gap: 0.4em;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: .8rem;
+      padding-right: 0.4em;
+      border-right: 0.1px solid #000;
+    }
+
+    .highlight {
+      background: rgba(110,168,254,.28);
+      padding: 0 .15em;
+      border-radius: 4px;
+    }
+
+    .fa-play:before {
+      color: #007bff;
+      font-size: 0.6em;
+    }
+  </style>
+
+</head>
+<body>
+  <main>
+  <div class="wrap">
+
+  <header>
+  <div class="header-left">
+    <button class="close-x" onclick="window.location.href='index.html'">
+      <i class="fa fa-arrow-left"></i>
+    </button>
+    <h4>Solar Explorar</h4>
+  </div>
+  <div class="header-right">
+    <div class="search-wrapper">
+      <input type="text" id="search" placeholder="Search anything..." aria-label="Search questions">
+      <button id="searchToggle" class="search-icon-btn" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </button>
+      <button id="searchClose" class="search-close-btn" aria-label="Close">×</button>
+    </div>
+  </div>
+</header>
+
+  <div class="chipbar horizontal-list" aria-label="Filter by category">
+  <button class="chip active" data-chip="all">All</button>
+  <button class="chip" data-chip="planets">Planets</button>
+  <button class="chip" data-chip="moons">Moons</button>
+  <button class="chip" data-chip="dwarf-planets">Dwarf Planets</button>
+  <button class="chip" data-chip="features">Features</button>
+  <button class="chip" data-chip="belts">Belts &amp; Regions</button>
+  <button class="chip" data-chip="terms">Terms</button>
+</div>
+
+    <h5 style="color: #007bff;
+    margin: 0 0 1em 1em;
+    font-size: 1.2rem;
+    font-weight: 600;">Solar Q & A :</h5>
+
+    <section id="list" class="grid" aria-live="polite">
+      <!-- ===== Terms ===== -->
+      <details class="qa" data-tags="terms definition">
+        <summary><i class="fas fa-play"></i>What is a planet?</summary>
+        <div class="answer">
+          <p>A planet orbits the Sun, is massive enough for its gravity to make it nearly round, and has cleared its orbital neighborhood of other debris.</p>
+          <div class="meta"><span class="tag">Definition</span><span class="tag">Terms</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="dwarf-planets terms definition">
+        <summary><i class="fas fa-play"></i>What is a dwarf planet?</summary>
+        <div class="answer">
+          <p>A dwarf planet orbits the Sun and is nearly round but has <em>not</em> cleared its orbital path of other objects. It is not a moon.</p>
+          <p>Examples include Pluto, Eris, Haumea, Makemake, and Ceres.</p>
+          <div class="meta"><span class="tag">Dwarf Planets</span><span class="tag">Definition</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="terms definition">
+        <summary><i class="fas fa-play"></i>What is a moon (natural satellite)?</summary>
+        <div class="answer">
+          <p>A moon is a natural object that orbits a planet or dwarf planet. Moons vary widely in size, composition, and activity.</p>
+          <div class="meta"><span class="tag">Moons</span><span class="tag">Definition</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="belts regions terms">
+        <summary><i class="fas fa-play"></i>What is the asteroid belt?</summary>
+        <div class="answer">
+          <p>The asteroid belt is a region between Mars and Jupiter containing many rocky bodies, including the dwarf planet Ceres.</p>
+          <div class="meta"><span class="tag">Belts & Regions</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="belts regions terms">
+        <summary><i class="fas fa-play"></i>What is the Kuiper Belt?</summary>
+        <div class="answer">
+          <p>The Kuiper Belt is a distant, disk-like region beyond Neptune filled with icy objects. Pluto, Haumea, Makemake, and many comets originate here.</p>
+          <div class="meta"><span class="tag">Kuiper Belt</span><span class="tag">Outer Solar System</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="belts regions terms">
+        <summary><i class="fas fa-play"></i>What is the Oort Cloud?</summary>
+        <div class="answer">
+          <p>The Oort Cloud is a hypothetical spherical shell of icy bodies far beyond the Kuiper Belt, thought to be the source of long-period comets.</p>
+          <div class="meta"><span class="tag">Oort Cloud</span><span class="tag">Outer Solar System</span></div>
+        </div>
+      </details>
+
+      <!-- ===== Planets ===== -->
+      <details class="qa" data-tags="planets mercury features">
+        <summary><i class="fas fa-play"></i>Why does Mercury have extreme temperatures?</summary>
+        <div class="answer">
+          <p>Mercury’s thin exosphere and slow rotation allow heat to escape at night and build during the day, creating huge temperature swings.</p>
+          <div class="meta"><span class="tag">Mercury</span><span class="tag">Atmosphere</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets venus features">
+        <summary><i class="fas fa-play"></i>Why is Venus so hot?</summary>
+        <div class="answer">
+          <p>Venus has a runaway greenhouse effect: a thick CO₂ atmosphere and sulfuric-acid clouds trap heat, making it hotter than Mercury.</p>
+          <div class="meta"><span class="tag">Venus</span><span class="tag">Greenhouse Effect</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets earth features tides">
+        <summary><i class="fas fa-play"></i>What causes ocean tides on Earth?</summary>
+        <div class="answer">
+          <p>Tides are primarily caused by the Moon’s gravity, with the Sun providing a secondary effect. Alignment during full/new moons creates stronger spring tides.</p>
+          <div class="meta"><span class="tag">Earth</span><span class="tag">Tides</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets mars features">
+        <summary><i class="fas fa-play"></i>Why is Mars called the Red Planet?</summary>
+        <div class="answer">
+          <p>Its soil contains iron oxides (rust) that reflect reddish light, giving Mars its distinctive color.</p>
+          <div class="meta"><span class="tag">Mars</span><span class="tag">Surface</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets jupiter features storms">
+        <summary><i class="fas fa-play"></i>What is Jupiter’s Great Red Spot?</summary>
+        <div class="answer">
+          <p>A gigantic, long-lived storm larger than Earth, driven by Jupiter’s turbulent atmosphere and strong jet streams.</p>
+          <div class="meta"><span class="tag">Jupiter</span><span class="tag">Storms</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets saturn rings features">
+        <summary><i class="fas fa-play"></i>What are Saturn’s rings made of?</summary>
+        <div class="answer">
+          <p>Mostly water-ice particles mixed with dust and rock, ranging from tiny grains to house-sized chunks.</p>
+          <div class="meta"><span class="tag">Saturn</span><span class="tag">Rings</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets uranus features">
+        <summary><i class="fas fa-play"></i>Why does Uranus rotate on its side?</summary>
+        <div class="answer">
+          <p>Uranus is tilted by ~98°, likely due to a massive ancient collision, causing extreme seasons that last decades.</p>
+          <div class="meta"><span class="tag">Uranus</span><span class="tag">Tilt</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets neptune features weather">
+        <summary><i class="fas fa-play"></i>Why is Neptune deep blue?</summary>
+        <div class="answer">
+          <p>Methane in its atmosphere absorbs red light and reflects blue. Powerful winds shape dark storm systems.</p>
+          <div class="meta"><span class="tag">Neptune</span><span class="tag">Atmosphere</span></div>
+        </div>
+      </details>
+
+      <!-- ===== Moons ===== -->
+      <details class="qa" data-tags="moons earth features">
+        <summary><i class="fas fa-play"></i>Does the Moon have an atmosphere?</summary>
+        <div class="answer">
+          <p>The Moon has an extremely thin exosphere, not a breathable atmosphere, so temperatures vary widely and sound cannot travel.</p>
+          <div class="meta"><span class="tag">Moon</span><span class="tag">Exosphere</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="moons jupiter volcanism">
+        <summary><i class="fas fa-play"></i>Why is Io so volcanically active?</summary>
+        <div class="answer">
+          <p>Strong tidal forces from Jupiter and neighboring moons flex Io’s interior, generating heat that fuels hundreds of volcanoes.</p>
+          <div class="meta"><span class="tag">Io</span><span class="tag">Tidal Heating</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="moons jupiter ice ocean">
+        <summary><i class="fas fa-play"></i>Could life exist in Europa’s ocean?</summary>
+        <div class="answer">
+          <p>Europa likely has a salty subsurface ocean warmed by tidal heating. If chemical energy is available, microbial life is considered possible.</p>
+          <div class="meta"><span class="tag">Europa</span><span class="tag">Subsurface Ocean</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="moons saturn atmosphere methane">
+        <summary><i class="fas fa-play"></i>What makes Titan unique?</summary>
+        <div class="answer">
+          <p>Titan has a thick nitrogen atmosphere and surface lakes and seas of liquid methane/ethane—an Earth-like hydrological cycle with hydrocarbons.</p>
+          <div class="meta"><span class="tag">Titan</span><span class="tag">Atmosphere</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="moons jupiter magnetic field">
+        <summary><i class="fas fa-play"></i>Does any moon have a magnetic field?</summary>
+        <div class="answer">
+          <p>Ganymede—the largest moon—has its own intrinsic magnetic field, unique among moons.</p>
+          <div class="meta"><span class="tag">Ganymede</span><span class="tag">Magnetism</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="moons neptune retrograde">
+        <summary><i class="fas fa-play"></i>Why does Triton orbit backward?</summary>
+        <div class="answer">
+          <p>Triton orbits Neptune in a retrograde (opposite) direction, suggesting it was captured from the Kuiper Belt rather than forming in place.</p>
+          <div class="meta"><span class="tag">Triton</span><span class="tag">Retrograde Orbit</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="moons mars orbits">
+        <summary><i class="fas fa-play"></i>Will Phobos crash into Mars?</summary>
+        <div class="answer">
+          <p>Phobos is slowly spiraling inward and may break apart into a ring or impact Mars in tens of millions of years.</p>
+          <div class="meta"><span class="tag">Phobos</span><span class="tag">Orbital Decay</span></div>
+        </div>
+      </details>
+
+      <!-- ===== More Concepts ===== -->
+      <details class="qa" data-tags="features time terms">
+        <summary><i class="fas fa-play"></i>What is a light‑year?</summary>
+        <div class="answer">
+          <p>A light‑year is a unit of distance: how far light travels in one year (~9.46 trillion km), not a unit of time.</p>
+          <div class="meta"><span class="tag">Units</span><span class="tag">Distance</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="features sun terms">
+        <summary><i class="fas fa-play"></i>How massive is the Sun compared to the Solar System?</summary>
+        <div class="answer">
+          <p>The Sun contains about 99.8% of the Solar System’s mass; everything else (planets, moons, comets) share the remainder.</p>
+          <div class="meta"><span class="tag">Sun</span><span class="tag">Mass</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="belts comets terms">
+        <summary><i class="fas fa-play"></i>What is a comet?</summary>
+        <div class="answer">
+          <p>A comet is an icy body that releases gas and dust when heated by the Sun, forming a glowing coma and one or more tails.</p>
+          <div class="meta"><span class="tag">Comets</span><span class="tag">Icy Bodies</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets classification">
+        <summary><i class="fas fa-play"></i>Why isn’t Pluto a planet anymore?</summary>
+        <div class="answer">
+          <p>Pluto didn’t meet the “cleared its orbit” criterion set in 2006, so it was reclassified as a dwarf planet.</p>
+          <div class="meta"><span class="tag">Pluto</span><span class="tag">Classification</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="features rings terms">
+        <summary><i class="fas fa-play"></i>Do other planets have rings?</summary>
+        <div class="answer">
+          <p>Yes. All four giant planets—Jupiter, Saturn, Uranus, and Neptune—have ring systems, though Saturn’s are the most prominent.</p>
+          <div class="meta"><span class="tag">Rings</span><span class="tag">Giants</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="terms observation history">
+        <summary><i class="fas fa-play"></i>Who discovered Uranus?</summary>
+        <div class="answer">
+          <p>William Herschel discovered Uranus in 1781—the first planet found with a telescope.</p>
+          <div class="meta"><span class="tag">History</span><span class="tag">Discoveries</span></div>
+        </div>
+      </details>
+
+      <details class="qa" data-tags="planets venus rotation">
+        <summary><i class="fas fa-play"></i>Is a day on Venus longer than its year?</summary>
+        <div class="answer">
+          <p>Yes. Venus rotates so slowly that one Venus day (~243 Earth days) is longer than its year (~225 Earth days).</p>
+          <div class="meta"><span class="tag">Venus</span><span class="tag">Rotation</span></div>
+        </div>
+      </details>
+    </section>
+
+    </main>
+    <footer>
+  <div class="footer-buttons">
+    <a href="intro.html" class="feedback-btn">Home</a>
+    <a href="feedback.html" class="feedback-btn">Feedback</a>
+  </div>
+  <p id="footerp">© 2025 Solar Explorar. All rights reserved.</p>
+  </div>
+  </footer>
+  <script>
+    const chips = document.querySelectorAll('.chip');
+    let activeChip = 'all';
+    chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    activeChip = chip.dataset.chip;
+    filter();
+  }));
+
+    // Search filtering with highlight
+    const search = document.getElementById('search');
+    const clearBtn = document.getElementById('clearSearch');
+    const expandAll = document.getElementById('expandAll');
+    const collapseAll = document.getElementById('collapseAll');
+
+    function normalize(s){ return s.toLowerCase().replace(/\s+/g,' ').trim(); }
+
+     function filter(){
+      const q = normalize(search.value);
+      const items = list.querySelectorAll('details.qa');
+      const term = q.split(' ').filter(Boolean);
+      items.forEach(d => {
+        // category filter
+        const inChip = (activeChip === 'all') || d.dataset.tags.includes(activeChip);
+        // text filter
+        const text = normalize(d.textContent);
+        const inSearch = !q || term.every(t => text.includes(t));
+        d.style.display = (inChip && inSearch) ? '' : 'none';
+        // highlight in answer
+        const ans = d.querySelector('.answer');
+        if (!ans) return;
+        const original = ans.getAttribute('data-original') || ans.innerHTML;
+        if (!ans.getAttribute('data-original')) ans.setAttribute('data-original', original);
+        if (!q) { ans.innerHTML = original; return; }
+        let html = original;
+        term.forEach(t => {
+          if (!t) return;
+          const re = new RegExp(`(${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'ig');
+          html = html.replace(re, '<span class="highlight">$1</span>');
+        });
+        ans.innerHTML = html;
+      });
+    }
+    
+const searchInput = document.getElementById('search');
+const searchWrapper = document.querySelector('.search-wrapper');
+const searchToggle = document.getElementById('searchToggle');
+const searchClose = document.getElementById('searchClose');
+
+// Expand search bar
+searchToggle.addEventListener('click', () => {
+  searchWrapper.classList.add('expanded');
+  searchInput.focus();
+});
+
+// Close search bar
+searchClose.addEventListener('click', () => {
+  searchWrapper.classList.remove('expanded');
+  searchInput.value = '';
+  filter(); // reset QnA list
+  searchInput.focus();
+});
+
+// Hook into your existing search logic
+searchInput.addEventListener('input', filter);
+
+// Clear with ESC key or "/" shortcut
+window.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement !== searchInput) {
+    e.preventDefault();
+    searchWrapper.classList.add('expanded');
+    searchInput.focus();
+  }
+  if (e.key === 'Escape' && searchWrapper.classList.contains('expanded')) {
+    searchWrapper.classList.remove('expanded');
+    searchInput.value = '';
+    filter();
+  }
+});
+
+// ✅ Run once on page load
+filter();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,2323 @@
+[
+
+
+
+
+
+
+
+
+
+
+ {
+  "name": "Sun",
+  "alternativeNames": ["Sol", "Sól", "Helios"],
+  "adjectives": ["Solar"],
+  "symbol": "Circle with dot in the middle",
+  "image": "media/Sun.avif",
+  "description": "The Sun is the star at the center of the Solar System, containing more than 99.8% of its total mass. Composed primarily of hydrogen and helium, it generates energy through nuclear fusion, converting hydrogen into helium in its core. This energy powers life on Earth, drives climate and weather patterns, and governs the orbits of planets and other bodies.",
+  "sections": {
+    "Observation Data": {
+      "Mean distance from Earth": "1 AU (149,600,000 km)",
+      "Light travel time": "8 min 19 s",
+      "Visual brightness": "−26.74 (V)",
+      "Absolute magnitude": 4.83,
+      "Spectral classification": "G2V",
+      "Metallicity (Z)": 0.0122,
+      "Angular size (°)": "0.527–0.545"
+    },
+    "Orbital Characteristics": {
+      "Mean distance from Milky Way core": "24,000–28,000 light-years",
+      "Galactic period": "225–250 million years",
+      "Velocity": {
+        "Orbit around Galactic Center": "251 km/s",
+        "Relative to stellar neighborhood": "20 km/s",
+        "Relative to cosmic microwave background": "370 km/s"
+      },
+      "Obliquity": {
+        "Ecliptic": "7.25°",
+        "Galactic plane": "67.23°"
+      },
+      "Right ascension of North pole": "286.13°",
+      "Declination of North pole": "+63.87°"
+    },
+    "Rotation": {
+      "Sidereal rotation period": {
+        "Equator": "25.05 days",
+        "Poles": "34.4 days"
+      },
+      "Equatorial rotation velocity": "1.997 km/s"
+    },
+    "Physical Characteristics": {
+      "Equatorial radius (km)": 695700,
+      "Diameter (km)": 1392700,
+      "Flattening": 0.00005,
+      "Surface area (km²)": "6.09 × 10^12",
+      "Volume (km³)": "1.412 × 10^18",
+      "Mass (kg)": "1.9885 × 10^30",
+      "Relative to Earth": {
+        "Radius": "109 × Earth",
+        "Volume": "1,300,000 × Earth",
+        "Mass": "332,950 × Earth"
+      },
+      "Average density (g/cm³)": 1.408,
+      "Age (billion years)": 4.6,
+      "Equatorial surface gravity (m/s²)": 274,
+      "Surface escape velocity (km/s)": 617.7,
+      "Moment of inertia factor": "≈0.070"
+    },
+    "Temperature": {
+      "Core (K)": 15700000,
+      "Photosphere (K)": 5772,
+      "Corona (K)": 5000000
+    },
+    "Luminosity & Brightness": {
+      "Luminosity (W)": "3.828 × 10^26",
+      "Luminous efficacy (lm/W)": 98,
+      "Total luminous flux (lm)": "3.75 × 10^28",
+      "Colour (B-V)": 0.656,
+      "Mean radiance (W·m−2·sr−1)": "2.009 × 10^7"
+    },
+    "Composition by Mass (%)": {
+      "Hydrogen": 73.46,
+      "Helium": 24.85,
+      "Oxygen": 0.77,
+      "Carbon": 0.29,
+      "Iron": 0.16,
+      "Neon": 0.12,
+      "Nitrogen": 0.09,
+      "Silicon": 0.07,
+      "Magnesium": 0.05,
+      "Sulfur": 0.04
+    },
+    "Planetary Distances & Orbits (from Sun)": {
+      "Mercury (km)": "57,910,000",
+      "Venus (km)": "108,200,000",
+      "Earth (km)": "149,600,000",
+      "Mars (km)": "227,940,000",
+      "Jupiter (km)": "778,500,000",
+      "Saturn (km)": "1,429,000,000",
+      "Uranus (km)": "2,870,990,000",
+      "Neptune (km)": "4,504,000,000",
+      "Pluto (km)": "5,906,000,000"
+    }
+  },
+  "moons": [],
+  "note": "The Sun has no moons."
+},
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+  "name": "Mercury",
+  "pronunciation": "/ˈmɜːrkjʊri/",
+  "adjectives": ["Mercurian", "Mercurial"],
+  "symbol": "☿",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg",
+  "description": "Mercury is the smallest and innermost planet in the Solar System. It orbits closest to the Sun, completing a revolution in just 88 Earth days. Due to its proximity to the Sun, temperatures on Mercury vary extremely between day and night. The planet has a rocky surface covered with craters, similar to Earth's Moon. Despite its small size, Mercury has a large iron-rich core, making it dense and unique among planets.",
+  "sections": {
+    "Designations": {
+      "Pronunciation": "/ˈmɜːrkjʊri/",
+      "Adjectives": ["Mercurian", "Mercurial"],
+      "Symbol": "☿"
+    },
+    "Orbital Characteristics": {
+      "Epoch": "J2000",
+      "Aphelion (AU)": 0.466697,
+      "Aphelion (km)": 69820000,
+      "Perihelion (AU)": 0.307499,
+      "Perihelion (km)": 46000000,
+      "Semi-major axis (AU)": 0.387098,
+      "Semi-major axis (km)": 57910000,
+      "Eccentricity": 0.205630,
+      "Orbital period (sidereal days)": 87.9691,
+      "Orbital period (years)": 0.240846,
+      "Synodic orbital period (days)": 115.88,
+      "Average orbital speed (km/s)": 47.36,
+      "Mean anomaly (°)": 174.796,
+      "Inclination to ecliptic (°)": 7.005,
+      "Inclination to Sun's equator (°)": 3.38,
+      "Inclination to invariable plane (°)": 6.35,
+      "Longitude of ascending node (°)": 48.331,
+      "Argument of perihelion (°)": 29.124,
+      "Satellites": "None"
+    },
+    "Physical Characteristics": {
+      "Mean radius (km)": 2439.7,
+      "Relative to Earth radius": 0.3829,
+      "Flattening": 0.0009,
+      "Surface area (km²)": "7.48 × 10^7",
+      "Relative to Earth surface area": 0.147,
+      "Volume (km³)": "6.083 × 10^10",
+      "Relative to Earth volume": 0.056,
+      "Mass (kg)": "3.3011 × 10^23",
+      "Relative to Earth mass": 0.055,
+      "Mean density (g/cm³)": 5.427,
+      "Surface gravity (m/s²)": 3.7,
+      "Relative to Earth gravity": 0.38,
+      "Moment of inertia factor": "0.346 ± 0.014",
+      "Escape velocity (km/s)": 4.25,
+      "Sidereal rotation period (days)": 58.646,
+      "Synodic rotation period (days)": 176,
+      "Equatorial rotation velocity (m/s)": 3.026,
+      "Axial tilt (°)": 0.034,
+      "North pole right ascension": "281.01° (18h 44m 2s)",
+      "North pole declination": "61.41°",
+      "Albedo (Bond)": 0.088,
+      "Albedo (geometric)": 0.142,
+      "Apparent magnitude": "-2.48 to +7.25",
+      "Absolute magnitude (H)": -0.4,
+      "Angular diameter (arcseconds)": "4.5–13"
+    },
+    "Temperature": {
+      "Blackbody temperature (K)": 437,
+      "Surface temperature (°C)": {
+        "Min": -173,
+        "Mean": 67,
+        "Max": 427
+      }
+    },
+    "Atmosphere": {
+      "Surface pressure": "trace (≲ 0.5 nPa)",
+      "Composition by volume": [
+        "Atomic oxygen",
+        "Sodium",
+        "Magnesium",
+        "Atomic hydrogen",
+        "Potassium",
+        "Calcium",
+        "Helium",
+        "Trace amounts of iron, aluminium, argon, dinitrogen, dioxygen, carbon dioxide, water vapor, xenon, krypton, neon"
+      ]
+    }
+  },
+  "moons": [],
+  "note": "Mercury has no moons."
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+  "name": "Venus",
+  "pronunciation": "/ˈviːnəs/",
+  "named_after": "Roman goddess of love",
+  "adjectives": ["Venusian", "Cytherean (rare)", "Venerean / Venerian"],
+  "symbol": "♀",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg",
+  "description": "Venus is the second planet from the Sun and has a thick, toxic atmosphere. Its clouds are composed mainly of carbon dioxide and sulfuric acid, creating a strong greenhouse effect. Surface temperatures are extremely high, hot enough to melt lead. Venus rotates very slowly and in the opposite direction to most planets, causing a day longer than its year. The planet's surface is rocky and volcanic, with vast plains, mountains, and thousands of volcanoes.",
+  "sections": {
+    "Designations": {
+      "Pronunciation": "/ˈviːnəs/",
+      "Named after": "Roman goddess of love",
+      "Adjectives": ["Venusian", "Cytherean", "Venerean / Venerian"],
+      "Symbol": "♀"
+    },
+    "Orbital Characteristics": {
+      "Epoch": "J2000",
+      "Aphelion (AU)": 0.728213,
+      "Aphelion (km)": 108940000,
+      "Perihelion (AU)": 0.718440,
+      "Perihelion (km)": 107480000,
+      "Semi-major axis (AU)": 0.723332,
+      "Semi-major axis (km)": 108210000,
+      "Eccentricity": 0.006772,
+      "Orbital period (sidereal days)": 224.701,
+      "Orbital period (years)": 0.615198,
+      "Synodic orbital period (days)": 583.92,
+      "Average orbital speed (km/s)": 35.02,
+      "Mean anomaly (°)": 50.115,
+      "Inclination to ecliptic (°)": 3.39458,
+      "Inclination to Sun's equator (°)": 3.86,
+      "Inclination to invariable plane (°)": 2.15,
+      "Longitude of ascending node (°)": 76.680,
+      "Argument of perihelion (°)": 54.884,
+      "Satellites": "None"
+    },
+    "Physical Characteristics": {
+      "Mean radius (km)": 6051.8,
+      "Relative to Earth radius": 0.9499,
+      "Flattening": 0,
+      "Surface area (km²)": "4.6023 × 10^8",
+      "Relative to Earth surface area": 0.902,
+      "Volume (km³)": "9.2843 × 10^11",
+      "Relative to Earth volume": 0.857,
+      "Mass (kg)": "4.8675 × 10^24",
+      "Relative to Earth mass": 0.815,
+      "Mean density (g/cm³)": 5.243,
+      "Surface gravity (m/s²)": 8.87,
+      "Relative to Earth gravity": 0.904,
+      "Escape velocity (km/s)": 10.36,
+      "Sidereal rotation period (days)": -243.0226,
+      "Synodic rotation period (days)": -116.75,
+      "Rotation type": "Retrograde",
+      "Equatorial rotation velocity (m/s)": 1.81,
+      "Axial tilt (°)": "2.64 (retrograde definition) or 177.36 (prograde definition)",
+      "North pole right ascension": "272.76° (18h 11m 2s)",
+      "North pole declination": "67.16°",
+      "Albedo (Bond)": 0.76,
+      "Albedo (geometric)": 0.689,
+      "Apparent magnitude": "-4.92 to -2.98",
+      "Absolute magnitude (H)": -4.4,
+      "Angular diameter (arcseconds)": "9.7–66.0"
+    },
+    "Temperature": {
+      "Blackbody temperature (K)": 232,
+      "Surface temperature (K)": 737,
+      "Surface temperature (°C)": 464,
+      "Surface temperature (°F)": 867,
+      "Radiation absorbed dose rate (μGy/h)": "2.1 × 10^-6",
+      "Equivalent dose rate (μSv/h)": "2.2 × 10^-6 (surface), 0.092–22 (cloud level)"
+    },
+    "Atmosphere": {
+      "Surface pressure": "93 bar (9.3 MPa, ~92 atm)",
+      "Composition by volume": {
+        "Carbon dioxide": "96.5%",
+        "Nitrogen": "3.5%",
+        "Sulphur dioxide": "0.015%",
+        "Argon": "0.0070%",
+        "Water vapor": "0.0020%",
+        "Carbon monoxide": "0.0017%",
+        "Helium": "0.0012%",
+        "Neon": "0.0007%",
+        "Traces": ["Carbonyl sulfide", "Hydrogen chloride", "Hydrogen fluoride"]
+      }
+    }
+  },
+  "moons": [],
+  "note": "Venus has no moons. Its rotation is retrograde."
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "name": "Earth",
+  "alternative_names": ["The World", "The Globe", "Terra", "Tellus", "Gaia"],
+  "adjectives": ["Earthly", "Terrestrial", "Terran", "Tellurian"],
+  "symbol": ["🜨", "♁"],
+  "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg",
+  "description": "Earth is the third planet from the Sun and the only known astronomical object to harbor life. Its surface is 71% water and 29% land, with a dynamic climate and a protective atmosphere that sustains diverse ecosystems.",
+  "sections": {
+    "Designations": {
+      "Alternative names": ["The World", "The Globe", "Terra", "Tellus", "Gaia"],
+      "Adjectives": ["Earthly", "Terrestrial", "Terran", "Tellurian"],
+      "Symbol": ["🜨", "♁"]
+    },
+    "Orbital Characteristics": {
+      "Epoch": "J2000",
+      "Aphelion (km)": 152097597,
+      "Perihelion (km)": 147098450,
+      "Semi-major axis (km)": 149598023,
+      "Eccentricity": 0.0167086,
+      "Orbital period (sidereal days)": 365.256363004,
+      "Orbital period (Julian years)": 1.00001742096,
+      "Average orbital speed (km/s)": 29.7827,
+      "Mean anomaly (°)": 358.617,
+      "Inclination to Sun's equator (°)": 7.155,
+      "Inclination to invariable plane (°)": 1.57869,
+      "Inclination to J2000 ecliptic (°)": 0.00005,
+      "Longitude of ascending node (°)": -11.26064,
+      "Time of perihelion": "2023-Jan-04",
+      "Argument of perihelion (°)": 114.20783,
+      "Satellites": "1 (The Moon)"
+    },
+    "Physical Characteristics": {
+      "Mean radius (km)": 6371.0,
+      "Equatorial radius (km)": 6378.137,
+      "Polar radius (km)": 6356.752,
+      "Flattening": "1/298.257222101 (ETRS89)",
+      "Circumference (equatorial km)": 40075.017,
+      "Circumference (meridional km)": 40007.86,
+      "Surface area (km²)": 510072000,
+      "Land area (km²)": 148940000,
+      "Water area (km²)": 361132000,
+      "Volume (km³)": "1.08321 × 10^12",
+      "Mass (kg)": "5.972168 × 10^24",
+      "Mean density (g/cm³)": 5.513,
+      "Surface gravity (m/s²)": 9.80665,
+      "Relative gravity (g0)": 1.0,
+      "Moment of inertia factor": 0.3307,
+      "Escape velocity (km/s)": 11.186,
+      "Sidereal rotation period (days)": 0.99726968,
+      "Synodic rotation period (days)": 1.0,
+      "Day length (hours)": 24,
+      "Equatorial rotation velocity (km/s)": 0.4651,
+      "Axial tilt (°)": 23.4392811,
+      "Albedo (geometric)": 0.434,
+      "Albedo (Bond)": 0.294,
+      "Absolute magnitude (H)": -3.99
+    },
+    "Temperature": {
+      "Blackbody temperature (K)": 255,
+      "Surface temperature min (°C)": -89.2,
+      "Surface temperature mean (°C)": 14.76,
+      "Surface temperature max (°C)": 56.7,
+      "Surface equivalent dose rate (μSv/h)": 0.274
+    },
+    "Atmosphere": {
+      "Surface pressure (kPa)": 101.325,
+      "Composition by volume": {
+        "Nitrogen": "78.08%",
+        "Oxygen": "20.95%",
+        "Water vapor": "≤1% (variable)",
+        "Argon": "0.9340%",
+        "Carbon dioxide": "0.0415%",
+        "Neon": "0.00182%",
+        "Helium": "0.00052%",
+        "Methane": "0.00017%",
+        "Krypton": "0.00011%",
+        "Hydrogen": "0.00006%"
+      }
+    }
+  },
+
+
+  "moons": [
+    {
+      "name": "Moon",
+      "alternative_names": ["Luna", "Selene (poetic)", "Cynthia (poetic)"],
+      "symbol": ["☾", "☽"],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "description": "The Moon is Earth's only natural satellite, influencing tides and stabilizing Earth's axis. It orbits our planet at an average distance of about 384,400 km. The lunar surface is covered with craters, mountains, and plains called maria. The Moon has no atmosphere, which allows temperatures to vary drastically between day and night. It plays a crucial role in Earth's environment and has been a focus of human exploration for centuries.",
+      "sections": {
+        "Orbital Characteristics": {
+          "Epoch": "J2000",
+          "Uncertainty parameter": 0,
+          "Perigee (km)": 362600,
+          "Apogee (km)": 405400,
+          "Semi-major axis (km)": 384399,
+          "Mean orbit radius (km)": 384784,
+          "Eccentricity": 0.0549,
+          "Orbital period (sidereal days)": 27.321661,
+          "Orbital period (synodic days)": 29.530589,
+          "Average orbital speed (km/s)": 1.022,
+          "Inclination to ecliptic (°)": 5.145,
+          "Longitude of ascending node": "Regresses by one revolution in 18.61 years",
+          "Argument of perigee": "Progresses by one revolution in 8.85 years",
+          "Satellite of": "Earth"
+        },
+        "Physical Characteristics": {
+          "Mean radius (km)": 1737.4,
+          "Equatorial radius (km)": 1738.1,
+          "Polar radius (km)": 1736.0,
+          "Flattening": 0.0012,
+          "Circumference (km)": 10921,
+          "Surface area (km²)": "3.793 × 10^7",
+          "Volume (km³)": "2.1958 × 10^10",
+          "Mass (kg)": "7.346 × 10^22",
+          "Mean density (g/cm³)": 3.344,
+          "Relative density (Earth=1)": 0.606,
+          "Surface gravity (m/s²)": 1.622,
+          "Relative gravity (g0)": 0.1654,
+          "Moment of inertia factor": "0.3929 ± 0.0009",
+          "Escape velocity (km/s)": 2.38,
+          "Rotation period (sidereal days)": 27.321661,
+          "Rotation period (synodic days)": 29.530589,
+          "Equatorial rotation velocity (m/s)": 4.627,
+          "Axial tilt to ecliptic (°)": 1.5424,
+          "Axial tilt to orbit plane (°)": 6.687,
+          "Axial tilt to Earth's equator (°)": 24,
+          "Albedo": 0.136,
+          "Absolute magnitude (H)": 0.2,
+          "Angular diameter (arcminutes)": "29.3 – 34.1"
+        },
+        "Temperature": {
+          "Equator min (K)": 100,
+          "Equator mean (K)": 250,
+          "Equator max (K)": 390,
+          "Near 85°N mean (K)": 230,
+          "Near 85°N min (K)": 150
+        },
+        "Radiation": {
+          "Surface absorbed dose rate (μGy/h)": 13.2,
+          "Surface equivalent dose rate (μSv/h)": 57.0
+        },
+        "Apparent Brightness": {
+          "Magnitude range": "-2.5 to -12.9",
+          "Mean full moon magnitude": -12.74
+        },
+        "Atmosphere": {
+          "Surface pressure (Pa)": "10^-7 (day), 10^-10 (night)",
+          "Composition by volume": ["He", "Ar", "Ne", "Na", "K", "H"]
+        }
+      }
+    }
+  ],
+  "note": "Earth has one moon."
+},
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+  "name": "Mars",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
+  "description": "Mars is known as the Red Planet due to iron oxide on its surface. It is the fourth planet from the Sun and has a thin atmosphere mostly composed of carbon dioxide. The planet features the largest volcano and canyon in the Solar System, Olympus Mons and Valles Marineris. Mars experiences seasons similar to Earth, with polar ice caps made of water and dry ice. Scientists are interested in Mars for the possibility of past or present life and future human exploration.",
+  "sections": {
+  "Designations": {
+    "Adjectives": ["Martian", "Arean (rare, from Ares)"],
+    "Symbol": "♂"
+  },
+    "Physical Characteristics": {
+      "Mean Radius (km)": 3389.5,
+      "Equatorial Radius (km)": 3396.2,
+      "Polar Radius (km)": 3376.2,
+      "Flattening": "0.00589",
+      "Surface Area (km²)": "1.4437×10^8",
+      "Volume (km³)": "1.63118×10^11",
+      "Mass (kg)": "6.4171×10^23",
+      "Density (g/cm³)": 3.9335,
+      "Surface Gravity (m/s²)": 3.72,
+      "Moment of Inertia Factor": "0.3644",
+      "Escape Velocity (km/s)": 5.027,
+      "Rotation Period (hours)": 24.6,
+      "Equatorial Rotation Velocity (m/s)": 241,
+      "Axial Tilt (°)": 25.19,
+      "Albedo (geometric)": 0.170,
+      "Albedo (Bond)": 0.25
+    },
+    "Orbital Data": {
+      "Epoch": "J2000",
+      "Aphelion (km)": 249261000,
+      "Perihelion (km)": 206650000,
+      "Semi-major Axis (km)": 227939366,
+      "Eccentricity": 0.0934,
+      "Orbital Period (days)": 686.98,
+      "Synodic Period (days)": 779.94,
+      "Average Orbital Speed (km/s)": 24.07,
+      "Inclination (°)": {
+        "To ecliptic": 1.85,
+        "To Sun's equator": 5.65,
+        "To invariable plane": 1.63
+      },
+      "Longitude of Ascending Node (°)": 49.57854,
+      "Argument of Perihelion (°)": 286.5
+    },
+    "Temperature": {
+      "Blackbody Temperature (K)": 209,
+      "Surface Min (°C)": -110,
+      "Surface Mean (°C)": -60,
+      "Surface Max (°C)": 35
+    },
+    "Atmosphere": {
+      "Surface Pressure (kPa)": 0.636,
+      "Composition by Volume": {
+        "CO2": "95.97%",
+        "Argon": "1.93%",
+        "Nitrogen": "1.89%",
+        "Oxygen": "0.146%",
+        "Carbon Monoxide": "0.0557%",
+        "Water Vapor": "0.021%"
+      }
+    }
+  },
+
+
+  "moons": [
+   {
+  "name": "Phobos",
+  "image": "media/Phobos.jpg",
+  "description": "Phobos is the larger and closer of Mars' two moons, irregularly shaped and slowly spiraling toward Mars. It orbits Mars very quickly, completing a revolution in just about 7 hours and 39 minutes. The moon's surface is covered with craters and grooves, including the large Stickney crater. Phobos is gradually getting closer to Mars and may eventually break apart or crash into the planet. It is one of the smallest moons in the Solar System and was discovered in 1877 by astronomer Asaph Hall.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "Asaph Hall",
+    "Discovery date": "18 August 1877"
+  },
+  "Designations": {
+    "Designation": "Mars I",
+    "Pronunciation": ["/ˈfoʊbɒs/", "/ˈfoʊbəs/"],
+    "Named after": "Φόβος (Phobos, personification of fear in Greek mythology)",
+    "Adjectives": ["Phobian"],
+    "Symbol": "(rare)"
+  },
+  "Orbital_characteristics": {
+    "Epoch": "J2000",
+    "Periapsis (km)": 9234.42,
+    "Apoapsis (km)": 9517.58,
+    "Semi-major axis (km)": 9376,
+    "Eccentricity": 0.0151,
+    "Orbital Period (days)": 0.31891023,
+    "Orbital Period (hours)": "7h 39m 12s",
+    "Average Orbital Speed (km/s)": 2.138,
+    "Inclination": {
+      "To Mars's equator (°)": 1.093,
+      "To Laplace plane (°)": 0.046,
+      "To ecliptic (°)": 26.04
+    },
+    "Satellite of": "Mars"
+  },
+  "Physical_characteristics": {
+    "Dimensions (km)": "25.90 × 22.60 × 18.32",
+    "Mean Radius (km)": 11.08,
+    "Surface Area (km²)": 1640,
+    "Volume (km³)": 5695,
+    "Mass (kg)": "1.060×10^16",
+    "Density (g/cm³)": 1.861,
+    "Surface Gravity (m/s²)": 0.0057,
+    "Escape Velocity (m/s)": 11.39,
+    "Rotation": "Synchronous",
+    "Equatorial Rotation Velocity": "11 km/h",
+    "Axial Tilt": 0,
+    "Albedo": "0.071 ± 0.012 at 0.54 μm",
+    "Temperature (K)": 233,
+    "Apparent Magnitude": 11.8
+  }
+ }
+},
+
+
+    {
+  "name": "Deimos",
+  "image": "media/Deimos.jpg",
+  "description": "Deimos is the smaller and outermost of Mars' two moons. It has a smoother and less cratered surface than Phobos due to a thick layer of regolith. The moon orbits Mars slowly, taking about 30.3 hours to complete one revolution. Deimos is gradually moving away from Mars over time and may eventually escape its orbit. It was discovered in 1877 by astronomer Asaph Hall and is one of the smallest moons in the Solar System.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "Asaph Hall",
+    "Discovery date": "12 August 1877"
+  },
+  "Designations": {
+    "Designation": "Mars II",
+    "Pronunciation": ["/ˈdaɪməs/", "/ˈdiːməs/", "/ˈdeɪmɒs/"],
+    "Named after": "Δεῖμος (Deimos, personification of dread/terror in Greek mythology)",
+    "Adjectives": ["Deimian"],
+    "Symbol": "(rare)"
+  },
+  "Orbital_characteristics": {
+    "Epoch": "23 September 2012 (JD 2456191.5)",
+    "Periapsis (km)": 23455.5,
+    "Apoapsis (km)": 23470.9,
+    "Semi-major axis (km)": 23463.2,
+    "Eccentricity": 0.00033,
+    "Orbital Period (days)": 1.263,
+    "Orbital Period (hours)": 30.312,
+    "Average Orbital Speed (km/s)": 1.3513,
+    "Inclination": {
+      "To Mars's equator (°)": 0.93,
+      "To Laplace plane (°)": 1.791,
+      "To ecliptic (°)": 27.58
+    },
+    "Satellite of": "Mars"
+  },
+  "Physical_characteristics": {
+    "Dimensions (km)": "16.08 × 11.78 × 10.22",
+    "Mean Radius (km)": 6.27,
+    "Surface Area (km²)": 522,
+    "Volume (km³)": 1033,
+    "Mass (kg)": "1.51×10^15",
+    "Density (g/cm³)": 1.465,
+    "Surface Gravity (m/s²)": 0.003,
+    "Escape Velocity (m/s)": 5.556,
+    "Rotation": "Synchronous",
+    "Albedo": "0.068 ± 0.007",
+    "Temperature (K)": 233,
+    "Apparent Magnitude": 12.89
+  }
+  }
+ }
+],
+  "note": "Mars has two moons: Phobos and Deimos."
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "name": "Jupiter",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg",
+  "description": "Jupiter is the largest planet in the Solar System, a gas giant primarily composed of hydrogen and helium. It has a powerful magnetic field and dozens of moons, including the four large Galilean moons. The planet is famous for its Great Red Spot, a massive storm larger than Earth that has raged for centuries. Jupiter's thick atmosphere features colorful cloud bands created by strong winds and turbulence. Its immense gravity influences the Solar System, acting as a shield by capturing comets and asteroids.",
+  "sections": {
+  "Designations": {
+    "Pronunciation": "/ˈdʒuːpɪtər/",
+    "Named after": "Jupiter (Roman king of the gods)",
+    "Adjectives": ["Jovian"],
+    "Symbol": "♃"
+  },
+  "Orbital_characteristics": {
+    "Epoch": "J2000",
+    "Aphelion (AU)": 5.4570,
+    "Aphelion (km)": 816363000,
+    "Perihelion (AU)": 4.9506,
+    "Perihelion (km)": 740595000,
+    "Semi-major axis (AU)": 5.2038,
+    "Semi-major axis (km)": 778479000,
+    "Eccentricity": 0.0489,
+    "Orbital Period (years)": 11.862,
+    "Orbital Period (days)": 4332.59,
+    "Orbital Period (Jovian solar days)": 10476.8,
+    "Synodic Period (days)": 398.88,
+    "Average Orbital Speed (km/s)": 13.06,
+    "Mean Anomaly (°)": 20.020,
+    "Inclination": {
+      "To ecliptic (°)": 1.303,
+      "To Sun's equator (°)": 6.09,
+      "To invariable plane (°)": 0.32
+    },
+    "Longitude of Ascending Node (°)": 100.464,
+    "Time of Perihelion": "21 January 2023",
+    "Argument of Perihelion (°)": 273.867,
+    "Known Satellites": 97
+  },
+  "Physical_characteristics": {
+    "Mean Radius (km)": 69911,
+    "Equatorial Radius (km)": 71492,
+    "Polar Radius (km)": 66854,
+    "Flattening": 0.06487,
+    "Surface Area (km²)": "6.1469×10^10",
+    "Volume (km³)": "1.4313×10^15",
+    "Mass (kg)": "1.8982×10^27",
+    "Mean Density (g/cm³)": 1.326,
+    "Surface Gravity (m/s²)": 24.79,
+    "Moment of Inertia Factor": "0.2756±0.0006",
+    "Escape Velocity (km/s)": 59.5,
+    "Rotation (Sidereal)": "9.9250 h (9h 55m 30s)",
+    "Rotation (Synodic)": "9.9258 h (9h 55m 33s)",
+    "Equatorial Rotation Velocity (km/s)": 12.6,
+    "Axial Tilt (°)": 3.13,
+    "North Pole RA": "268.057°; 17h 52m 14s",
+    "North Pole Dec": "64.495°",
+    "Albedo": {
+      "Bond": 0.503,
+      "Geometric": 0.538
+    }
+  },
+  "Temperature": {
+    "Blackbody Temperature (K)": 88,
+    "Blackbody Temperature (°C)": -185,
+    "Surface Temperatures": {
+      "1 bar mean (K)": 165,
+      "0.1 bar min (K)": 78,
+      "0.1 bar mean (K)": 128
+    }
+  },
+  "Atmosphere": {
+    "Surface Pressure (kPa)": "200–600",
+    "Scale Height (km)": 27,
+    "Composition by Volume": {
+      "Hydrogen": "89% ± 2.0%",
+      "Helium": "10% ± 2.0%",
+      "Methane": "0.3% ± 0.1%",
+      "Ammonia": "0.026% ± 0.004%",
+      "Hydrogen deuteride": "0.0028% ± 0.001%",
+      "Ethane": "0.0006% ± 0.0002%",
+      "Water": "0.0004% ± 0.0004%"
+    }
+  },
+  "Observational": {
+    "Apparent Magnitude": "-2.94 to -1.66",
+    "Absolute Magnitude (H)": -9.4,
+    "Angular Diameter": "29.8\" to 50.1\""
+ }
+},
+
+"moons": [
+      {
+  "name": "Ganymede",
+  "image": "media/Ganymede.jpg",
+  "description": "Ganymede is the largest moon in the Solar System and even larger than the planet Mercury. It was discovered in 1610 by Galileo Galilei and independently by Simon Marius. As a Galilean moon of Jupiter, it orbits the gas giant every seven Earth days. Ganymede has a thin oxygen atmosphere and a surface marked by both bright grooves and dark regions. Scientists believe it has a subsurface ocean beneath its icy crust, making it a key target for exploration.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Galileo Galilei", "Simon Marius"],
+    "Discovery date": "January 7, 1610"
+  },
+  "Designations": {
+    "Pronunciation": "/ˈɡænɪmiːd/ (GAN-im-eed)",
+    "Named after": "Γανυμήδης (Ganymēdēs)",
+    "Alternative names": ["Jupiter III"],
+    "Adjectives": ["Ganymedian", "Ganymedean"]
+  },
+  "Orbital_characteristics": {
+    "Periapsis (km)": 1069200,
+    "Apoapsis (km)": 1071600,
+    "Semi-major axis (km)": 1070400,
+    "Eccentricity": 0.0013,
+    "Orbital Period (days)": 7.15455296,
+    "Average Orbital Speed (km/s)": 10.880,
+    "Inclination": {
+      "To ecliptic (°)": 2.214,
+      "To Jupiter's equator (°)": 0.20
+    },
+    "Satellite of": "Jupiter",
+    "Group": "Galilean moon"
+  },
+  "Physical_characteristics": {
+    "Mean radius (km)": 2634.1,
+    "Surface area (km²)": "8.72×10^7",
+    "Volume (km³)": "7.66×10^10",
+    "Mass (kg)": "1.4819×10^23",
+    "Mean density (g/cm³)": 1.936,
+    "Surface gravity (m/s²)": 1.428,
+    "Moment of inertia factor": "0.3115±0.0028",
+    "Escape velocity (km/s)": 2.741,
+    "Rotation": "Synchronous",
+    "Axial tilt (°)": "0–0.33",
+    "North pole right ascension (°)": 268.20,
+    "North pole declination (°)": 64.57,
+    "Albedo": "0.43±0.02"
+  },
+  "Temperature": {
+    "Min (K)": 70,
+    "Mean (K)": 110,
+    "Max (K)": 152,
+    "Min (°C)": -203,
+    "Mean (°C)": -163,
+    "Max (°C)": -121
+  },
+  "Observational": {
+    "Apparent Magnitude": ["4.61 (opposition)", "4.38 (1951)"],
+    "Angular Diameter": "1.2–1.8 arcseconds"
+  },
+  "Atmosphere": {
+    "Surface pressure": "0.2–1.2 μPa (1.97×10⁻¹²–1.18×10⁻¹¹ atm)",
+    "Composition by volume": "Mostly oxygen"
+  }
+ }
+},
+
+      {
+  "name": "Callisto",
+  "image": "media/Callisto.jpeg",
+  "description": "Callisto is the second-largest moon of Jupiter and the most heavily cratered object in the Solar System. Its ancient surface has remained largely unchanged for billions of years, preserving the history of impacts. The moon is composed of a mixture of rock and ice, with a very thin atmosphere of carbon dioxide. Callisto orbits far from Jupiter, which reduces the effects of radiation compared to other Galilean moons. Scientists suspect it may have a subsurface ocean, making it a candidate for future exploration.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Galileo Galilei", "Simon Marius"],
+    "Discovery date": "January 7, 1610"
+  },
+  "Designations": {
+    "Pronunciation": "/kəˈlɪstoʊ/ (kə-LIST-oh)",
+    "Named after": "Καλλιστώ (Kallistō)",
+    "Alternative names": ["Jupiter IV"],
+    "Adjectives": ["Callistoan"]
+  },
+  "Orbital_characteristics": {
+    "Periapsis (km)": 1869000,
+    "Apoapsis (km)": 1897000,
+    "Semi-major axis (km)": 1882700,
+    "Eccentricity": 0.0074,
+    "Orbital Period (days)": 16.6890184,
+    "Average Orbital Speed (km/s)": 8.204,
+    "Inclination": {
+      "To ecliptic (°)": 2.017,
+      "To local Laplace planes (°)": 0.192
+    },
+    "Satellite of": "Jupiter",
+    "Group": "Galilean moon"
+  },
+  "Physical_characteristics": {
+    "Mean radius (km)": 2410.3,
+    "Surface area (km²)": "7.305×10^7",
+    "Volume (km³)": "5.866×10^10",
+    "Mass (kg)": "1.075938×10^23",
+    "Mean density (g/cm³)": 1.8344,
+    "Surface gravity (m/s²)": 1.235,
+    "Moment of inertia factor": "0.3549±0.0042",
+    "Escape velocity (km/s)": 2.441,
+    "Rotation": "Synchronous",
+    "Axial tilt (°)": "<1",
+    "North pole right ascension (°)": 268.72,
+    "North pole declination (°)": 64.83,
+    "Albedo": "0.22 (geometric)"
+  },
+  "Temperature": {
+    "Min (K)": "80±5",
+    "Mean (K)": "134±11",
+    "Max (K)": "165±5",
+    "Mean (°C)": -139
+  },
+  "Observational": {
+    "Apparent Magnitude": "5.65 (opposition)"
+  },
+  "Atmosphere": {
+    "Surface pressure": "0.75 μPa (7.40×10⁻¹² atm)",
+    "Composition by volume": ["≈ 4×10^8 molecules/cm³ carbon dioxide",
+      "up to 2×10^10 molecules/cm³ molecular oxygen (O₂)"]
+  }
+ }
+},
+
+
+     {
+  "name": "Io",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg",
+  "description": "Io is the innermost of Jupiter’s four Galilean moons and the most volcanically active body in the Solar System. Its surface is constantly reshaped by hundreds of active volcanoes, lava flows, and sulfur deposits. The moon's vibrant colors come from sulfur compounds and volcanic activity. Io experiences strong tidal forces from Jupiter’s gravity, which generate intense internal heating. This extreme activity makes Io a unique and dynamic world, unlike any other moon in the Solar System.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "Galileo Galilei",
+    "Discovery date": "January 8, 1610"
+  },
+  "Designations": {
+    "Pronunciation": ["/ˈaɪ.oʊ/", "/ˈiː.oʊ/"],
+    "Named after": "Ἰώ (Īō)",
+    "Alternative names": ["Jupiter I"],
+    "Adjectives": ["Ionian"]
+  },
+  "Orbital_characteristics": {
+    "Periapsis (km)": 420000,
+    "Apoapsis (km)": 423400,
+    "Mean orbit radius (km)": 421700,
+    "Eccentricity": 0.0040313,
+    "Orbital Period (days)": 1.769137786,
+    "Orbital Period (hours)": 42.4593,
+    "Average Orbital Speed (km/s)": 17.334,
+    "Inclination": {
+      "To Jupiter's equator (°)": 0.05,
+      "To ecliptic (°)": 2.213
+    },
+    "Satellite of": "Jupiter",
+    "Group": "Galilean moon"
+  },
+  "Physical_characteristics": {
+    "Dimensions (km)": "3660.0 × 3637.4 × 3630.6",
+    "Mean radius (km)": 1821.6,
+    "Surface area (km²)": "4.1698×10^7",
+    "Volume (km³)": "2.5319×10^10",
+    "Mass (kg)": "8.9319×10^22",
+    "Mean density (g/cm³)": 3.528,
+    "Surface gravity (m/s²)": 1.797,
+    "Moment of inertia factor": "0.37824±0.00022",
+    "Escape velocity (km/s)": 2.558,
+    "Rotation": "Synchronous",
+    "Equatorial rotation velocity (km/h)": 271,
+    "North pole right ascension (°)": 268.05,
+    "North pole declination (°)": 64.50,
+    "Albedo": "0.63±0.02"
+  },
+  "Temperature": {
+    "Min (K)": 90,
+    "Mean (K)": 110,
+    "Max (K)": 130,
+    "Mean (°C)": -143
+  },
+  "Observational": {
+    "Apparent Magnitude": "5.02 (opposition)",
+    "Angular Diameter (arcseconds)": 1.2
+  },
+  "Atmosphere": {
+    "Surface pressure": "0.5–4 mPa (4.93×10⁻⁹ – 3.95×10⁻⁸ atm)",
+    "Composition by volume": ["90% sulfur dioxide"]
+  }
+ }
+},
+
+
+      {
+  "name": "Europa",
+  "image": "media/Europa.png",
+  "description": "Europa is an icy Galilean moon of Jupiter that is believed to have a vast subsurface ocean beneath its frozen surface. Its smooth, bright surface is crisscrossed by cracks and ridges, with very few large craters. The icy crust is thought to cover a salty ocean that may contain more water than all of Earth's oceans combined. Europa's ocean, kept liquid by tidal heating from Jupiter’s gravity, makes it a prime candidate for life. Because of this potential, Europa is a major target for future space missions and exploration.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Galileo Galilei", "Simon Marius"],
+    "Discovery date": "January 8, 1610"
+  },
+  "Designations": {
+    "Pronunciation": ["/jʊˈroʊpə/"],
+    "Named after": "Ευρώπη (Eurōpē)",
+    "Alternative names": ["Jupiter II"],
+    "Adjectives": ["Europan"]
+  },
+  "Orbital_characteristics": {
+    "Epoch": "8 January 2004",
+    "Periapsis (km)": 664862,
+    "Apoapsis (km)": 676938,
+    "Mean orbit radius (km)": 670900,
+    "Eccentricity": 0.009,
+    "Orbital Period (days)": 3.551181,
+    "Average Orbital Speed (km/s)": 13.743,
+    "Inclination": {
+      "To Jupiter's equator (°)": 0.470,
+      "To ecliptic (°)": 1.791
+    },
+    "Satellite of": "Jupiter",
+    "Group": "Galilean moon"
+  },
+  "Physical_characteristics": {
+    "Mean radius (km)": 1560.8,
+    "Surface area (km²)": "3.061×10^7",
+    "Volume (km³)": "1.593×10^10",
+    "Mass (kg)": "4.79984×10^22",
+    "Mean density (g/cm³)": 3.013,
+    "Surface gravity (m/s²)": 1.314,
+    "Moment of inertia factor": "0.346 (estimate)",
+    "Escape velocity (km/s)": 2.025,
+    "Rotation": "Synchronous",
+    "Axial tilt (°)": 0.1,
+    "North pole right ascension (°)": 268.08,
+    "North pole declination (°)": 64.51,
+    "Albedo": "0.67 ± 0.03"
+  },
+  "Temperature": {
+    "Min (K)": 50,
+    "Mean (K)": 102,
+    "Max (K)": 125,
+    "Mean (°C)": -171
+  },
+  "Observational": {
+    "Apparent Magnitude": "5.29 (opposition)"
+  },
+  "Atmosphere": {
+    "Surface pressure": "0.1 μPa (10⁻¹² bar)"
+   }
+  }
+ }
+]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+  "name": "Saturn",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+  "description": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, famous for its stunning ring system. The rings are composed mostly of ice and rock particles, ranging from tiny grains to large chunks. Saturn is a gas giant primarily made of hydrogen and helium, with a very low average density. It has over 80 known moons, including Titan, which has a thick atmosphere and liquid methane lakes. Saturn’s fast rotation causes it to appear flattened at the poles, giving it a unique shape.",
+  "sections": {
+  "Designations": {
+    "Pronunciation": ["/ˈsætərn/"],
+    "Named after": "Saturn",
+    "Adjectives": ["Saturnian", "Cronian", "Kronian"],
+    "Symbol": "♄"
+  },
+  "Orbital_characteristics": {
+    "Aphelion (km)": "1,514,500,000 (10.1238 AU)",
+    "Perihelion (km)": "1,352,550,000 (9.0412 AU)",
+    "Semi-major axis (km)": "1,433,530,000 (9.5826 AU)",
+    "Eccentricity": 0.0565,
+    "Orbital period (sidereal)": "29.4475 years (10,755.70 days)",
+    "Orbital period (synodic)": "378.09 days",
+    "Average orbital speed (km/s)": 9.68,
+    "Mean anomaly (°)": 317.020,
+    "Inclination": {
+      "To ecliptic (°)": 2.485,
+      "To Sun's equator (°)": 5.51,
+      "To invariable plane (°)": 0.93
+    },
+    "Longitude of ascending node (°)": 113.665,
+    "Time of perihelion": "2032-Nov-29",
+    "Argument of perihelion (°)": 339.392,
+    "Known satellites": "274 with formal designations; innumerable additional moonlets"
+  },
+  "Physical_characteristics": {
+    "Mean radius (km)": 58232,
+    "Equatorial radius (km)": 60268,
+    "Polar radius (km)": 54364,
+    "Flattening": 0.09796,
+    "Circumference (km)": 365882.4,
+    "Surface area (km²)": "4.27×10^10",
+    "Volume (km³)": "8.2713×10^14",
+    "Mass (kg)": "5.6834×10^26",
+    "Mean density (g/cm³)": 0.687,
+    "Surface gravity (m/s²)": 10.44,
+    "Moment of inertia factor": 0.22,
+    "Escape velocity (km/s)": 35.5,
+    "Rotation": {
+      "Synodic": "10 h 32 m 36 s to 10 h 39 m",
+      "Sidereal": "10 h 33 m 38 s ± 1 m 52 s",
+      "Equatorial rotation velocity (km/s)": 9.87
+    },
+    "Axial tilt (°)": 26.73,
+    "North pole right ascension (°)": 40.589,
+    "North pole declination (°)": 83.537,
+    "Albedo": {
+      "Bond": 0.342,
+      "Geometric": 0.499
+    }
+  },
+  "Temperature": {
+    "1 bar (K)": 134,
+    "0.1 bar min (K)": 88,
+    "0.1 bar mean (K)": 97,
+    "0.1 bar max (K)": 151,
+    "Average (°C)": -178
+  },
+  "Observational": {
+    "Apparent magnitude": "−0.55 to +1.17",
+    "Absolute magnitude (H)": -9.7,
+    "Angular diameter": "14.5″ to 20.1″ (excludes rings)"
+  },
+  "Atmosphere": {
+    "Surface pressure": ">>1000 bars",
+    "Scale height (km)": 59.5,
+    "Composition by volume": {
+      "Hydrogen": "96.3% ± 2.4%",
+      "Helium": "3.25% ± 2.4%",
+      "Methane": "0.45% ± 0.2%",
+      "Ammonia": "0.0125% ± 0.0075%",
+      "Hydrogen deuteride": "0.0110% ± 0.0058%",
+      "Ethane": "0.0007% ± 0.00015%",
+      "Icy volatiles": ["Ammonia", "Water ice", "Ammonium hydrosulfide"]
+    }
+   }
+  },
+  "Rings": {
+    "Description": "Saturn has a massive and complex ring system composed mainly of ice particles with smaller amounts of rocky debris and dust."
+},
+
+
+"moons": [
+  {
+  "name": "Titan",
+  "image": "media/Titan.jpeg",
+  "description": "Titan is the largest moon of Saturn and the second-largest moon in the Solar System. It is notable for its dense nitrogen-rich atmosphere, which is thicker than Earth's. The surface contains rivers, lakes, and seas of liquid methane and ethane. Titan's atmosphere and surface processes resemble those of early Earth, making it a fascinating study target. It is one of the most Earth-like worlds discovered and a major focus for future exploration missions.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "Christiaan Huygens",
+    "Discovery date": "March 25, 1655"
+  },
+  "Designations": {
+    "Designation": "Saturn VI",
+    "Pronunciation": "/ˈtaɪtən/",
+    "Named after": "Τῑτάν (Tītan)",
+    "Adjectives": ["Titanian", "Titanean"]
+  },
+  "Orbital_characteristics": {
+    "Periapsis (km)": 1186680,
+    "Apoapsis (km)": 1257060,
+    "Semi-major axis (km)": 1221870,
+    "Eccentricity": 0.0288,
+    "Orbital period (sidereal)": "15.945 days",
+    "Average orbital speed (km/s)": 5.57,
+    "Inclination (° to Saturn's equator)": 0.34854,
+    "Satellite of": "Saturn"
+  },
+  "Physical_characteristics": {
+    "Mean radius (km)": 2574.73,
+    "Surface area (km²)": "8.33×10^7",
+    "Volume (km³)": "7.16×10^10",
+    "Mass (kg)": "1.34518×10^23",
+    "Mean density (g/cm³)": 1.8798,
+    "Surface gravity (m/s²)": 1.352,
+    "Moment of inertia factor": 0.3414,
+    "Escape velocity (km/s)": 2.641,
+    "Rotation": {
+      "Synodic": "Synchronous"
+    },
+    "Axial tilt (°)": {
+      "To orbital plane": 0,
+      "To sun": 27
+    },
+    "Albedo": {
+      "Geometric": 0.22,
+      "Bond": 0.265
+    }
+  },
+  "Temperature": {
+    "Surface (K)": 93.7,
+    "Surface (°C)": -179.5
+  },
+  "Observational": {
+    "Apparent magnitude": "8.2 to 9.0"
+  },
+  "Atmosphere": {
+    "Surface pressure (kPa)": 146.7,
+    "Surface pressure (atm)": 1.45
+   }
+ }
+},
+
+     {
+  "name": "Rhea",
+  "image": "media/Rhea.jpeg",
+  "description": "Rhea is Saturn's second-largest moon, with a heavily cratered and bright, reflective surface. It is composed mainly of water ice mixed with some rocky material. The moon has a very thin atmosphere made primarily of oxygen and carbon dioxide. Rhea orbits Saturn at a distance of about 527,000 kilometers, taking 4.5 days to complete one revolution. Its surface features bright wispy lines, which are believed to be icy cliffs formed by tectonic activity.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "Giovanni Domenico Cassini",
+    "Discovery date": "December 23, 1672"
+  },
+  "Designations": {
+    "Designation": "Saturn V",
+    "Pronunciation": "/ˈriː.ə/",
+    "Named after": "Ῥέᾱ (Rheā)",
+    "Adjectives": ["Rhean"]
+  },
+  "Orbital_characteristics": {
+    "Semi-major axis (km)": 527040,
+    "Eccentricity": 0.001,
+    "Orbital period (sidereal)": "4.518212 days",
+    "Average orbital speed (km/s)": 8.48,
+    "Inclination (°)": 0.35,
+    "Satellite of": "Saturn"
+  },
+  "Physical_characteristics": {
+    "Dimensions (km)": "1532.4 × 1525.6 × 1524.4",
+    "Mean radius (km)": 763.5,
+    "Surface area (km²)": 7325342,
+    "Mass (kg)": "2.3064854×10^21",
+    "Mass (Earths)": "3.9×10^-4",
+    "Mean density (g/cm³)": 1.2372,
+    "Surface gravity (m/s²)": 0.26,
+    "Moment of inertia factor": "0.3911 (disputed/unclear)",
+    "Escape velocity (km/s)": 0.635,
+    "Rotation": {
+      "Synodic": "4.518212 days (synchronous)"
+    },
+    "Axial tilt (°)": 0,
+    "Albedo": {
+      "Geometric": 0.949
+    }
+  },
+  "Temperature": {
+    "Surface (K)": {
+      "Min": 53,
+      "Mean": 99
+    },
+    "Surface (°C)": {
+      "Approximate mean": -174
+    }
+  },
+  "Observational": {
+    "Apparent magnitude": 10
+   }
+  }
+ }
+]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+   {
+  "name": "Uranus",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg",
+  "description": "Uranus is an ice giant with a unique sideways rotation, tilted over 98 degrees on its axis. This unusual tilt causes extreme seasonal variations that last for decades. Its atmosphere is composed mainly of hydrogen, helium, and methane, giving it a pale blue-green color. Uranus has a faint ring system and 27 known moons, many named after literary characters. It is the seventh planet from the Sun and was the first planet discovered with a telescope in 1781.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "William Herschel",
+    "Discovery date": "13 March 1781"
+  },
+  "Designations": {
+    "Pronunciation": ["/ˈjʊərənəs/", "/jʊˈreɪnəs/"],
+    "Named after": "Latin form Ūranus of the Greek god Οὐρανός (Ouranos)",
+    "Adjectives": ["Uranian"],
+    "Symbols": ["⛢", "♅"]
+  },
+  "Orbital Characteristics": {
+    "Epoch": "J2000",
+    "Aphelion (AU)": 20.0965,
+    "Perihelion (AU)": 18.2861,
+    "Semi-major axis (AU)": 19.19126,
+    "Semi-major axis (km)": 2870972000,
+    "Eccentricity": 0.04717,
+    "Orbital period (sidereal)": "84.0205 years (30,688.5 days)",
+    "Orbital period (synodic)": "369.66 days",
+    "Average orbital speed (km/s)": 6.80,
+    "Mean anomaly (°)": 142.2386,
+    "Inclination (°)": {
+      "To ecliptic": 0.773,
+      "To Sun's equator": 6.48,
+      "To invariable plane": 0.99
+    },
+    "Longitude of ascending node (°)": 74.006,
+    "Argument of perihelion (°)": 96.999,
+    "Time of perihelion": "August 17–19, 2050",
+    "Known satellites": 28
+  },
+  "Physical_characteristics": {
+    "Mean radius (km)": 25362,
+    "Equatorial radius (km)": 25559,
+    "Polar radius (km)": 24973,
+    "Flattening": 0.0229,
+    "Circumference (km)": 159354,
+    "Surface area (km²)": "8.1156×10^9",
+    "Earth comparison (surface area)": 15.91,
+    "Volume (km³)": "6.833×10^13",
+    "Earth comparison (volume)": 63.086,
+    "Mass (kg)": "8.6810×10^25",
+    "Earth comparison (mass)": 14.536,
+    "GM (km³/s²)": "5,793,939",
+    "Mean density (g/cm³)": 1.27,
+    "Surface gravity (m/s²)": 8.69,
+    "Earth comparison (gravity)": 0.886,
+    "Moment of inertia factor": 0.23,
+    "Escape velocity (km/s)": 21.3,
+    "Rotation": {
+      "Synodic": "-17h 14m 51s (retrograde)",
+      "Sidereal": "-17h 14m 52.310s ± 0.036s (retrograde)"
+    },
+    "Equatorial rotation velocity (km/s)": 2.59,
+    "Axial tilt": "97.77° (prograde, right-hand rule)",
+    "North pole": {
+      "Right ascension": "17h 9m 15s (257.311°)",
+      "Declination": "−15.175°"
+    },
+    "Albedo": {
+      "Bond": 0.300,
+      "Geometric": 0.488
+    }
+  },
+  "Temperature": {
+    "At 1 bar (K)": 76,
+    "At 0.1 bar (K)": {
+      "Min": 47,
+      "Mean": 53,
+      "Max": 57
+    },
+    "Average (°C)": -197
+  },
+  "Observational": {
+    "Apparent magnitude": "5.38 to 6.03",
+    "Absolute magnitude (H)": -7.2,
+    "Angular diameter": "3.3″ to 4.1″"
+  },
+  "Atmosphere": {
+    "Scale height (km)": 27.7,
+    "Composition by volume": {
+      "Hydrogen": "83 ± 3%",
+      "Helium": "15 ± 3%",
+      "Methane": "2.3%",
+      "Hydrogen deuteride": "0.009%",
+      "Hydrogen sulfide": "trace",
+      "Icy volatiles": [
+        "Ammonia",
+        "Water ice",
+        "Ammonium hydrosulfide",
+        "Methane hydrate"
+      ]
+    }
+  }
+},
+
+
+    "moons": [
+  {
+    "name": "Titania",
+    "image": "media/Titania.jpeg",
+    "description": "Titania is the largest moon of Uranus, characterized by vast ice cliffs and deep canyons. It is composed mainly of water ice mixed with rocky material, making it an icy world. The surface shows evidence of past geological activity, including fault lines and valleys. Titania orbits Uranus every 8.7 days at a distance of about 436,000 kilometers. It was discovered in 1787 by William Herschel, the same astronomer who found Uranus.",
+    "sections": {
+    "Discovery": {
+      "Discovered by": "William Herschel",
+      "Discovery date": "January 11, 1787"
+    },
+    "Designations": {
+      "Designation": "Uranus III",
+      "Pronunciation": ["/təˈtɑːniə/", "/təˈteɪniə/"],
+      "Adjectives": ["Titanian"]
+    },
+    "Orbital_characteristics": {
+      "Semi-major axis (km)": 435910,
+      "Eccentricity": 0.0011,
+      "Orbital period (sidereal)": "8.706234 days",
+      "Average orbital speed (km/s)": 3.64,
+      "Inclination (° to Uranus's equator)": 0.340,
+      "Satellite of": "Uranus"
+    },
+    "Physical_characteristics": {
+      "Mean radius (km)": 788.4,
+      "Earth comparison (radii)": 0.1235,
+      "Surface area (km²)": 7820000,
+      "Volume (km³)": 2054000000,
+      "Mass (kg)": "3.4550×10^21",
+      "Mean density (g/cm³)": 1.683,
+      "Surface gravity (m/s²)": 0.371,
+      "Escape velocity (km/s)": 0.765,
+      "Rotation": "Synchronous (presumed)",
+      "Albedo": {
+        "Geometric": 0.35,
+        "Bond": 0.17
+      }
+    },
+    "Temperature": {
+      "Min (K)": 60,
+      "Mean (K)": 70,
+      "Max (K)": 89,
+      "Mean (°C)": -197
+    },
+    "Observational": {
+      "Apparent magnitude": 13.9
+    },
+    "Atmosphere": {
+      "Surface pressure": "<1–2 mPa (10–20 nbar)",
+      "Composition by volume (possible)": [
+        "Carbon dioxide",
+        "Nitrogen",
+        "Methane"
+      ]
+    }
+  }
+},
+
+
+ {
+    "name": "Oberon",
+    "image": "media/Oberon.jpeg",
+    "description": "Oberon is Uranus' second-largest moon and one of its most heavily cratered satellites. Its surface is marked by large impact craters and dark patches of unknown origin. Like Titania, it is composed mainly of water ice mixed with rock. Oberon orbits Uranus at a distance of about 584,000 kilometers, taking 13.5 days to complete a revolution. It was discovered in 1787 by William Herschel, along with Titania.",
+    "sections": {
+    "Discovery": {
+      "Discovered by": "William Herschel",
+      "Discovery date": "January 11, 1787"
+    },
+    "Designations": {
+      "Designation": "Uranus IV",
+      "Pronunciation": ["/ˈoʊbərɒn/", "/ˈoʊbərən/"],
+      "Adjectives": ["Oberonian"]
+    },
+    "Orbital_characteristics": {
+      "Semi-major axis (km)": 583520,
+      "Eccentricity": 0.0014,
+      "Orbital period (sidereal)": "13.463234 days",
+      "Average orbital speed (km/s)": 3.15,
+      "Inclination (° to Uranus's equator)": 0.058,
+      "Satellite of": "Uranus"
+    },
+    "Physical_characteristics": {
+      "Mean radius (km)": 761.4,
+      "Earth comparison (radii)": 0.1194,
+      "Surface area (km²)": 7285000,
+      "Volume (km³)": 1849000000,
+      "Mass (kg)": "3.1104×10^21",
+      "Mean density (g/cm³)": 1.682,
+      "Surface gravity (m/s²)": 0.358,
+      "Escape velocity (km/s)": 0.738,
+      "Rotation": "Synchronous (presumed)",
+      "Albedo": {
+        "Geometric": 0.31,
+        "Bond": 0.14
+      }
+    },
+    "Temperature": {
+      "Range (K)": "70–80",
+      "Mean (°C)": -193
+    },
+    "Observational": {
+      "Apparent magnitude": 14.1
+    }
+   }
+  }
+ ]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {
+  "name": "Neptune",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg",
+  "description": "Neptune is the farthest planet from the Sun and is a cold, dark ice giant. It has a deep blue color caused by methane in its atmosphere. Powerful winds and massive storms, such as the Great Dark Spot, dominate its dynamic weather system. Neptune has a faint ring system and 14 known moons, with Triton being the largest and most unique. Discovered in 1846, it remains one of the least explored planets in the Solar System.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Johann Galle", "Urbain Le Verrier", "John Couch Adams"],
+    "Discovery date": "23 September 1846"
+  },
+  "Designations": {
+    "Pronunciation": ["US: /ˈnɛptuːn/", "UK: /-tjuːn/"],
+    "Named after": "Latin Neptunus, via French Neptune",
+    "Adjectives": ["Neptunian", "Poseidean"],
+    "Symbol": ["♆", "⯉"]
+  },
+  "Orbital_characteristics": {
+    "Epoch": "J2000",
+    "Aphelion": "30.33 AU (4.54 billion km)",
+    "Perihelion": "29.81 AU (4.46 billion km)",
+    "Semi-major axis": "30.07 AU (4.50 billion km)",
+    "Eccentricity": 0.008678,
+    "Orbital period (sidereal)": "164.8 years (60,195 days, 89,666 Neptunian solar days)",
+    "Orbital period (synodic)": "367.49 days",
+    "Average orbital speed": "5.43 km/s",
+    "Mean anomaly": "259.883°",
+    "Inclination": {
+      "To ecliptic": "1.770°",
+      "To Sun's equator": "6.43°",
+      "To invariable plane": "0.74°"
+    },
+    "Longitude of ascending node": "131.783°",
+    "Time of perihelion": "2042-Sep-04",
+    "Argument of perihelion": "273.187°",
+    "Known satellites": 16
+  },
+  "Physical_characteristics": {
+    "Mean radius (km)": 24622,
+    "Equatorial radius (km)": 24764,
+    "Polar radius (km)": 24341,
+    "Flattening": 0.0171,
+    "Surface area (km²)": "7.6183×10^9",
+    "Volume (km³)": "6.253×10^13",
+    "Mass (kg)": "1.02409×10^26",
+    "Mean density (g/cm³)": 1.638,
+    "Surface gravity (m/s²)": 11.15,
+    "Moment of inertia factor": 0.23,
+    "Escape velocity (km/s)": 23.5,
+    "Rotation period (sidereal)": "0.6713 days (16h 6m 36s)",
+    "Rotation period (synodic)": "0.67125 days (16h 6m 36s)",
+    "Equatorial rotation velocity (km/s)": 2.68,
+    "Axial tilt": "28.32° to orbit",
+    "North pole": {
+      "Right ascension": "19h 57m 20s (299.36°)",
+      "Declination": "43.46°"
+    },
+    "Albedo": {
+      "Bond": 0.290,
+      "Geometric": 0.442
+    }
+  },
+  "Temperature": {
+    "At 1 bar level (K)": 72,
+    "At 0.1 bar (K)": 55,
+    "Mean (°C)": -201,
+    "Min (°C)": -218,
+    "Max (°C)": -201
+  },
+  "Observational": {
+    "Apparent magnitude": "7.67–8.00",
+    "Absolute magnitude (H)": -6.9,
+    "Angular diameter": "2.2–2.4″"
+  },
+  "Atmosphere": {
+    "Scale height (km)": 19.7,
+    "Composition by volume": {
+      "Hydrogen": "80% ± 3.2%",
+      "Helium": "19% ± 3.2%",
+      "Methane": "1.5% ± 0.5%",
+      "Hydrogen deuteride": "~0.019%",
+      "Ethane": "~0.00015%",
+      "Trace ices": ["ammonia", "water ice", "ammonium hydrosulfide"]
+    }
+  }
+},
+
+
+   "moons": [
+    {
+      "name": "Triton",
+      "image": "media/Triton.jpeg",
+      "description": "Triton is the largest moon of Neptune, notable for its unusual retrograde orbit, moving opposite Neptune’s rotation. Its surface is covered with nitrogen ice, geysers, and frozen plains shaped by past geological activity. Triton has a thin atmosphere primarily made of nitrogen, with traces of methane. It is one of the coldest known objects in the Solar System, with surface temperatures near -235°C. Discovered in 1846, Triton is thought to be a captured Kuiper Belt object, making it unique among large moons.",
+      "sections": {
+      "Discovery": {
+        "Discovered by": "William Lassell",
+        "Discovery date": "October 10, 1846"
+      },
+      "Designations": {
+        "Designation": "Neptune I",
+        "Pronunciation": "/ˈtraɪtən/ (TRY-tən)",
+        "Named after": "Τρίτων (Tritōn)",
+        "Adjectives": ["Tritonian"]
+      },
+      "Orbital_characteristics": {
+        "Semi-major axis": "354,759 km",
+        "Eccentricity": 0.000016,
+        "Orbital period (sidereal)": "5.876854 days (retrograde)",
+        "Average orbital speed": "4.39 km/s",
+        "Inclination": {
+          "To ecliptic": "129.812°",
+          "To Neptune's equator": "156.885°",
+          "To Neptune's orbit": "129.608°"
+        },
+        "Satellite of": "Neptune"
+      },
+      "Physical_characteristics": {
+        "Mean radius (km)": 1353.4,
+        "Surface area (km²)": "23,018,000",
+        "Volume (km³)": "1.0384×10^10",
+        "Mass (kg)": "2.1389×10^22",
+        "Mean density (g/cm³)": 2.061,
+        "Surface gravity (m/s²)": 0.779,
+        "Escape velocity (km/s)": 1.455,
+        "Rotation": {
+          "Synodic rotation period": "synchronous",
+          "Sidereal rotation period": "5d 21h 2m 53s"
+        },
+        "Axial tilt": "0° (to orbit about Neptune)",
+        "Albedo": 0.76
+      },
+      "Temperature": {
+        "Mean (K)": 38,
+        "Mean (°C)": -235.2
+      },
+      "Observational": {
+        "Apparent magnitude": 13.47,
+        "Absolute magnitude (H)": -1.2
+      },
+      "Atmosphere": {
+        "Surface pressure": {
+          "1989": "1.4 Pa",
+          "1997": "1.9 Pa",
+          "2022": "1.454 Pa"
+        },
+        "Composition by volume": ["Nitrogen", "Methane (trace)", "Carbon monoxide (trace)"]
+      }
+    }
+  }
+]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "name": "Pluto (dwarf)",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Nh-pluto-in-true-color_2x_JPEG-edit-frame.jpg",
+  "description": "Pluto is a dwarf planet in the Kuiper Belt, once considered the ninth planet of the Solar System. It has a highly elliptical orbit that sometimes brings it closer to the Sun than Neptune. Pluto’s surface is composed of ice and rock, with vast plains, mountains, and glaciers of nitrogen ice. Its largest moon, Charon, is so big that the two bodies are sometimes considered a double system. Discovered in 1930, Pluto remains a symbol of exploration and was visited by NASA’s New Horizons mission in 2015.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "Clyde W. Tombaugh",
+    "Discovery site": "Lowell Observatory",
+    "Discovery date": "February 18, 1930",
+    "Earliest precovery date": "August 20, 1909"
+  },
+  "Designations": {
+    "MPC designation": "(134340) Pluto",
+    "Pronunciation": "/ˈpluːtoʊ/",
+    "Named after": "Pluto",
+    "Category": ["Dwarf planet", "Trans-Neptunian object", "Kuiper belt object", "Plutino"],
+    "Adjectives": ["Plutonian"],
+    "Symbols": ["♇", "⯓"]
+  },
+  "Orbital_characteristics": {
+    "Epoch": "J2000",
+    "Aphelion": "49.305 AU (7.37593 billion km)",
+    "Perihelion": "29.658 AU (4.43682 billion km)",
+    "Semi-major axis": "39.482 AU (5.90638 billion km)",
+    "Eccentricity": 0.2488,
+    "Orbital period (sidereal)": "247.94 years (90,560 days)",
+    "Orbital period (synodic)": "366.73 days",
+    "Average orbital speed": "4.743 km/s",
+    "Mean anomaly": "14.53°",
+    "Inclination": {
+      "To ecliptic": "17.16°",
+      "To Sun's equator": "11.88°"
+    },
+    "Longitude of ascending node": "110.299°",
+    "Argument of perihelion": "113.834°",
+    "Next aphelion": "February 2114",
+    "Last perihelion": "September 5, 1989",
+    "Known satellites": 5
+  },
+  "Physical_characteristics": {
+    "Dimensions (km)": 2376.6,
+    "Mean radius (km)": 1188.3,
+    "Flattening": "<1%",
+    "Surface area (km²)": "1.774×10^7",
+    "Volume (km³)": "7.057×10^9",
+    "Mass (kg)": "1.3025×10^22",
+    "Mean density (g/cm³)": 1.853,
+    "Surface gravity (m/s²)": 0.62,
+    "Escape velocity (km/s)": 1.212,
+    "Rotation": {
+      "Sidereal rotation period": "-6.387230 days (retrograde)",
+      "Synodic rotation period": "-6.38680 days",
+      "Rotation speed (m/s)": 13.11,
+      "Axial tilt": "119.51° to orbit"
+    },
+    "Pole orientation": {
+      "Right ascension": "132.993°",
+      "Declination": "-6.163°"
+    },
+    "Albedo": {
+      "Geometric": 0.52,
+      "Bond": 0.72,
+      "Local variation": "0.08–1.0"
+    }
+  },
+  "Temperature": {
+    "Minimum (K)": 33,
+    "Mean (K)": 44,
+    "Maximum (K)": 55,
+    "Mean (°C)": -229
+  },
+  "Observational": {
+    "Apparent magnitude": "13.65 – 16.3 (mean 15.1)",
+    "Absolute magnitude (H)": -0.44,
+    "Angular diameter": "0.06″ – 0.11″"
+  },
+  "Atmosphere": {
+    "Surface pressure": "1.0 Pa (2015)",
+    "Composition by volume": ["Nitrogen", "Methane", "Carbon monoxide"]
+  },
+    "Physical Characteristics": {
+      "Diameter (km)": 2376,
+      "Mass (kg)": "1.303 × 10^22",
+      "Atmosphere": "Thin, mostly nitrogen with methane and carbon monoxide"
+    },
+    "Orbital Data": {
+      "Distance from Sun (km)": "5,906,000,000",
+      "Orbital Period (years)": 248,
+      "Rotation Period (hours)": 153.3
+    },
+    "Temperature": {
+      "Average Temperature (°C)": -229
+    }
+  },
+
+
+   "moons": [
+    {
+      "name": "Charon",
+      "image": "media/Charon.jpg",
+      "description": "Charon is Pluto’s largest moon, nearly half the size of Pluto itself, forming a unique binary system. The two bodies orbit a common center of gravity located outside Pluto. Charon’s surface is marked by canyons, ridges, and a dark region near its north pole called Mordor Macula. Unlike Pluto, it shows little evidence of an atmosphere. Discovered in 1978, Charon plays a crucial role in shaping our understanding of the Pluto-Charon system.",
+      "sections": {
+      "Discovery": {
+        "Discovered by": "James W. Christy",
+        "Discovery date": "June 22, 1978"
+      },
+      "Designations": {
+        "Designation": "Pluto I",
+        "Alternative names": ["S/1978 P 1"],
+        "Pronunciation": ["/ˈkɛərɒn/", "/ˈʃærən/"],
+        "Named after": "Charlene (discoverer’s wife) and Χάρων (Kharōn)",
+        "Adjectives": ["Charonian", "Charontian", "Charonean"]
+      },
+      "Orbital_characteristics": {
+        "Epoch": "2452600.5 (2002 Nov 22)",
+        "Periapsis": "19,592.61 km",
+        "Apoapsis": "19,598.92 km",
+        "Semi-major axis": "19,595.764 km (planetocentric), 17,181 km (barycentric)",
+        "Eccentricity": 0.000161,
+        "Orbital period (sidereal)": "6.387221 days",
+        "Average orbital speed": "0.21 km/s",
+        "Inclination": {
+          "To Pluto's equator": "0.080°",
+          "To Pluto's orbit": "119.591°",
+          "To ecliptic": "112.783°"
+        },
+        "Longitude of ascending node": "223.046°"
+      },
+      "Physical_characteristics": {
+        "Mean radius (km)": 606.0,
+        "Flattening": "<0.5%",
+        "Surface area (km²)": "4.6×10^6",
+        "Volume (km³)": "9.32×10^8",
+        "Mass (kg)": "1.5897×10^21",
+        "Mean density (g/cm³)": 1.705,
+        "Surface gravity (m/s²)": 0.288,
+        "Escape velocity (km/s)": 0.59,
+        "Rotation": {
+          "Synodic rotation period": "synchronous"
+        },
+        "Albedo": {
+          "Average": 0.38,
+          "Bond": 0.25,
+          "Local variation": "0.20–0.73"
+        }
+      },
+      "Temperature": {
+        "Mean (K)": 53,
+        "Mean (°C)": -220
+      },
+      "Observational": {
+        "Apparent magnitude": 16.8,
+        "Absolute magnitude (H)": 1,
+        "Angular diameter": "55 milli-arcsec"
+      },
+        "Physical Characteristics": {
+          "Diameter (km)": 1212,
+          "Mass (kg)": "1.5897 × 10^21"
+        },
+        "Orbital Data": {
+          "Orbital Period (days)": 6.39
+        },
+        "Temperature": {
+          "Average Temperature (°C)": -220
+        }
+      },
+      "note": "Largest moon of Pluto."
+    }
+  ]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "name": "Eris (dwarf)",
+  "image": "media/Eris.avif",
+  "description": "Eris is the most massive known dwarf planet in the Solar System, located in the scattered disc beyond Neptune. It is slightly smaller than Pluto in size but has greater mass, making it one of the densest dwarf planets. Eris has a highly elliptical orbit that takes it far from the Sun, with an orbital period of about 558 years. Its surface is believed to be covered with frozen methane, giving it a bright, reflective appearance. Discovered in 2005, Eris played a major role in the reclassification of Pluto as a dwarf planet.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["M. E. Brown", "C. A. Trujillo", "D. L. Rabinowitz"],
+    "Discovery date": "January 5, 2005",
+    "Earliest precovery date": "September 3, 1954"
+  },
+  "Designations": {
+    "MPC designation": "(136199) Eris",
+    "Pronunciation": ["/ˈɛrɪs/", "/ˈɪərɪs/"],
+    "Named after": "Ἔρις (Eris, Greek goddess of strife)",
+    "Alternative designations": ["2003 UB313", "Xena (nickname)"],
+    "Minor planet category": ["Dwarf planet", "TNO", "SDO", "Binary"],
+    "Adjectives": ["Eridian"],
+    "Symbol": "⯰"
+  },
+  "Orbital_characteristics": {
+    "Epoch": "May 5, 2025 (JD 2460800.5)",
+    "Aphelion": "97.699 AU (14.616×10^9 km)",
+    "Perihelion": "38.403 AU (5.745×10^9 km)",
+    "Semi-major axis": "68.051 AU (10.180×10^9 km)",
+    "Eccentricity": 0.43568,
+    "Orbital period (sidereal)": "561.38 years (205,044 days)",
+    "Average orbital speed": "3.434 km/s",
+    "Mean anomaly": "211.032°",
+    "Mean motion": "0° 0m 6.321s / day",
+    "Inclination": "43.822°",
+    "Longitude of ascending node": "36.046°",
+    "Argument of perihelion": "150.714°",
+    "Time of perihelion": "≈ December 7, 2257",
+    "Known satellites": 1
+  },
+  "Physical_characteristics": {
+    "Mean diameter (km)": "2326 ± 12",
+    "Mean radius (km)": "1163 ± 6",
+    "Surface area (km²)": "(1.70 ± 0.02) × 10^7",
+    "Volume (km³)": "(6.59 ± 0.10) × 10^9",
+    "Mass (kg)": "(1.6466 ± 0.0085) × 10^22 (system), (1.638 ± 0.014) × 10^22 (Eris only)",
+    "Relative mass": "0.0027 Earths; 0.22 Moons",
+    "Mean density (g/cm³)": "2.43 ± 0.05",
+    "Surface gravity (m/s²)": "0.82 ± 0.02",
+    "Escape velocity (km/s)": "1.38 ± 0.01",
+    "Rotation": {
+      "Sidereal rotation period": "15.786 days (synchronous)",
+      "Axial tilt": "≈ 78.3° to orbit (assumed), ≈ 61.6° to ecliptic (assumed)"
+    },
+    "Albedo": {
+      "Geometric": "0.96 (+0.09, −0.04)",
+      "Bond": "0.99 (+0.01, −0.09)"
+    },
+    "Spectral type": {
+      "B−V": 0.78,
+      "V−R": 0.45
+    }
+  },
+  "Temperature": {
+    "Minimum (K)": 30,
+    "Mean (K)": 42,
+    "Maximum (K)": 56,
+    "Mean (°C)": -231
+  },
+  "Observational": {
+    "Apparent magnitude": 18.7,
+    "Absolute magnitude (H)": -1.21,
+    "Angular diameter": "34.4 ± 1.4 milli-arcsec"
+  },
+    "Physical Characteristics": {
+      "Diameter (km)": 2326,
+      "Mass (kg)": "1.66 × 10^22",
+      "Atmosphere": "Possible seasonal atmosphere of nitrogen"
+    },
+    "Orbital Data": {
+      "Distance from Sun (km)": "10,125,000,000",
+      "Orbital Period (years)": 558,
+      "Rotation Period (hours)": 25.9
+    },
+    "Temperature": {
+      "Average Temperature (°C)": -231
+    }
+  },
+
+
+  "moons": [
+    {
+  "name": "Dysnomia",
+  "image": "media/Dysnomia.webp",
+  "description": "Dysnomia is the only known moon of Eris, named after the daughter of Eris, the goddess of lawlessness. It was discovered in 2005 shortly after Eris itself was identified. Dysnomia orbits Eris at an estimated distance of about 37,000 kilometers. Its presence allows scientists to calculate Eris’s mass with greater accuracy. Very little is known about Dysnomia’s size and composition due to its faintness and distance.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": "Brown et al.",
+    "Discovery date": "10 September 2005"
+  },
+  "Designations": {
+    "Designation": "Eris I",
+    "Pronunciation": ["/dɪsˈnoʊmiə/", "/daɪˈsnoʊmiə/"],
+    "Named after": "Δυσνομία (Dysnomia, daughter of Eris in Greek mythology)",
+    "Alternative names": ["S/2005 (2003 UB313) 1", "Dy", "Gabrielle"],
+    "Adjectives": ["Dysnomian"]
+  },
+  "Orbital_characteristics": {
+    "Epoch": "31 August 2006 (JD 2453979.0)",
+    "Semi-major axis": "37,273 ± 64 km",
+    "Eccentricity": "0.0062 ± 0.0010",
+    "Orbital period (sidereal)": "15.785899 ± 0.000050 days",
+    "Average orbital speed": "0.172 km/s",
+    "Inclination": [
+      "≈ 0° to Eris's equator (assumed)",
+      "78.29° ± 0.65° to Eris's orbit",
+      "45.49° ± 0.15° to celestial equator",
+      "61.59° ± 0.16° to ecliptic"
+    ],
+    "Longitude of ascending node": "126.17° ± 0.26°",
+    "Argument of periapsis": "180.83°",
+    "Satellite of": "Eris"
+  },
+  "Physical_characteristics": {
+    "Mean diameter (km)": "615 (+60 / −50)",
+    "Mass (kg)": "(8.2 ± 5.7) × 10^19",
+    "Mean density (g/cm³)": "0.7 ± 0.5",
+    "Rotation": {
+      "Synodic rotation period": "Synchronous",
+      "Axial tilt": "≈ 0° to orbit (assumed)"
+    },
+    "Albedo": "0.05 ± 0.01",
+    "Apparent magnitude": 25.4,
+    "Absolute magnitude (H)": 5.6
+  }
+  }
+  }
+ ]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {
+  "name": "Haumea (dwarf)",
+  "image": "media/Haumea.avif",
+  "description": "Haumea is a dwarf planet with an unusual elongated, oval shape caused by its extremely fast rotation. It completes one rotation in just about 4 hours, making it one of the fastest-spinning large objects in the Solar System. Haumea is located in the Kuiper Belt and has two known moons, Hiʻiaka and Namaka. Its surface is covered with crystalline water ice, giving it a bright, reflective appearance. Discovered in 2004, Haumea is also notable for having a faint ring system, a rare feature among dwarf planets.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Brown et al.", "Ortiz et al."],
+    "Discovery dates": ["7 March 2003 (Ortiz)", "28 December 2004 (Brown)"]
+  },
+  "Designations": {
+    "MPC designation": "(136108) Haumea",
+    "Pronunciation": ["/haʊˈmeɪ.ə/", "ˌhɑːuː-"],
+    "Named after": "Haumea (Hawaiian goddess of fertility and childbirth)",
+    "Alternative designations": ["2003 EL61"],
+    "Minor planet category": ["Dwarf planet", "TNO", "Haumea family", "Trinary"],
+    "Adjectives": ["Haumean"],
+    "Symbol": "🝻"
+  },
+    "Physical Characteristics": {
+      "Dimensions (km)": "≈ 2,100 × 1,680 × 1,074",
+      "Mean radius (km)": "≈ 780–816",
+      "Surface area (km²)": "≈ 8.14 × 10^6",
+      "Volume (km³)": "≈ 1.98 × 10^9",
+      "Mass (kg)": "(4.006 ± 0.040) × 10^21",
+      "Mean density (g/cm³)": "1.76–2.02",
+      "Surface gravity (m/s²)": "0.24–0.93",
+      "Escape velocity (km/s)": "0.71–1.0",
+      "Rotation period (hours)": 3.915,
+      "Axial tilt": "≈126° to orbit; 78.9°–81.2° to ecliptic",
+      "Shape": "Elongated due to rapid rotation",
+      "Geometric albedo": "0.51–0.66",
+      "Bond albedo": "0.33 ± 0.03",
+      "Temperature (K)": "< 50",
+      "Spectral type": "BB (neutral), B–V=0.64, V–R=0.33",
+      "Apparent magnitude": "17.3",
+      "Absolute magnitude (H)": "0.428 ± 0.011"
+    },
+    "Orbital Data": {
+      "Epoch": "17 December 2020 (JD 2459200.5)",
+      "Observation arc": "65 years 291 days",
+      "Earliest precovery": "22 March 1955",
+      "Aphelion (AU)": 51.585,
+      "Perihelion (AU)": 34.647,
+      "Semi-major axis (AU)": 43.116,
+      "Eccentricity": 0.19642,
+      "Orbital period (years)": 283.12,
+      "Average orbital speed (km/s)": 4.53,
+      "Mean anomaly": "218.205°",
+      "Inclination": "28.2137°",
+      "Longitude of ascending node": "122.167°",
+      "Argument of perihelion": "239.041°",
+      "Next perihelion": "≈ 1 June 2133 ± 2 days"
+    },
+    "Temperature": {
+      "Average Temperature (°C)": -223
+    }
+  },
+
+
+  "moons": [
+    {
+  "name": "Hi'iaka",
+  "image": "media/Hi'iaka.jfif",
+  "description": "Hiʻiaka is the larger and outermost moon of the dwarf planet Haumea, discovered in 2005. It is named after the Hawaiian goddess Hiʻiaka, the sister of the volcano goddess Pele. Hiʻiaka is composed mostly of water ice, which gives it a bright and reflective surface. It orbits Haumea at a distance of about 49,500 kilometers, taking nearly 49 days to complete a revolution. The moon is thought to have formed from debris after a giant impact that shaped Haumea’s unique features.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Michael E. Brown", "Keck Observatory adaptive optics team"],
+    "Discovery site": "W. M. Keck Observatory, Mauna Kea",
+    "Discovery date": "26 January 2005"
+  },
+  "Designations": {
+    "Designation": "(136108) Haumea I",
+    "Pronunciation": ["/hiːʔiˈɑːkə/", "Hawaiian: [ˈhiʔiˈjɐkə]"],
+    "Named after": "Hiʻiaka",
+    "Alternative names": ["S/2005 (2003 EL61) 1", "S/2005 (136108) 1"]
+  },
+    "Physical Characteristics": {
+      "Dimensions (km)": "476 × 370 × 286 ± (88 × 52 × 14)",
+      "Mean diameter (km)": "369 ± 23",
+      "Mass (kg)": "1.21 × 10^19",
+      "Mean density (g/cm³)": "0.46 ± 0.15",
+      "Rotation period (hours)": "9.68 ± 0.03",
+      "Axial tilt": "≈ 90° to Haumea's equator",
+      "Albedo": "0.68 ± 0.05",
+      "Temperature (K)": "≈ 40",
+      "Apparent magnitude": "~20",
+      "Absolute magnitude (H)": "3.24 ± 0.08"
+    },
+    "Orbital Data": {
+      "Epoch": "28 May 2008 (JD 2454615.0)",
+      "Semi-major axis (km)": "49,371 ± 45",
+      "Eccentricity": "0.0542 ± 0.0012",
+      "Orbital period (days)": "49.462 ± 0.083",
+      "Mean anomaly": "154.53° (+2.05°/−2.00°)",
+      "Inclination": [
+        "77.394° ± 0.038° (to ecliptic)",
+        "1.01° (+0.66°/−0.47°) to Haumea's equator",
+        "13.2° ± 0.2° to Namaka's orbital plane"
+      ],
+      "Longitude of ascending node": "13.110° (+0.030°/−0.031°)",
+      "Argument of periapsis": "98.34° (+2.02°/−2.06°)"
+    }
+  },
+  "satellite_of": "Haumea"
+},
+
+    {
+  "name": "Namaka",
+  "image": "media/Namaka.webp",
+  "description": "Namaka is the smaller and inner moon of the dwarf planet Haumea, discovered in 2005. It is named after Nāmaka, a Hawaiian sea goddess and sister of Hiʻiaka. Namaka has an eccentric orbit, which is strongly influenced by the gravitational pull of Hiʻiaka. The moon is thought to experience chaotic rotation due to these orbital interactions. Like Hiʻiaka, Namaka likely formed from debris after a giant impact that shaped Haumea’s system.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Michael E. Brown", "Keck Observatory adaptive optics team"],
+    "Discovery site": "W. M. Keck Observatory, Mauna Kea",
+    "Discovery date": "2005"
+  },
+  "Designations": {
+    "Designation": "(136108) Haumea II",
+    "Pronunciation": ["/nɑːˈmɑːkə/", "Hawaiian: [naːˈmɐkə]"],
+    "Named after": "Nāmaka",
+    "Alternative names": ["S/2005 (2003 EL61) 2", "S/2005 (136108) 2"]
+  },
+    "Physical Characteristics": {
+      "Mean diameter (km)": "150 ± 50 (≥ 83 ± 2 km from occultation)",
+      "Mass (kg)": "(1.18 ± 0.25) × 10^18",
+      "Mean density (g/cm³)": "~0.65 (for 150 km diameter)",
+      "Rotation period": "Unknown, likely chaotic",
+      "Axial tilt": "Unknown, likely chaotic",
+      "Albedo": "0.5 – 0.8",
+      "Temperature (K)": "≈ 40",
+      "Apparent magnitude": "~22",
+      "Absolute magnitude (H)": "5.1"
+    },
+    "Orbital Data": {
+      "Epoch": "28 May 2008 (JD 2454615.0)",
+      "Semi-major axis (km)": "25,506 ± 36",
+      "Eccentricity": "0.2179 (+0.0033/−0.0032)",
+      "Orbital period (days)": "18.2783 ± 0.0076",
+      "Mean anomaly": "185.19° (+0.69°/−0.65°)",
+      "Inclination": [
+        "69.005° (+0.108°/−0.107°) to ecliptic",
+        "12.79° (+1.01°/−0.58°) to Haumea's equator",
+        "13.2° ± 0.2° to Hiʻiaka's orbital plane"
+      ],
+      "Longitude of ascending node": "23.725° (+0.149°/−0.150°)",
+      "Argument of periapsis": "118.35° (+0.39°/−0.42°)"
+    }
+  },
+  "satellite_of": "Haumea"
+  }
+ ]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+  "name": "Makemake (dwarf)",
+  "image": "media/Makemake.png",
+  "description": "Makemake is a bright dwarf planet in the Kuiper Belt, discovered in 2005 by a team of astronomers led by Michael E. Brown. It is one of the largest known objects in the outer Solar System, slightly smaller than Pluto. Makemake’s surface is believed to be covered with methane, ethane, and possibly nitrogen ice, giving it a reddish color. The dwarf planet has a single known moon, MK 2, which was discovered in 2016. Makemake is named after the fertility god of the Rapa Nui people of Easter Island.",
+  "sections": {
+  "Discovery": {
+    "Discovered by": ["Michael E. Brown", "Chad Trujillo", "David Rabinowitz"],
+    "Discovery date": "March 31, 2005"
+  },
+  "Designations": {
+    "MPC designation": "(136472) Makemake",
+    "Pronunciation": [
+      "UK: /ˌmækiˈmæki/",
+      "US: /ˌmɑːkiˈmɑːki/ or /ˌmɑːkeɪˈmɑːkeɪ/"
+    ],
+    "Named after": "Makemake (a Rapa Nui fertility god)",
+    "Alternative designations": ["2005 FY9"],
+    "Minor planet category": [
+      "Dwarf planet",
+      "Trans-Neptunian object (TNO)",
+      "Cubewano",
+      "Scattered-near"
+    ],
+    "Adjectives": ["Makemakean"],
+    "Symbol": "🝼"
+  },
+    "Physical Characteristics": {
+      "Dimensions (km)": "1434 (+48/−18) × 1420 (+18/−24) projected",
+      "Mean radius (km)": "715 (+19/−11)",
+      "Flattening": "0.0098",
+      "Surface area (km²)": "6.42 × 10^6",
+      "Volume (km³)": "1.53 × 10^9",
+      "Mass (kg)": "≈ 3.1 × 10^21",
+      "Mean density (g/cm³)": "1.7–2.1",
+      "Equatorial surface gravity (m/s²)": "< 0.57",
+      "Equatorial escape velocity (km/s)": "< 0.91",
+      "Rotation period (hours)": "22.8266 ± 0.0001",
+      "Geometric albedo": "0.82 ± 0.02",
+      "Bond albedo": "0.74 ± 0.06",
+      "Spectral type": "B−V = 0.83, V−R = 0.5",
+      "Apparent magnitude": "17.0 (opposition)",
+      "Absolute magnitude (H)": "−0.12 to 0.049 ± 0.020"
+    },
+    "Orbital Data": {
+      "Epoch": "May 31, 2020 (JD 2458900.5)",
+      "Earliest precovery date": "January 29, 1955",
+      "Aphelion (AU)": "52.756",
+      "Perihelion (AU)": "38.104",
+      "Semi-major axis (AU)": "45.430",
+      "Eccentricity": "0.16126",
+      "Orbital period (years)": "306.21 (111,845 days)",
+      "Average orbital speed (km/s)": "4.419",
+      "Mean anomaly": "165.514°",
+      "Inclination": "28.9835°",
+      "Longitude of ascending node": "79.620°",
+      "Time of perihelion": "17 November 2186",
+      "Argument of perihelion": "294.834°",
+      "Known satellites": "1 (S/2015 (136472) 1)"
+    },
+    "Temperature": {
+      "Range (K)": "32–36 (single-terrain model), 40–44 (two-terrain model)"
+    },
+    "Atmosphere": {
+      "Composition": "Trace methane and nitrogen (seasonal, tenuous atmosphere)"
+    }
+},
+
+
+   "moons": [
+  {
+    "name": "MK2",
+    "image": "media/Mk2.jpg",
+    "description": "MK2 is Makemake’s only known moon, discovered in 2015 using the Hubble Space Telescope’s Wide Field Camera 3. It is estimated to be about 175 kilometers in diameter, making it relatively small compared to Makemake. The moon has a very dark surface, reflecting little sunlight, which makes it difficult to observe against Makemake’s brightness. MK2 orbits Makemake at a distance of about 21,000 kilometers, though its exact orbital period is still being studied. Its discovery helps scientists better understand Makemake’s mass and density, offering insights into Kuiper Belt objects.",
+    "sections": {
+    "Discovery": {
+      "Discovered by": [
+        "HST/Wide Field Camera 3",
+        "Alex H. Parker",
+        "Marc W. Buie",
+        "William M. Grundy",
+        "Keith S. Noll"
+      ],
+      "Discovery date": "27 April 2015"
+    },
+    "Designations": {
+      "Alternative names": ["MK2 (unofficial)"]
+    },
+      "Orbital Characteristics": {
+        "Semi-major axis (km)": "> 21,000",
+        "Eccentricity": "unknown",
+        "Orbital period (days)": "> 12.4",
+        "Inclination": "63°–87° relative to ecliptic (prograde)",
+        "Satellite of": "Makemake"
+      },
+      "Physical Characteristics": {
+        "Mean diameter (km)": "≈ 175 (best fit, assuming 4% albedo)",
+        "Diameter range (km)": "175–250 (for 2–4% albedo)",
+        "Albedo": "0.02–0.04 (best fit: 0.04)",
+        "Apparent magnitude": "25.0",
+        "Absolute magnitude (H)": "7.89 ± 0.04"
+      }
+    },
+    "note": "Makemake’s only known moon."
+  }
+ ]
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+  "name": "Ceres (dwarf)",
+  "image": "media/Ceres.jpg",
+  "description": "Ceres is the largest object in the asteroid belt between Mars and Jupiter and the only dwarf planet in the inner Solar System. It was the first asteroid discovered in 1801 by Giuseppe Piazzi and later reclassified as a dwarf planet in 2006. Ceres is rich in water ice, and evidence suggests the presence of a subsurface ocean beneath its crust. Its surface features bright salt deposits, impact craters, and possible cryovolcanoes. As a nearby dwarf planet, Ceres is a key target for studying the transition between rocky planets and icy bodies.",
+  "sections": {
+    "Discovery": {
+      "Discovered By": "Giuseppe Piazzi",
+      "Discovery Date": "1 January 1801",
+      "MPC designation": "1 Ceres",
+      "Named After": "Cerēs",
+      "Pronunciation": "/ˈsɪəriːz/ (SEER-eez)",
+      "Symbol": "⚳"
+    },
+    "Orbital Data": {
+      "Epoch (JD)": 2459600.5,
+      "Orbital Period (Earth years)": 4.60,
+      "Orbital Period (days)": 1680,
+      "Synodic Period (days)": 466.6,
+      "Semi-major Axis (AU)": 2.77,
+      "Semi-major Axis (km)": 414000000,
+      "Perihelion (AU)": 2.55,
+      "Aphelion (AU)": 2.98,
+      "Eccentricity": 0.0785,
+      "Inclination (°)": 10.6,
+      "Longitude of Ascending Node (°)": 80.3,
+      "Argument of Perihelion (°)": 73.6,
+      "Mean Anomaly (°)": 291.4,
+      "Average Orbital Speed (km/s)": 17.9,
+      "Proper Orbital Period (yr)": 4.60358
+    },
+    "Physical Characteristics": {
+      "Dimensions (km)": "966.2 × 962.0 × 891.8",
+      "Mean Radius (km)": 469.7,
+      "Surface Area (km²)": 2772368,
+      "Volume (km³)": 434000000,
+      "Mass (kg)": "9.3839 × 10^20",
+      "Mean Density (g/cm³)": 2.1616,
+      "Surface Gravity (m/s²)": 0.284,
+      "Escape Velocity (km/s)": 0.516,
+      "Rotation Period (hours)": 9.07417,
+      "Axial Tilt (°)": 4,
+      "Moment of Inertia Factor": "0.36 ± 0.15 (estimate)",
+      "Geometric Albedo": "0.090 ± 0.0033",
+      "Spectral Type": "C",
+      "Surface Temperature (K)": {
+        "Min": 110,
+        "Mean": 172.5,
+        "Max": 235
+      }
+    },
+    "Observational Data": {
+      "Apparent Magnitude": 7.6,
+      "Absolute Magnitude (H)": 3.34,
+      "Angular Diameter (arcsec)": "0.854 – 0.339"
+    },
+    "Satellites": {
+      "Known Moons": "None"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+]
