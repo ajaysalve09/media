@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Space Explorar</title>
+<title>Solar System Info</title>
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -15,7 +15,8 @@
     <img src="media/logo.png" alt="Logo" class="header-logo" style="height: 2em; width: 2em;"/>
     <h4>Space Explorer</h4>
   </div>
-  <div class="header-right">
+  
+    <div class="header-right">
     <div class="search-wrapper">
       <input type="text" id="search" placeholder="Search to Explore...">
       <button id="searchToggle" class="search-icon-btn" aria-label="Search">
@@ -23,6 +24,7 @@
       </button>
       <button id="searchClose" class="search-close-btn" aria-label="Close">×</button>
     </div>
+    <a href="qna.html" class="ai-btn"><img src="media/Ai.png" alt="AI" style="width:2em; height:2.1em;"></a>
   </div>
 </header>
 <main>
@@ -60,8 +62,8 @@
  <footer>
   <div class="footer-buttons">
     <a href="intro.html" class="feedback-btn">Home</a>
-    <a href="qna.html" class="feedback-btn">SpaceAI</a>
     <a href="feedback.html" class="feedback-btn">Feedback</a>
+    <a id="shareBtn" class="feedback-btn"> <i class="fas fa-share"></i> Share</a>
   </div>
   <p>© 2025 Space Explorar. All rights reserved.</p>
 </footer>
