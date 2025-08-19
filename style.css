@@ -154,7 +154,7 @@ header {
 }
 
 .search-wrapper.expanded {
-  width: min(300em, 86vw);
+  width: min(300em, 87vw);
 }
 
 .search-wrapper input {
