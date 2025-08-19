@@ -29,23 +29,28 @@ function loadPlanets(planets) {
   detailsPanel.style.display = 'none';
   introInfo.style.display = 'block';
 
-  planets.forEach((planet, index) => {
+  planets.forEach((planet) => {
     const pDiv = document.createElement('div');
     pDiv.className = 'planet';
     pDiv.innerText = planet.name;
-    pDiv.onclick = () => selectPlanet(index);
+    pDiv.onclick = () => selectPlanet(planet); // ✅ pass planet object
     planetList.appendChild(pDiv);
   });
 }
 
 // Handle planet click
-function selectPlanet(index) {
+function selectPlanet(planet) {
   clearSelected(planetList);
+  // Highlight selected planet
   const planetDivs = planetList.querySelectorAll('.planet');
-  planetDivs[index].classList.add('selected');
+  planetDivs.forEach(div => {
+    if (div.innerText === planet.name) {
+      div.classList.add('selected');
+    }
+  });
 
-  loadMoons(data[index].moons);
-  showDetails(data[index]);
+  loadMoons(planet.moons);
+  showDetails(planet);
 }
 
 // Load moons for selected planet
@@ -205,7 +210,7 @@ searchInput.addEventListener('input', () => {
     (planet.description && planet.description.toLowerCase().includes(q))
   );
 
-  loadPlanets(filteredPlanets);
+  loadPlanets(filteredPlanets); // ✅ still works, each item now passes planet object directly
 
   // Show matching moons
   moonList.innerHTML = '';
@@ -241,24 +246,37 @@ searchInput.addEventListener('input', () => {
 
 loadData();
 
-
-
- const shareBtn = document.getElementById('shareBtn');
-
-  shareBtn.addEventListener('click', async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'Space Explorar',
-          text: 'Take a tour in space with Space Explorar',
-          url: window.location.href
-        });
-        console.log('Shared successfully');
-      } catch (err) {
-        console.error('Error sharing:', err);
-      }
-    } else {
-      alert('Your browser does not support the Web Share API.');
+// Share button
+const shareBtn = document.getElementById('shareBtn');
+shareBtn.addEventListener('click', async () => {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'Space Explorar',
+        text: 'Take a tour in space with Space Explorar',
+        url: window.location.href
+      });
+      console.log('Shared successfully');
+    } catch (err) {
+      console.error('Error sharing:', err);
     }
-  });
-  
+  } else {
+    alert('Your browser does not support the Web Share API.');
+  }
+});
+
+// Menu toggle
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+menuToggle.addEventListener("click", () => {
+  sideMenu.style.left = "0px";   // show menu
+  overlay.style.display = "block"; // show overlay
+});
+
+// Close when clicking overlay
+overlay.addEventListener("click", () => {
+  sideMenu.style.left = "-260px"; 
+  overlay.style.display = "none"; 
+});
