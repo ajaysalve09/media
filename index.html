@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Solar System Info</title>
+<title>Space Explorar</title>
 <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 
 <body>
 <header>
   <div class="header-left">
-    <img src="media/logo.png" alt="Logo" class="header-logo" style="height: 2em; width: 2em;"/>
-    <h4>Space Explorer</h4>
+    <button id="menuToggle" class="menu-btn" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <h3>Space Explorer</h3>
   </div>
-  
-    <div class="header-right">
+  <div class="header-right">
     <div class="search-wrapper">
       <input type="text" id="search" placeholder="Search to Explore...">
       <button id="searchToggle" class="search-icon-btn" aria-label="Search">
@@ -24,8 +25,20 @@
       </button>
       <button id="searchClose" class="search-close-btn" aria-label="Close">×</button>
     </div>
-  <a href="qna.html" class="ai-btn"><img src="media/Ai.png" alt="AI" style="width:2em; height:2.1em;"></a>
+  </div>
 </header>
+<nav id="sideMenu" class="side-menu">
+  <div class="menu-header">
+    <img src="media/logo.png" alt="Logo" class="menu-logo">
+    <h3>Space Explorer</h3>
+  </div>
+  <hr style="margin: 0;">
+  <a href="intro.html"><i class="fas fa-house"></i>  Home</a>
+  <a href="qna.html"><i class="fa-regular fa-star"></i> Space AI</a>
+  <a href="feedback.html"><i class="far fa-comment"></i> Feedback</a>
+  <a id="shareBtn" class="feedback-btn"> <i class="fas fa-share-alt"></i> Share</a>
+</nav>
+<div id="overlay"></div>
 <main>
 
 <div class="container">
@@ -59,11 +72,6 @@
 
 </main>
  <footer>
-  <div class="footer-buttons">
-    <a href="intro.html" class="feedback-btn">Home</a>
-    <a href="feedback.html" class="feedback-btn">Feedback</a>
-    <a id="shareBtn" class="feedback-btn"> <i class="fas fa-share"></i> Share</a>
-  </div>
   <p>© 2025 Space Explorar. All rights reserved.</p>
 </footer>
 
