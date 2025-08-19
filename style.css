@@ -82,14 +82,14 @@ footer {
 
 .list {
   display: flex;
-  gap: 0.6em;
+  gap: 0.4em;
   overflow-x: auto;
   padding: 0 0 6px 0;
 }
 
 .planet, .moon {
   flex: 0 0 auto;
-  padding: 6px 11px;
+  padding: 5px 10px;
   cursor: pointer;
   border-radius: 7px;
   user-select: none;
@@ -97,11 +97,11 @@ footer {
   background-color: #f0f0fa;
 }
 .planet {
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: 420;
+  font-size: 0.9rem;
 }
 .moon {
-  font-weight: 400;
+  font-weight: 420;
   font-size: 0.8rem;
   color: #000;
 }
