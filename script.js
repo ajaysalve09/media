@@ -249,8 +249,8 @@ loadData();
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Floor Planner',
-          text: 'Check out this awesome Floor Planner tool!',
+          title: 'Space Explorar',
+          text: 'Take a tour in space with Space Explorar',
           url: window.location.href
         });
         console.log('Shared successfully');
