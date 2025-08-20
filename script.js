@@ -281,3 +281,22 @@ overlay.addEventListener("click", () => {
   overlay.style.display = "none"; 
   document.body.classList.remove("no-scroll"); // enable scroll
 });
+
+// Handle back button (Android devices, browsers)
+window.addEventListener("popstate", () => {
+  if (sideMenu.style.left === "0px") {
+    // If menu is open → close it instead of going back
+    sideMenu.style.left = "-260px";
+    overlay.style.display = "none";
+    document.body.classList.remove("no-scroll");
+    history.pushState(null, null, location.href); // prevent navigation
+  }
+});
+
+// Push a state when menu opens
+menuToggle.addEventListener("click", () => {
+  sideMenu.style.left = "0px";   // show menu
+  overlay.style.display = "block"; // show overlay
+  document.body.classList.add("no-scroll");
+  history.pushState(null, null, location.href); // add fake state
+});
