@@ -18,6 +18,7 @@
   "image": "media/Sun.avif",
   "description": "The Sun is the star at the center of the Solar System, containing more than 99.8% of its total mass. Composed primarily of hydrogen and helium, it generates energy through nuclear fusion, converting hydrogen into helium in its core. This energy powers life on Earth, drives climate and weather patterns, and governs the orbits of planets and other bodies.",
   "sections": {
+    "description1": "The Sun is the star at the center of the Solar System, containing more than 99.8% of its total mass. Composed primarily of hydrogen and helium, it generates energy through nuclear fusion, converting hydrogen into helium in its core. This energy powers life on Earth, drives climate and weather patterns, and governs the orbits of planets and other bodies.",
     "Observation Data": {
       "Mean distance from Earth": "1 AU (149,600,000 km)",
       "Light travel time": "8 min 19 s",
