@@ -6,6 +6,7 @@
 <title>Space Explorar</title>
 <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
@@ -28,10 +29,10 @@
     <img src="media/logo.png" alt="Logo" class="menu-logo">
     <h3>Space Explorer</h3>
   </div>
-  <hr style="margin: 0;">
+  <hr style="border: 1px solid #eee; margin: 0;">
   <div class="menu-links">
     <a href="intro.html"><i class="fas fa-house"></i>  Home</a>
-  <a href="feedback.html"><i class="far fa-comment"></i> Feedback</a>
+  <a href="feedback.html"><i class="fas fa-comment"></i> Feedback</a>
   <a id="shareBtn" class="feedback-btn"> <i class="fas fa-share-alt"></i> Share</a>
   </div>
   <div class="menu-footer">
@@ -43,10 +44,10 @@
 <main>
   
 
-<h4>Planets</h4>
+<!-- <h4>Planets</h4> -->
 <div id="officialPlanetList" class="list horizontal-list"></div>
 
-<h4>Moons</h4>
+<!-- <h4>Moons</h4> -->
 <div id="moonList" class="list horizontal-list moons-list" style="display:none;"></div>
 
 
@@ -64,12 +65,19 @@
   </div>
 </div>
 
+
 <div id="details" class="details">
-  <h4 id="detailName"></h4>
+  <div class="details-header">
+    <button id="backBtn" class="back-btn">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h4 id="detailName"></h4>
+  </div>
   <img id="detailImage" src="" alt=""/>
   <p id="detailIntro"></p>
   <div id="detailSections"></div>
 </div>
+
 
 </main>
  <footer>
