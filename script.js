@@ -3,6 +3,9 @@
 // ==========================
 let data = [];
 
+let lastSearchQuery = "";
+let lastSearchResults = [];
+
 const officialPlanetList = document.getElementById("officialPlanetList");
 const moonList           = document.getElementById("moonList");
 const detailsPanel       = document.getElementById("details");
@@ -10,7 +13,6 @@ const introInfo          = document.getElementById("introInfo");
 
 const searchWrapper = document.querySelector(".search-wrapper");
 const searchToggle  = document.getElementById("searchToggle");
-// const searchClose   = document.getElementById("searchClose");
 const searchInput   = document.getElementById("search");
 
 const shareBtn   = document.getElementById("shareBtn");
@@ -37,7 +39,7 @@ async function loadData() {
 // ==========================
 // Rendering Helpers
 // ==========================
-function createItem(item, clickHandler) {
+function createItem(item, clickHandler, query = "") {
   const div = document.createElement("div");
   div.className = "item";
 
@@ -46,7 +48,14 @@ function createItem(item, clickHandler) {
   img.alt = item.name;
 
   const span = document.createElement("span");
-  span.textContent = item.name;
+
+  // Highlight matches in name
+  if (query && item.name.toLowerCase().includes(query.toLowerCase())) {
+    const regex = new RegExp(`(${query})`, "gi");
+    span.innerHTML = item.name.replace(regex, "<mark>$1</mark>");
+  } else {
+    span.textContent = item.name;
+  }
 
   div.appendChild(img);
   div.appendChild(span);
@@ -56,7 +65,8 @@ function createItem(item, clickHandler) {
   return div;
 }
 
-function renderItems(items) {
+
+function renderItems(items, query = "", fromSearch = false) {
   // Reset
   officialPlanetList.innerHTML = "";
   moonList.innerHTML = "";
@@ -64,39 +74,46 @@ function renderItems(items) {
   introInfo.style.display = "block";
 
   items.forEach(item => {
-    const itemDiv = createItem(item, (i, div) => handleSelect(i, div));
+    const itemDiv = createItem(item, (i, div) => handleSelect(i, div, query), query);
 
     switch (item.type) {
       case "official":
         officialPlanetList.appendChild(itemDiv);
+
+        // ✅ If this render came from search, always show moons
+        if (fromSearch && item.moons && item.moons.length > 0) {
+          renderMoons(item.moons, query);
+        }
         break;
+
       case "moon":
         moonList.appendChild(itemDiv);
         moonList.style.display = "flex";
         break;
+
       default:
         console.warn("Unknown type:", item.type, item.name);
     }
   });
 }
 
+
 // ==========================
 // Selection & Details
 // ==========================
-function handleSelect(item, element) {
+function handleSelect(item, element, query = "") {
   clearSelected(officialPlanetList);
   clearSelected(moonList);
 
   element.classList.add("selected");
 
-  // Show moons if the item has them
-  if (item.moons) renderMoons(item.moons);
+  if (item.moons) renderMoons(item.moons, query);
   else moonList.style.display = "none";
 
   showDetails(item);
 }
 
-function renderMoons(moons) {
+function renderMoons(moons, query = "") {
   moonList.innerHTML = "";
   if (!moons || moons.length === 0) {
     moonList.style.display = "none";
@@ -109,7 +126,7 @@ function renderMoons(moons) {
       clearSelected(moonList);
       div.classList.add("selected");
       showDetails(m);
-    });
+    }, query); 
     moonList.appendChild(moonDiv);
   });
 }
@@ -118,8 +135,25 @@ function clearSelected(container) {
   container.querySelectorAll(".selected").forEach(el => el.classList.remove("selected"));
 }
 
+const backBtn = document.getElementById("backBtn");
+backBtn.addEventListener("click", () => {
+  detailsPanel.style.display = "none";   // hide details
+  introInfo.style.display = "block";     // show intro again
+  officialPlanetList.style.display = "flex"; // show planets
+  // moons only visible if previously selected
+  if (moonList.children.length > 0) {
+    moonList.style.display = "flex";
+  }
+});
+
+
 function showDetails(item) {
+  // Hide intro + lists
   introInfo.style.display = "none";
+  officialPlanetList.style.display = "none";
+  moonList.style.display = "none";
+
+  // Show details
   detailsPanel.style.display = "block";
 
   // Header
@@ -164,38 +198,76 @@ function showDetails(item) {
   }
 }
 
-function buildTable(dataObj) {
-  const table = document.createElement("table");
-  table.style.width = "100%";
-  table.style.borderCollapse = "collapse";
+function buildTable(data) {
+  if (data == null) return document.createDocumentFragment();
 
-  for (let key in dataObj) {
-    const row = document.createElement("tr");
-    row.style.borderBottom = "0.1px solid #2f3e53";
+  const makeP = (text) => {
+    const p = document.createElement("p");
+    p.textContent = String(text);
+    p.style.margin = "0"; 
+    p.style.padding = "0"; 
+    return p;
+  };
 
-    const keyCell = document.createElement("td");
-    keyCell.style.fontWeight = "400";
-    keyCell.style.padding = "8px 4px";
-    keyCell.style.color = "#007bff";
-    keyCell.textContent = key;
-
-    const valCell = document.createElement("td");
-    valCell.style.padding = "8px 4px";
-    valCell.style.color = "#000";
-
-    const value = dataObj[key];
-    if (typeof value === "object" && value !== null) {
-      valCell.appendChild(buildTable(value));
-    } else {
-      valCell.textContent = value;
-    }
-
-    row.appendChild(keyCell);
-    row.appendChild(valCell);
-    table.appendChild(row);
+  const t = typeof data;
+  if (t === "string" || t === "number" || t === "boolean") {
+    return makeP(data);
   }
 
-  return table;
+  if (Array.isArray(data)) {
+    const ul = document.createElement("ul");
+    ul.style.margin = "0";
+    data.forEach((v) => {
+      const li = document.createElement("li");
+      if (v !== null && typeof v === "object") {
+        li.appendChild(buildTable(v));
+      } else {
+        li.textContent = String(v);
+      }
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
+  if (typeof data === "object") {
+    const keys = Object.keys(data);
+
+    const allNumeric = keys.length > 0 && keys.every((k) => /^\d+$/.test(k));
+    if (allNumeric) {
+      const joined = keys.sort((a, b) => a - b).map((k) => data[k]).join("");
+      return makeP(joined);
+    }
+
+    const table = document.createElement("table");
+    table.style.width = "100%";
+    table.style.borderCollapse = "collapse";
+
+    keys.forEach((key) => {
+      const value = data[key];
+      if (value === undefined) return;
+
+      const row = document.createElement("tr");
+
+      const keyCell = document.createElement("td");
+      keyCell.style.fontWeight = "500";
+      keyCell.style.color = "#007bff";
+      keyCell.style.verticalAlign = "top";
+      keyCell.textContent = key;
+
+      const valCell = document.createElement("td");
+      valCell.style.color = "#000";
+
+      valCell.appendChild(buildTable(value));
+
+      row.appendChild(keyCell);
+      row.appendChild(valCell);
+      table.appendChild(row);
+    });
+
+    return table;
+  }
+
+  return makeP(String(data));
 }
 
 // ==========================
@@ -203,35 +275,45 @@ function buildTable(dataObj) {
 // ==========================
 searchInput.addEventListener("input", () => {
   const q = searchInput.value.trim().toLowerCase();
+
   if (q.length === 0) {
     renderItems(data);
-    moonList.style.display = "none";
+    officialPlanetList.style.display = "flex";  // ✅ show planets again
+    moonList.style.display = "none";            // moons hidden by default
+    detailsPanel.style.display = "none";        // ✅ hide details if search cleared
     return;
   }
 
-  const filtered = data.filter(item =>
-    item.name.toLowerCase().includes(q) ||
-    (item.description && item.description.toLowerCase().includes(q))
-  );
+  let results = [];
 
-  renderItems(filtered);
+  data.forEach(item => {
+    const matchPlanet =
+      item.name.toLowerCase().includes(q) ||
+      (item.description && item.description.toLowerCase().includes(q));
+
+    const matchedMoons = (item.moons || []).filter(moon =>
+      moon.name.toLowerCase().includes(q) ||
+      (moon.description && moon.description.toLowerCase().includes(q))
+    );
+
+    if (matchPlanet) {
+      results.push(item);
+    } else if (matchedMoons.length > 0) {
+      results.push({
+        ...item,
+        moons: matchedMoons
+      });
+    }
+  });
+
+  // ✅ Ensure lists are visible while searching
+  detailsPanel.style.display = "none";
+  officialPlanetList.style.display = "flex";
+  moonList.style.display = "flex";
+
+  renderItems(results, q, true);
 });
 
-searchInput.addEventListener("input", () => {
-  const q = searchInput.value.trim().toLowerCase();
-  if (q.length === 0) {
-    renderItems(data);
-    moonList.style.display = "none";
-    return;
-  }
-
-  const filtered = data.filter(item =>
-    item.name.toLowerCase().includes(q) ||
-    (item.description && item.description.toLowerCase().includes(q))
-  );
-
-  renderItems(filtered);
-});
 
 // ==========================
 // Share Button
@@ -272,3 +354,20 @@ overlay.addEventListener("click", () => {
 // ==========================
 loadData();
 
+
+// Function to remove highlight (<mark>) only from clicked item
+function removeHighlightOnClick(container) {
+  container.addEventListener("click", function (e) {
+    const mark = e.target.closest("mark");
+    if (mark) {
+      // unwrap <mark> and keep its text
+      const textNode = document.createTextNode(mark.textContent);
+      mark.replaceWith(textNode);
+    }
+  });
+}
+
+// Apply to your lists
+removeHighlightOnClick(document.getElementById("officialPlanetList"));
+removeHighlightOnClick(document.getElementById("dwarfPlanetList"));
+removeHighlightOnClick(document.getElementById("moonList"));
