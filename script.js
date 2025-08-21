@@ -1,302 +1,274 @@
+// ==========================
+// Globals & DOM References
+// ==========================
 let data = [];
-const planetList = document.getElementById('planetList');
-const moonList = document.getElementById('moonList');
-const detailsPanel = document.getElementById('details');
-const introInfo = document.getElementById('introInfo');
 
-const searchWrapper = document.querySelector('.search-wrapper');
-const searchToggle = document.getElementById('searchToggle');
-const searchClose = document.getElementById('searchClose');
-const searchInput = document.getElementById('search');
+const officialPlanetList = document.getElementById("officialPlanetList");
+const moonList           = document.getElementById("moonList");
+const detailsPanel       = document.getElementById("details");
+const introInfo          = document.getElementById("introInfo");
 
-// Load JSON Data
+const searchWrapper = document.querySelector(".search-wrapper");
+const searchToggle  = document.getElementById("searchToggle");
+// const searchClose   = document.getElementById("searchClose");
+const searchInput   = document.getElementById("search");
+
+const shareBtn   = document.getElementById("shareBtn");
+const menuBtn    = document.querySelector(".menu-btn");
+const sideMenu   = document.querySelector(".side-menu");
+const overlay    = document.getElementById("overlay");
+
+// ==========================
+// Data Loading
+// ==========================
 async function loadData() {
   try {
-    const res = await fetch('data.json');
+    const res = await fetch("data.json");
     if (!res.ok) throw new Error("Could not load data.json");
+
     data = await res.json();
-    loadPlanets(data);
+    renderItems(data);
   } catch (err) {
     console.error(err);
-    planetList.innerHTML = "<p style='color:red;'>Error loading planet data.</p>";
+    officialPlanetList.innerHTML = "<p style='color:red;'>Error loading data.</p>";
   }
 }
 
-// Display planet list
-function loadPlanets(planets) {
-  planetList.innerHTML = "";
-  moonList.innerHTML = "";
-  detailsPanel.style.display = 'none';
-  introInfo.style.display = 'block';
+// ==========================
+// Rendering Helpers
+// ==========================
+function createItem(item, clickHandler) {
+  const div = document.createElement("div");
+  div.className = "item";
 
-  planets.forEach((planet) => {
-    const pDiv = document.createElement('div');
-    pDiv.className = 'planet';
-    pDiv.innerText = planet.name;
-    pDiv.onclick = () => selectPlanet(planet); // ✅ pass planet object
-    planetList.appendChild(pDiv);
-  });
+  const img = document.createElement("img");
+  img.src = item.image || "placeholder.png";
+  img.alt = item.name;
+
+  const span = document.createElement("span");
+  span.textContent = item.name;
+
+  div.appendChild(img);
+  div.appendChild(span);
+
+  div.onclick = () => clickHandler(item, div);
+
+  return div;
 }
 
-// Handle planet click
-function selectPlanet(planet) {
-  clearSelected(planetList);
-  // Highlight selected planet
-  const planetDivs = planetList.querySelectorAll('.planet');
-  planetDivs.forEach(div => {
-    if (div.innerText === planet.name) {
-      div.classList.add('selected');
+function renderItems(items) {
+  // Reset
+  officialPlanetList.innerHTML = "";
+  moonList.innerHTML = "";
+  detailsPanel.style.display = "none";
+  introInfo.style.display = "block";
+
+  items.forEach(item => {
+    const itemDiv = createItem(item, (i, div) => handleSelect(i, div));
+
+    switch (item.type) {
+      case "official":
+        officialPlanetList.appendChild(itemDiv);
+        break;
+      case "moon":
+        moonList.appendChild(itemDiv);
+        moonList.style.display = "flex";
+        break;
+      default:
+        console.warn("Unknown type:", item.type, item.name);
     }
   });
-
-  loadMoons(planet.moons);
-  showDetails(planet);
 }
 
-// Load moons for selected planet
-function loadMoons(moons) {
+// ==========================
+// Selection & Details
+// ==========================
+function handleSelect(item, element) {
+  clearSelected(officialPlanetList);
+  clearSelected(moonList);
+
+  element.classList.add("selected");
+
+  // Show moons if the item has them
+  if (item.moons) renderMoons(item.moons);
+  else moonList.style.display = "none";
+
+  showDetails(item);
+}
+
+function renderMoons(moons) {
   moonList.innerHTML = "";
   if (!moons || moons.length === 0) {
-    moonList.style.display = 'none';
+    moonList.style.display = "none";
     return;
   }
-  moonList.style.display = 'flex';
+  moonList.style.display = "flex";
 
-  moons.forEach((moon) => {
-    const mDiv = document.createElement('div');
-    mDiv.className = 'moon';
-    mDiv.innerText = moon.name;
-    mDiv.onclick = () => {
+  moons.forEach(moon => {
+    const moonDiv = createItem(moon, (m, div) => {
       clearSelected(moonList);
-      mDiv.classList.add('selected');
-      showDetails(moon);
-    };
-    moonList.appendChild(mDiv);
+      div.classList.add("selected");
+      showDetails(m);
+    });
+    moonList.appendChild(moonDiv);
   });
 }
 
-// Remove selection highlight
 function clearSelected(container) {
-  container.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+  container.querySelectorAll(".selected").forEach(el => el.classList.remove("selected"));
 }
 
-// Show details panel
 function showDetails(item) {
-  introInfo.style.display = 'none';
-  detailsPanel.style.display = 'block';
+  introInfo.style.display = "none";
+  detailsPanel.style.display = "block";
 
-  let nameText = item.name;
+  // Header
+  let title = item.name;
   if (item.moons && item.moons.length > 0) {
-    nameText += ` (Moons: ${item.moons.length})`;
+    title += ` (Moons: ${item.moons.length})`;
   }
-  document.getElementById('detailName').innerText = nameText;
-  document.getElementById('detailImage').src = item.image || '';
-  document.getElementById('detailImage').alt = item.name;
-  document.getElementById('detailIntro').innerText = item.description || '';
+  document.getElementById("detailName").innerText = title;
+  document.getElementById("detailImage").src = item.image || "";
+  document.getElementById("detailImage").alt = item.name;
+  document.getElementById("detailIntro").innerText = item.description || "";
 
-  const detailSections = document.getElementById('detailSections');
-  detailSections.innerHTML = '';
+  // Sections
+  const detailSections = document.getElementById("detailSections");
+  detailSections.innerHTML = "";
 
-  if (item.sections) {
-    for (const [sectionTitle, sectionData] of Object.entries(item.sections)) {
-      const section = document.createElement('div');
-      section.className = 'section';
+  if (!item.sections) return;
 
-      const header = document.createElement('div');
-      header.className = 'section-header';
-      header.textContent = sectionTitle;
+  for (const [sectionTitle, sectionData] of Object.entries(item.sections)) {
+    const section = document.createElement("div");
+    section.className = "section";
 
-      const content = document.createElement('div');
-      content.className = 'section-content';
+    const header = document.createElement("div");
+    header.className = "section-header";
+    header.textContent = sectionTitle;
 
-      const table = document.createElement('table');
-      table.style.width = '100%';
-      table.style.borderCollapse = 'collapse';
+    const content = document.createElement("div");
+    content.className = "section-content";
 
-      for (let key in sectionData) {
-        const row = document.createElement('tr');
-        row.style.borderBottom = '0.1px solid #2f3e53';
+    const table = buildTable(sectionData);
+    content.appendChild(table);
 
-        const keyCell = document.createElement('td');
-        keyCell.style.fontWeight = '400';
-        keyCell.style.padding = '8px 4px';
-        keyCell.style.color = '#007bff';
-        keyCell.textContent = key;
+    header.onclick = () => {
+      header.classList.toggle("open");
+      content.classList.toggle("open");
+      content.style.maxHeight = content.classList.contains("open") ? content.scrollHeight + "px" : null;
+    };
 
-        const valCell = document.createElement('td');
-        valCell.style.padding = '8px 4px';
-        valCell.style.color = '#000';
-
-        const value = sectionData[key];
-
-        if (typeof value === 'object' && value !== null) {
-          const nestedTable = document.createElement('table');
-          nestedTable.style.width = '100%';
-          nestedTable.style.borderCollapse = 'collapse';
-
-          for (let subKey in value) {
-            const nestedRow = document.createElement('tr');
-            nestedRow.style.borderBottom = '0.1px solid #aaa';
-
-            const nestedKeyCell = document.createElement('td');
-            nestedKeyCell.style.fontWeight = '400';
-            nestedKeyCell.style.padding = '4px 6px';
-            nestedKeyCell.style.color = '#007bff';
-            nestedKeyCell.textContent = subKey;
-
-            const nestedValCell = document.createElement('td');
-            nestedValCell.style.padding = '4px 6px';
-            nestedValCell.style.color = '#000';
-            nestedValCell.textContent = value[subKey];
-
-            nestedRow.appendChild(nestedKeyCell);
-            nestedRow.appendChild(nestedValCell);
-            nestedTable.appendChild(nestedRow);
-          }
-
-          valCell.appendChild(nestedTable);
-        } else {
-          valCell.textContent = value;
-        }
-
-        row.appendChild(keyCell);
-        row.appendChild(valCell);
-        table.appendChild(row);
-      }
-
-      content.appendChild(table);
-
-      header.onclick = () => {
-        header.classList.toggle('open');
-        if (content.classList.contains('open')) {
-          content.style.maxHeight = null;
-          content.classList.remove('open');
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.classList.add('open');
-        }
-      };
-
-      section.appendChild(header);
-      section.appendChild(content);
-      detailSections.appendChild(section);
-    }
+    section.appendChild(header);
+    section.appendChild(content);
+    detailSections.appendChild(section);
   }
 }
 
-// Search functionality
-searchToggle.addEventListener('click', () => {
-  searchWrapper.classList.add('expanded');
-  searchInput.focus();
-});
+function buildTable(dataObj) {
+  const table = document.createElement("table");
+  table.style.width = "100%";
+  table.style.borderCollapse = "collapse";
 
-searchClose.addEventListener('click', () => {
-  searchWrapper.classList.remove('expanded');
-  searchInput.value = '';
-  loadPlanets(data); // Reset to all planets
-  moonList.style.display = 'none';
-});
+  for (let key in dataObj) {
+    const row = document.createElement("tr");
+    row.style.borderBottom = "0.1px solid #2f3e53";
 
-searchInput.addEventListener('input', () => {
+    const keyCell = document.createElement("td");
+    keyCell.style.fontWeight = "400";
+    keyCell.style.padding = "8px 4px";
+    keyCell.style.color = "#007bff";
+    keyCell.textContent = key;
+
+    const valCell = document.createElement("td");
+    valCell.style.padding = "8px 4px";
+    valCell.style.color = "#000";
+
+    const value = dataObj[key];
+    if (typeof value === "object" && value !== null) {
+      valCell.appendChild(buildTable(value));
+    } else {
+      valCell.textContent = value;
+    }
+
+    row.appendChild(keyCell);
+    row.appendChild(valCell);
+    table.appendChild(row);
+  }
+
+  return table;
+}
+
+// ==========================
+// Search
+// ==========================
+searchInput.addEventListener("input", () => {
   const q = searchInput.value.trim().toLowerCase();
   if (q.length === 0) {
-    loadPlanets(data);
-    moonList.style.display = 'none';
+    renderItems(data);
+    moonList.style.display = "none";
     return;
   }
 
-  const filteredPlanets = data.filter(planet =>
-    planet.name.toLowerCase().includes(q) ||
-    (planet.description && planet.description.toLowerCase().includes(q))
+  const filtered = data.filter(item =>
+    item.name.toLowerCase().includes(q) ||
+    (item.description && item.description.toLowerCase().includes(q))
   );
 
-  loadPlanets(filteredPlanets); // ✅ still works, each item now passes planet object directly
-
-  // Show matching moons
-  moonList.innerHTML = '';
-  moonList.style.display = 'flex';
-  let foundAnyMoon = false;
-
-  data.forEach(planet => {
-    if (planet.moons) {
-      const matchingMoons = planet.moons.filter(moon =>
-        moon.name.toLowerCase().includes(q) ||
-        (moon.description && moon.description.toLowerCase().includes(q))
-      );
-
-      matchingMoons.forEach(moon => {
-        foundAnyMoon = true;
-        const mDiv = document.createElement('div');
-        mDiv.className = 'moon';
-        mDiv.innerText = `${moon.name} (${planet.name})`;
-        mDiv.onclick = () => {
-          clearSelected(moonList);
-          mDiv.classList.add('selected');
-          showDetails(moon);
-        };
-        moonList.appendChild(mDiv);
-      });
-    }
-  });
-
-  if (!foundAnyMoon) {
-    moonList.style.display = 'none';
-  }
+  renderItems(filtered);
 });
 
-loadData();
+searchInput.addEventListener("input", () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (q.length === 0) {
+    renderItems(data);
+    moonList.style.display = "none";
+    return;
+  }
 
-// Share button
-const shareBtn = document.getElementById('shareBtn');
-shareBtn.addEventListener('click', async () => {
+  const filtered = data.filter(item =>
+    item.name.toLowerCase().includes(q) ||
+    (item.description && item.description.toLowerCase().includes(q))
+  );
+
+  renderItems(filtered);
+});
+
+// ==========================
+// Share Button
+// ==========================
+shareBtn.addEventListener("click", async () => {
   if (navigator.share) {
     try {
       await navigator.share({
-        title: 'Space Explorar',
-        text: 'Take a tour in space with Space Explorar',
-        url: window.location.href
+        title: "Space Explorar",
+        text: "Take a tour in space with Space Explorar",
+        url: window.location.href,
       });
-      console.log('Shared successfully');
     } catch (err) {
-      console.error('Error sharing:', err);
+      console.error("Error sharing:", err);
     }
   } else {
-    alert('Your browser does not support the Web Share API.');
+    alert("Your browser does not support the Web Share API.");
   }
 });
 
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
-const overlay = document.getElementById("overlay");
-
-menuToggle.addEventListener("click", () => {
-  sideMenu.style.left = "0px";   // show menu
-  overlay.style.display = "block"; // show overlay
-  document.body.classList.add("no-scroll"); // disable scroll
-});
-
-// Close when clicking overlay
-overlay.addEventListener("click", () => {
-  sideMenu.style.left = "-260px"; 
-  overlay.style.display = "none"; 
-  document.body.classList.remove("no-scroll"); // enable scroll
-});
-
-// Handle back button (Android devices, browsers)
-window.addEventListener("popstate", () => {
-  if (sideMenu.style.left === "0px") {
-    // If menu is open → close it instead of going back
-    sideMenu.style.left = "-260px";
-    overlay.style.display = "none";
-    document.body.classList.remove("no-scroll");
-    history.pushState(null, null, location.href); // prevent navigation
-  }
-});
-
-// Push a state when menu opens
-menuToggle.addEventListener("click", () => {
-  sideMenu.style.left = "0px";   // show menu
-  overlay.style.display = "block"; // show overlay
+// ==========================
+// Side Menu
+// ==========================
+menuBtn.addEventListener("click", () => {
+  sideMenu.style.left = "0";
+  overlay.classList.add("active");
   document.body.classList.add("no-scroll");
-  history.pushState(null, null, location.href); // add fake state
 });
+
+overlay.addEventListener("click", () => {
+  sideMenu.style.left = "-260px";
+  overlay.classList.remove("active");
+  document.body.classList.remove("no-scroll");
+});
+
+// ==========================
+// Init
+// ==========================
+loadData();
+
