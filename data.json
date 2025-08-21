@@ -11,6 +11,7 @@
 
  {
   "name": "Sun",
+  "type": "official",
   "alternativeNames": ["Sol", "Sól", "Helios"],
   "adjectives": ["Solar"],
   "symbol": "Circle with dot in the middle",
@@ -119,6 +120,7 @@
 
   {
   "name": "Mercury",
+  "type": "official",
   "pronunciation": "/ˈmɜːrkjʊri/",
   "adjectives": ["Mercurian", "Mercurial"],
   "symbol": "☿",
@@ -218,6 +220,7 @@
 
   {
   "name": "Venus",
+  "type": "official",
   "pronunciation": "/ˈviːnəs/",
   "named_after": "Roman goddess of love",
   "adjectives": ["Venusian", "Cytherean (rare)", "Venerean / Venerian"],
@@ -321,6 +324,7 @@
 
 {
   "name": "Earth",
+  "type": "official",
   "alternative_names": ["The World", "The Globe", "Terra", "Tellus", "Gaia"],
   "adjectives": ["Earthly", "Terrestrial", "Terran", "Tellurian"],
   "symbol": ["🜨", "♁"],
@@ -404,6 +408,7 @@
   "moons": [
     {
       "name": "Moon",
+      "type": "moon",
       "alternative_names": ["Luna", "Selene (poetic)", "Cynthia (poetic)"],
       "symbol": ["☾", "☽"],
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
@@ -488,6 +493,7 @@
 
   {
   "name": "Mars",
+  "type": "official",
   "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
   "description": "Mars is known as the Red Planet due to iron oxide on its surface. It is the fourth planet from the Sun and has a thin atmosphere mostly composed of carbon dioxide. The planet features the largest volcano and canyon in the Solar System, Olympus Mons and Valles Marineris. Mars experiences seasons similar to Earth, with polar ice caps made of water and dry ice. Scientists are interested in Mars for the possibility of past or present life and future human exploration.",
   "sections": {
@@ -553,6 +559,7 @@
   "moons": [
    {
   "name": "Phobos",
+  "type": "moon",
   "image": "media/Phobos.jpg",
   "description": "Phobos is the larger and closer of Mars' two moons, irregularly shaped and slowly spiraling toward Mars. It orbits Mars very quickly, completing a revolution in just about 7 hours and 39 minutes. The moon's surface is covered with craters and grooves, including the large Stickney crater. Phobos is gradually getting closer to Mars and may eventually break apart or crash into the planet. It is one of the smallest moons in the Solar System and was discovered in 1877 by astronomer Asaph Hall.",
   "sections": {
@@ -605,6 +612,7 @@
 
     {
   "name": "Deimos",
+  "type": "moon",
   "image": "media/Deimos.jpg",
   "description": "Deimos is the smaller and outermost of Mars' two moons. It has a smoother and less cratered surface than Phobos due to a thick layer of regolith. The moon orbits Mars slowly, taking about 30.3 hours to complete one revolution. Deimos is gradually moving away from Mars over time and may eventually escape its orbit. It was discovered in 1877 by astronomer Asaph Hall and is one of the smallest moons in the Solar System.",
   "sections": {
@@ -669,6 +677,7 @@
 
 {
   "name": "Jupiter",
+  "type": "official",
   "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg",
   "description": "Jupiter is the largest planet in the Solar System, a gas giant primarily composed of hydrogen and helium. It has a powerful magnetic field and dozens of moons, including the four large Galilean moons. The planet is famous for its Great Red Spot, a massive storm larger than Earth that has raged for centuries. Jupiter's thick atmosphere features colorful cloud bands created by strong winds and turbulence. Its immense gravity influences the Solar System, acting as a shield by capturing comets and asteroids.",
   "sections": {
@@ -758,6 +767,7 @@
 "moons": [
       {
   "name": "Ganymede",
+  "type": "moon",
   "image": "media/Ganymede.jpg",
   "description": "Ganymede is the largest moon in the Solar System and even larger than the planet Mercury. It was discovered in 1610 by Galileo Galilei and independently by Simon Marius. As a Galilean moon of Jupiter, it orbits the gas giant every seven Earth days. Ganymede has a thin oxygen atmosphere and a surface marked by both bright grooves and dark regions. Scientists believe it has a subsurface ocean beneath its icy crust, making it a key target for exploration.",
   "sections": {
@@ -821,6 +831,7 @@
 
       {
   "name": "Callisto",
+  "type": "moon",
   "image": "media/Callisto.jpeg",
   "description": "Callisto is the second-largest moon of Jupiter and the most heavily cratered object in the Solar System. Its ancient surface has remained largely unchanged for billions of years, preserving the history of impacts. The moon is composed of a mixture of rock and ice, with a very thin atmosphere of carbon dioxide. Callisto orbits far from Jupiter, which reduces the effects of radiation compared to other Galilean moons. Scientists suspect it may have a subsurface ocean, making it a candidate for future exploration.",
   "sections": {
@@ -883,6 +894,7 @@
 
      {
   "name": "Io",
+  "type": "moon",
   "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg",
   "description": "Io is the innermost of Jupiter’s four Galilean moons and the most volcanically active body in the Solar System. Its surface is constantly reshaped by hundreds of active volcanoes, lava flows, and sulfur deposits. The moon's vibrant colors come from sulfur compounds and volcanic activity. Io experiences strong tidal forces from Jupiter’s gravity, which generate intense internal heating. This extreme activity makes Io a unique and dynamic world, unlike any other moon in the Solar System.",
   "sections": {
@@ -947,6 +959,7 @@
 
       {
   "name": "Europa",
+  "type": "moon",
   "image": "media/Europa.png",
   "description": "Europa is an icy Galilean moon of Jupiter that is believed to have a vast subsurface ocean beneath its frozen surface. Its smooth, bright surface is crisscrossed by cracks and ridges, with very few large craters. The icy crust is thought to cover a salty ocean that may contain more water than all of Earth's oceans combined. Europa's ocean, kept liquid by tidal heating from Jupiter’s gravity, makes it a prime candidate for life. Because of this potential, Europa is a major target for future space missions and exploration.",
   "sections": {
@@ -1023,6 +1036,7 @@
 
   {
   "name": "Saturn",
+  "type": "official",
   "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
   "description": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, famous for its stunning ring system. The rings are composed mostly of ice and rock particles, ranging from tiny grains to large chunks. Saturn is a gas giant primarily made of hydrogen and helium, with a very low average density. It has over 80 known moons, including Titan, which has a thick atmosphere and liquid methane lakes. Saturn’s fast rotation causes it to appear flattened at the poles, giving it a unique shape.",
   "sections": {
@@ -1111,6 +1125,7 @@
 "moons": [
   {
   "name": "Titan",
+  "type": "moon",
   "image": "media/Titan.jpeg",
   "description": "Titan is the largest moon of Saturn and the second-largest moon in the Solar System. It is notable for its dense nitrogen-rich atmosphere, which is thicker than Earth's. The surface contains rivers, lakes, and seas of liquid methane and ethane. Titan's atmosphere and surface processes resemble those of early Earth, making it a fascinating study target. It is one of the most Earth-like worlds discovered and a major focus for future exploration missions.",
   "sections": {
@@ -1171,6 +1186,7 @@
 
      {
   "name": "Rhea",
+  "type": "moon",
   "image": "media/Rhea.jpeg",
   "description": "Rhea is Saturn's second-largest moon, with a heavily cratered and bright, reflective surface. It is composed mainly of water ice mixed with some rocky material. The moon has a very thin atmosphere made primarily of oxygen and carbon dioxide. Rhea orbits Saturn at a distance of about 527,000 kilometers, taking 4.5 days to complete one revolution. Its surface features bright wispy lines, which are believed to be icy cliffs formed by tectonic activity.",
   "sections": {
@@ -1241,6 +1257,7 @@
 
    {
   "name": "Uranus",
+  "type": "official",
   "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg",
   "description": "Uranus is an ice giant with a unique sideways rotation, tilted over 98 degrees on its axis. This unusual tilt causes extreme seasonal variations that last for decades. Its atmosphere is composed mainly of hydrogen, helium, and methane, giving it a pale blue-green color. Uranus has a faint ring system and 27 known moons, many named after literary characters. It is the seventh planet from the Sun and was the first planet discovered with a telescope in 1781.",
   "sections": {
@@ -1344,6 +1361,7 @@
     "moons": [
   {
     "name": "Titania",
+    "type": "moon",
     "image": "media/Titania.jpeg",
     "description": "Titania is the largest moon of Uranus, characterized by vast ice cliffs and deep canyons. It is composed mainly of water ice mixed with rocky material, making it an icy world. The surface shows evidence of past geological activity, including fault lines and valleys. Titania orbits Uranus every 8.7 days at a distance of about 436,000 kilometers. It was discovered in 1787 by William Herschel, the same astronomer who found Uranus.",
     "sections": {
@@ -1402,6 +1420,7 @@
 
  {
     "name": "Oberon",
+    "type": "moon",
     "image": "media/Oberon.jpeg",
     "description": "Oberon is Uranus' second-largest moon and one of its most heavily cratered satellites. Its surface is marked by large impact craters and dark patches of unknown origin. Like Titania, it is composed mainly of water ice mixed with rock. Oberon orbits Uranus at a distance of about 584,000 kilometers, taking 13.5 days to complete a revolution. It was discovered in 1787 by William Herschel, along with Titania.",
     "sections": {
@@ -1468,6 +1487,7 @@
 
  {
   "name": "Neptune",
+  "type": "official",
   "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg",
   "description": "Neptune is the farthest planet from the Sun and is a cold, dark ice giant. It has a deep blue color caused by methane in its atmosphere. Powerful winds and massive storms, such as the Great Dark Spot, dominate its dynamic weather system. Neptune has a faint ring system and 14 known moons, with Triton being the largest and most unique. Discovered in 1846, it remains one of the least explored planets in the Solar System.",
   "sections": {
@@ -1555,6 +1575,7 @@
    "moons": [
     {
       "name": "Triton",
+      "type": "moon",
       "image": "media/Triton.jpeg",
       "description": "Triton is the largest moon of Neptune, notable for its unusual retrograde orbit, moving opposite Neptune’s rotation. Its surface is covered with nitrogen ice, geysers, and frozen plains shaped by past geological activity. Triton has a thin atmosphere primarily made of nitrogen, with traces of methane. It is one of the coldest known objects in the Solar System, with surface temperatures near -235°C. Discovered in 1846, Triton is thought to be a captured Kuiper Belt object, making it unique among large moons.",
       "sections": {
@@ -1631,7 +1652,8 @@
 
 
 {
-  "name": "Pluto (dwarf)",
+  "name": "Pluto",
+  "type": "official",
   "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Nh-pluto-in-true-color_2x_JPEG-edit-frame.jpg",
   "description": "Pluto is a dwarf planet in the Kuiper Belt, once considered the ninth planet of the Solar System. It has a highly elliptical orbit that sometimes brings it closer to the Sun than Neptune. Pluto’s surface is composed of ice and rock, with vast plains, mountains, and glaciers of nitrogen ice. Its largest moon, Charon, is so big that the two bodies are sometimes considered a double system. Discovered in 1930, Pluto remains a symbol of exploration and was visited by NASA’s New Horizons mission in 2015.",
   "sections": {
@@ -1729,6 +1751,7 @@
    "moons": [
     {
       "name": "Charon",
+      "type": "moon",
       "image": "media/Charon.jpg",
       "description": "Charon is Pluto’s largest moon, nearly half the size of Pluto itself, forming a unique binary system. The two bodies orbit a common center of gravity located outside Pluto. Charon’s surface is marked by canyons, ridges, and a dark region near its north pole called Mordor Macula. Unlike Pluto, it shows little evidence of an atmosphere. Discovered in 1978, Charon plays a crucial role in shaping our understanding of the Pluto-Charon system.",
       "sections": {
@@ -1815,7 +1838,8 @@
 
 
 {
-  "name": "Eris (dwarf)",
+  "name": "Eris",
+  "type": "official",
   "image": "media/Eris.avif",
   "description": "Eris is the most massive known dwarf planet in the Solar System, located in the scattered disc beyond Neptune. It is slightly smaller than Pluto in size but has greater mass, making it one of the densest dwarf planets. Eris has a highly elliptical orbit that takes it far from the Sun, with an orbital period of about 558 years. Its surface is believed to be covered with frozen methane, giving it a bright, reflective appearance. Discovered in 2005, Eris played a major role in the reclassification of Pluto as a dwarf planet.",
   "sections": {
@@ -1902,6 +1926,7 @@
   "moons": [
     {
   "name": "Dysnomia",
+  "type": "moon",
   "image": "media/Dysnomia.webp",
   "description": "Dysnomia is the only known moon of Eris, named after the daughter of Eris, the goddess of lawlessness. It was discovered in 2005 shortly after Eris itself was identified. Dysnomia orbits Eris at an estimated distance of about 37,000 kilometers. Its presence allows scientists to calculate Eris’s mass with greater accuracy. Very little is known about Dysnomia’s size and composition due to its faintness and distance.",
   "sections": {
@@ -1964,7 +1989,8 @@
 
 
  {
-  "name": "Haumea (dwarf)",
+  "name": "Haumea",
+  "type": "official",
   "image": "media/Haumea.avif",
   "description": "Haumea is a dwarf planet with an unusual elongated, oval shape caused by its extremely fast rotation. It completes one rotation in just about 4 hours, making it one of the fastest-spinning large objects in the Solar System. Haumea is located in the Kuiper Belt and has two known moons, Hiʻiaka and Namaka. Its surface is covered with crystalline water ice, giving it a bright, reflective appearance. Discovered in 2004, Haumea is also notable for having a faint ring system, a rare feature among dwarf planets.",
   "sections": {
@@ -2025,6 +2051,7 @@
   "moons": [
     {
   "name": "Hi'iaka",
+  "type": "moon",
   "image": "media/Hi'iaka.jfif",
   "description": "Hiʻiaka is the larger and outermost moon of the dwarf planet Haumea, discovered in 2005. It is named after the Hawaiian goddess Hiʻiaka, the sister of the volcano goddess Pele. Hiʻiaka is composed mostly of water ice, which gives it a bright and reflective surface. It orbits Haumea at a distance of about 49,500 kilometers, taking nearly 49 days to complete a revolution. The moon is thought to have formed from debris after a giant impact that shaped Haumea’s unique features.",
   "sections": {
@@ -2071,6 +2098,7 @@
 
     {
   "name": "Namaka",
+  "type": "moon",
   "image": "media/Namaka.webp",
   "description": "Namaka is the smaller and inner moon of the dwarf planet Haumea, discovered in 2005. It is named after Nāmaka, a Hawaiian sea goddess and sister of Hiʻiaka. Namaka has an eccentric orbit, which is strongly influenced by the gravitational pull of Hiʻiaka. The moon is thought to experience chaotic rotation due to these orbital interactions. Like Hiʻiaka, Namaka likely formed from debris after a giant impact that shaped Haumea’s system.",
   "sections": {
@@ -2130,7 +2158,8 @@
 
 
   {
-  "name": "Makemake (dwarf)",
+  "name": "Makemake",
+  "type": "official",
   "image": "media/Makemake.png",
   "description": "Makemake is a bright dwarf planet in the Kuiper Belt, discovered in 2005 by a team of astronomers led by Michael E. Brown. It is one of the largest known objects in the outer Solar System, slightly smaller than Pluto. Makemake’s surface is believed to be covered with methane, ethane, and possibly nitrogen ice, giving it a reddish color. The dwarf planet has a single known moon, MK 2, which was discovered in 2016. Makemake is named after the fertility god of the Rapa Nui people of Easter Island.",
   "sections": {
@@ -2200,6 +2229,7 @@
    "moons": [
   {
     "name": "MK2",
+    "type": "moon",
     "image": "media/Mk2.jpg",
     "description": "MK2 is Makemake’s only known moon, discovered in 2015 using the Hubble Space Telescope’s Wide Field Camera 3. It is estimated to be about 175 kilometers in diameter, making it relatively small compared to Makemake. The moon has a very dark surface, reflecting little sunlight, which makes it difficult to observe against Makemake’s brightness. MK2 orbits Makemake at a distance of about 21,000 kilometers, though its exact orbital period is still being studied. Its discovery helps scientists better understand Makemake’s mass and density, offering insights into Kuiper Belt objects.",
     "sections": {
@@ -2250,7 +2280,8 @@
 
 
   {
-  "name": "Ceres (dwarf)",
+  "name": "Ceres",
+  "type": "official",
   "image": "media/Ceres.jpg",
   "description": "Ceres is the largest object in the asteroid belt between Mars and Jupiter and the only dwarf planet in the inner Solar System. It was the first asteroid discovered in 1801 by Giuseppe Piazzi and later reclassified as a dwarf planet in 2006. Ceres is rich in water ice, and evidence suggests the presence of a subsurface ocean beneath its crust. Its surface features bright salt deposits, impact craters, and possible cryovolcanoes. As a nearby dwarf planet, Ceres is a key target for studying the transition between rocky planets and icy bodies.",
   "sections": {
