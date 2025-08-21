@@ -1,14 +1,12 @@
 * {
   box-sizing: border-box;
-  * {
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 *:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* For tablets */
@@ -88,6 +86,7 @@ header {
 .header-left h3 {
   font-size: 1em;
   font-weight: 410;
+  margin: 0.4em;
 }
 
 .header-right {
@@ -151,6 +150,36 @@ header {
   padding: 0 0 0 50%;
 }
 
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 1em; 
+  margin: 0 1em 1em;
+}
+
+.details-header h4 {
+  color: #0066ff;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
 .details {
   flex: none;
   background: #fff;
@@ -161,15 +190,6 @@ header {
 
 .details img {
   width: 100%;
-}
-
-.details h4 {
-  margin-top: 0;
-  margin-bottom: 0.6em;
-  color: #0066ff;
-  font-size: 1.4rem;
-  font-weight: 450;
-  padding: 0 0.4em 0;
 }
 
 .details p {
@@ -194,7 +214,6 @@ header {
   background: #fff;
   padding: 0 0.8em;
   margin-bottom: 1em;
-  border-bottom: 1px solid #eee;
 }
 
 .details .section-header {
@@ -212,6 +231,14 @@ header {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease;
+}
+
+.section-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 .details .section-content.open {
@@ -272,6 +299,21 @@ header {
   font-style: normal;
 }
 
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5em 0;
+}
+
+.details td {
+  display: table-cell;
+  white-space: normal;
+  word-break: break-word;
+  padding: 6px 8px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
 table td:first-child {
   font-weight: 600;
   color: #0066ff;
@@ -310,7 +352,7 @@ table td:first-child {
   padding: 12px 20px;
   text-decoration: none;
   font-size: 1em;
-  color: #000;
+  color: #222;
   display: block;
   transition: 0.2s;
   margin: 0.2em;
