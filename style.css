@@ -9,14 +9,12 @@
   box-shadow: none !important;
 }
 
-/* For tablets */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
   }
 }
 
-/* For phones */
 @media (max-width: 480px) {
   .container {
     width: 100%;
@@ -89,13 +87,6 @@ header {
   margin: 0.4em;
 }
 
-.header-right {
-  display: flex;
-  align-items: center;
-  position: relative; 
-  margin: 0.2em 0 0 0;
-}
-
 .search-bar {
   display: flex;
   align-items: center;
@@ -150,112 +141,11 @@ header {
   padding: 0 0 0 50%;
 }
 
-.details-header {
-  display: flex;
-  align-items: center;
-  gap: 1em; 
-  margin: 0 1em 1em;
-}
-
-.details-header h4 {
-  color: #0066ff;
-  padding: 0;
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.back-btn {
-  background: none;
-  border: none;
-  color: #000;
-  font-size: 1rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  padding: 0.2em;
-}
-
-.back-btn:hover {
-  text-decoration: underline;
-}
-
-.details {
-  flex: none;
-  background: #fff;
-  padding: 0.8em 0 0;
-  overflow-y: auto;
-  color: #000;
-}
-
-.details img {
-  width: 100%;
-}
-
-.details p {
-  font-size: 14px;
-  margin-bottom: 1.5em;
-  padding: 0 0.8em 0;
-  text-align: justify;
-}
-
-.details .section-header::after {
-  content: "▼";
-  font-size: 0.8rem;
-  margin-left: 10px;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.details .section-header.open::after {
-  transform: rotate(180deg);
-}
-
-.details .section {
-  background: #fff;
-  padding: 0 0.8em;
-  margin-bottom: 1em;
-}
-
-.details .section-header {
-  background: #fff;
-  cursor: pointer;
-  font-size: 1.4rem;
-  padding: 0.6em 0 0.6em;
-  display: flex;
-  align-items: center;
-  user-select: none;
-  width: fit-content;
-}
-
-.details .section-content {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s ease;
-}
-
-.section-content {
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  line-height: 1.5;
-  word-wrap: break-word;
-  white-space: normal;
-}
-
-.details .section-content.open {
-  max-height: 1000px;
-}
-
 .intro-info {
   color: #0066ff;
   text-align: center;
   font-size: 1.25rem;
   display: contents;
-}
-
-.intro-info img {
-  max-width: 100%;
-  max-height: 50%;
-  margin: 0.5em 0 0;
 }
 
 .intro-info p {
@@ -265,59 +155,19 @@ header {
   font-size: 14px;
 }
 
-.intro-info h4 {
-  color: #0066ff;
-  margin: 0;
-  margin-top: 1em;
-  margin-bottom: 0.8em;
-}
-
-.planet-list {
-  list-style: none;
-  padding: 0 0.8em;
-  margin: 0;
-  margin-bottom: 1em;
-}
-
-.planet-list li {
+.side-menu {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 0.8em 0;
-  border-bottom: 1px solid #ddd;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #000;
-}
-
-.planet-list .planet-name {
-  color: #0066ff;
-  font-weight: bold;
-}
-
-.planet-list .planet-feature {
-  color: #000;
-  font-style: normal;
-}
-
-.details table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0.5em 0;
-}
-
-.details td {
-  display: table-cell;
-  white-space: normal;
-  word-break: break-word;
-  padding: 6px 8px;
-  font-size: 14px;
-  vertical-align: top;
-}
-
-table td:first-child {
-  font-weight: 600;
-  color: #0066ff;
-  width: 50%;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -260px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+  z-index: 1100;
 }
 
 .menu-header {
@@ -336,65 +186,7 @@ table td:first-child {
 .menu-header h3 {
   color: #000;
   font-size: 1.2em;
-  margin: 0 0 0 0.6em;
-}
-
-.menu-btn {
-  background: none;
-  border: none;
-  font-size: 1.2em;
-  cursor: pointer;
-  color: #000;
-}
-
-.side-menu a {
-  font-family: sans-serif;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 1em;
-  color: #222;
-  display: block;
-  transition: 0.2s;
-  margin: 0.2em;
-  border-radius: 2em;
-}
-.side-menu a:hover {
-   background: #d1e3ff;
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  display: none;
-  z-index: 1000;
-  pointer-events: auto;
-}
-#overlay.active {
-  display: block;
-}
-
-.side-menu a i {
-  margin-right: 1.4em;
-}
-
-.side-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -260px;
-  background-color: #fff;
-  overflow-y: auto;
-  transition: 0.3s;
-  z-index: 1100;
+  margin: 0;
 }
 
 .menu-links {
@@ -409,16 +201,111 @@ table td:first-child {
 .menu-footer a {
   font-family: sans-serif;
   padding: 12px 20px;
-  font-size: 14px;
-  color: #000;
+  font-size: 15px;
+  color: rgb(66, 68, 73);
   display: block;
   transition: 0.2s;
-  margin: 0.2em;
+  margin: 0.4em;
   border-radius: 2em;
 }
 
 .menu-footer a:hover {
   background: #d1e3ff;
+}
+
+.side-menu a {
+  font-family: sans-serif;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgb(66, 68, 73);
+  display: block;
+  transition: 0.2s;
+  margin: 0.4em;
+  border-radius: 2em;
+}
+
+.side-menu a i {
+  margin-right: 1.4em;
+}
+
+.side-menu a:hover {
+  background: #d1e3ff;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: none;
+  z-index: 1000;
+}
+
+#overlay.active {
+  display: block;
+}
+
+.dropdown {
+  display: block;
+  width: 100%;
+}
+
+.dropdown-btn {
+  background: none;
+  gap: 1.4em;
+  border: none;
+  width: 95%;
+  padding: 12px 20px;
+  margin: 0.4em;
+  font-size: 15px;
+  color: rgb(66, 68, 73);
+  font-family: sans-serif;
+  cursor: pointer;
+  border-radius: 2em;
+  transition: background 0.2s;
+  display: flex;
+}
+
+.dropdown-btn:hover {
+  background: #d1e3ff;
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  padding-left: 10px;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown-content a {
+  padding: 10px 25px;
+  font-size: 15px;
+  border-radius: 1.5em;
+  text-decoration: none;
+  color: rgb(66, 68, 73);
+  display: flex;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: #f0f4ff;
+}
+
+.dropdown.active .dropdown-content {
+  max-height: 500px;
+}
+
+.caret {
+  transition: transform 0.2s ease;
+}
+
+.dropdown.active .caret {
+  transform: rotate(180deg);
 }
 
 h4 {
