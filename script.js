@@ -3,33 +3,44 @@
 // ==========================
 let data = [];
 
-let lastSearchQuery = "";
-let lastSearchResults = [];
-
 const officialPlanetList = document.getElementById("officialPlanetList");
 const moonList           = document.getElementById("moonList");
-const detailsPanel       = document.getElementById("details");
 const introInfo          = document.getElementById("introInfo");
 
-const searchWrapper = document.querySelector(".search-wrapper");
-const searchToggle  = document.getElementById("searchToggle");
 const searchInput   = document.getElementById("search");
-
-const shareBtn   = document.getElementById("shareBtn");
-const menuBtn    = document.querySelector(".menu-btn");
-const sideMenu   = document.querySelector(".side-menu");
-const overlay    = document.getElementById("overlay");
+const shareBtn      = document.getElementById("shareBtn");
+const menuBtn       = document.querySelector(".menu-btn");
+const sideMenu      = document.querySelector(".side-menu");
+const overlay       = document.getElementById("overlay");
 
 // ==========================
-// Data Loading
+// Utility: Get Query Parameter
+// ==========================
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+// ==========================
+// Load Data
 // ==========================
 async function loadData() {
   try {
     const res = await fetch("data.json");
     if (!res.ok) throw new Error("Could not load data.json");
-
     data = await res.json();
-    renderItems(data);
+
+    const planetName = getQueryParam("planet");
+    if (planetName) {
+      // We're on a planet page
+      const planet = data.find(p => p.name === planetName);
+      if (planet) showPlanetPage(planet);
+      else console.error("Planet not found");
+    } else {
+      // We're on the main page
+      renderItems(data);
+    }
+
   } catch (err) {
     console.error(err);
     officialPlanetList.innerHTML = "<p style='color:red;'>Error loading data.</p>";
@@ -37,7 +48,7 @@ async function loadData() {
 }
 
 // ==========================
-// Rendering Helpers
+// Create & Render Items
 // ==========================
 function createItem(item, clickHandler, query = "") {
   const div = document.createElement("div");
@@ -48,8 +59,6 @@ function createItem(item, clickHandler, query = "") {
   img.alt = item.name;
 
   const span = document.createElement("span");
-
-  // Highlight matches in name
   if (query && item.name.toLowerCase().includes(query.toLowerCase())) {
     const regex = new RegExp(`(${query})`, "gi");
     span.innerHTML = item.name.replace(regex, "<mark>$1</mark>");
@@ -60,204 +69,121 @@ function createItem(item, clickHandler, query = "") {
   div.appendChild(img);
   div.appendChild(span);
 
-  div.onclick = () => clickHandler(item, div);
+  // Redirect to page
+  div.onclick = () => {
+    if (item.url) {
+      window.location.href = `${item.url}?planet=${encodeURIComponent(item.name)}`;
+    }
+  };
 
   return div;
 }
 
-
-function renderItems(items, query = "", fromSearch = false) {
-  // Reset
+function renderItems(items, query = "") {
   officialPlanetList.innerHTML = "";
   moonList.innerHTML = "";
-  detailsPanel.style.display = "none";
-  introInfo.style.display = "block";
 
   items.forEach(item => {
-    const itemDiv = createItem(item, (i, div) => handleSelect(i, div, query), query);
-
-    switch (item.type) {
-      case "official":
-        officialPlanetList.appendChild(itemDiv);
-
-        // ✅ If this render came from search, always show moons
-        if (fromSearch && item.moons && item.moons.length > 0) {
-          renderMoons(item.moons, query);
-        }
-        break;
-
-      case "moon":
-        moonList.appendChild(itemDiv);
-        moonList.style.display = "flex";
-        break;
-
-      default:
-        console.warn("Unknown type:", item.type, item.name);
+    const div = createItem(item, null, query);
+    if (item.type === "official") officialPlanetList.appendChild(div);
+    else if (item.type === "moon") {
+      moonList.appendChild(div);
+      moonList.style.display = "flex";
     }
   });
 }
 
-
 // ==========================
-// Selection & Details
+// Planet Page Rendering
 // ==========================
-function handleSelect(item, element, query = "") {
-  clearSelected(officialPlanetList);
-  clearSelected(moonList);
+function showPlanetPage(planet) {
+  document.getElementById("detailName").innerText = planet.name;
+  document.getElementById("detailImage").src = planet.image || "";
+  document.getElementById("detailImage").alt = planet.name;
+  document.getElementById("detailIntro").innerText = planet.description || "";
 
-  element.classList.add("selected");
-
-  if (item.moons) renderMoons(item.moons, query);
-  else moonList.style.display = "none";
-
-  showDetails(item);
-}
-
-function renderMoons(moons, query = "") {
-  moonList.innerHTML = "";
-  if (!moons || moons.length === 0) {
-    moonList.style.display = "none";
-    return;
-  }
-  moonList.style.display = "flex";
-
-  moons.forEach(moon => {
-    const moonDiv = createItem(moon, (m, div) => {
-      clearSelected(moonList);
-      div.classList.add("selected");
-      showDetails(m);
-    }, query); 
-    moonList.appendChild(moonDiv);
-  });
-}
-
-function clearSelected(container) {
-  container.querySelectorAll(".selected").forEach(el => el.classList.remove("selected"));
-}
-
-const backBtn = document.getElementById("backBtn");
-backBtn.addEventListener("click", () => {
-  detailsPanel.style.display = "none";   // hide details
-  introInfo.style.display = "block";     // show intro again
-  officialPlanetList.style.display = "flex"; // show planets
-  // moons only visible if previously selected
-  if (moonList.children.length > 0) {
-    moonList.style.display = "flex";
-  }
-});
-
-
-function showDetails(item) {
-  // Hide intro + lists
-  introInfo.style.display = "none";
-  officialPlanetList.style.display = "none";
-  moonList.style.display = "none";
-
-  // Show details
-  detailsPanel.style.display = "block";
-
-  // Header
-  let title = item.name;
-  if (item.moons && item.moons.length > 0) {
-    title += ` (Moons: ${item.moons.length})`;
-  }
-  document.getElementById("detailName").innerText = title;
-  document.getElementById("detailImage").src = item.image || "";
-  document.getElementById("detailImage").alt = item.name;
-  document.getElementById("detailIntro").innerText = item.description || "";
-
-  // Sections
   const detailSections = document.getElementById("detailSections");
   detailSections.innerHTML = "";
 
-  if (!item.sections) return;
+  if (planet.sections) {
+    for (const [title, contentData] of Object.entries(planet.sections)) {
+      const section = document.createElement("div");
+      section.className = "section";
 
-  for (const [sectionTitle, sectionData] of Object.entries(item.sections)) {
-    const section = document.createElement("div");
-    section.className = "section";
+      const header = document.createElement("div");
+      header.className = "section-header";
+      header.textContent = title;
 
-    const header = document.createElement("div");
-    header.className = "section-header";
-    header.textContent = sectionTitle;
+      const content = document.createElement("div");
+      content.className = "section-content";
+      content.appendChild(buildTable(contentData));
 
-    const content = document.createElement("div");
-    content.className = "section-content";
+      header.onclick = () => {
+        header.classList.toggle("open");
+        content.classList.toggle("open");
+        content.style.maxHeight = content.classList.contains("open") ? content.scrollHeight + "px" : null;
+      };
 
-    const table = buildTable(sectionData);
-    content.appendChild(table);
+      section.appendChild(header);
+      section.appendChild(content);
+      detailSections.appendChild(section);
+    }
+  }
 
-    header.onclick = () => {
-      header.classList.toggle("open");
-      content.classList.toggle("open");
-      content.style.maxHeight = content.classList.contains("open") ? content.scrollHeight + "px" : null;
-    };
-
-    section.appendChild(header);
-    section.appendChild(content);
-    detailSections.appendChild(section);
+  // Render moons
+  if (planet.moons && planet.moons.length > 0) {
+    const moonContainer = document.getElementById("moonList");
+    moonContainer.innerHTML = "";
+    planet.moons.forEach(moon => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.textContent = moon.name;
+      div.onclick = () => {
+        if (moon.url) window.location.href = moon.url + `?moon=${encodeURIComponent(moon.name)}`;
+      };
+      moonContainer.appendChild(div);
+    });
+    moonContainer.style.display = "flex";
   }
 }
 
+// ==========================
+// Build Table (Recursive)
+// ==========================
 function buildTable(data) {
   if (data == null) return document.createDocumentFragment();
 
-  const makeP = (text) => {
+  if (typeof data === "string" || typeof data === "number" || typeof data === "boolean") {
     const p = document.createElement("p");
-    p.textContent = String(text);
-    p.style.margin = "0"; 
-    p.style.padding = "0"; 
+    p.textContent = data;
     return p;
-  };
-
-  const t = typeof data;
-  if (t === "string" || t === "number" || t === "boolean") {
-    return makeP(data);
   }
 
   if (Array.isArray(data)) {
     const ul = document.createElement("ul");
-    ul.style.margin = "0";
-    data.forEach((v) => {
+    data.forEach(v => {
       const li = document.createElement("li");
-      if (v !== null && typeof v === "object") {
-        li.appendChild(buildTable(v));
-      } else {
-        li.textContent = String(v);
-      }
+      if (typeof v === "object") li.appendChild(buildTable(v));
+      else li.textContent = v;
       ul.appendChild(li);
     });
     return ul;
   }
 
   if (typeof data === "object") {
-    const keys = Object.keys(data);
-
-    const allNumeric = keys.length > 0 && keys.every((k) => /^\d+$/.test(k));
-    if (allNumeric) {
-      const joined = keys.sort((a, b) => a - b).map((k) => data[k]).join("");
-      return makeP(joined);
-    }
-
     const table = document.createElement("table");
     table.style.width = "100%";
     table.style.borderCollapse = "collapse";
 
-    keys.forEach((key) => {
-      const value = data[key];
-      if (value === undefined) return;
-
+    Object.keys(data).forEach(key => {
       const row = document.createElement("tr");
-
       const keyCell = document.createElement("td");
       keyCell.style.fontWeight = "500";
       keyCell.style.color = "#007bff";
-      keyCell.style.verticalAlign = "top";
       keyCell.textContent = key;
 
       const valCell = document.createElement("td");
-      valCell.style.color = "#000";
-
-      valCell.appendChild(buildTable(value));
+      valCell.appendChild(buildTable(data[key]));
 
       row.appendChild(keyCell);
       row.appendChild(valCell);
@@ -267,7 +193,9 @@ function buildTable(data) {
     return table;
   }
 
-  return makeP(String(data));
+  const p = document.createElement("p");
+  p.textContent = String(data);
+  return p;
 }
 
 // ==========================
@@ -275,45 +203,21 @@ function buildTable(data) {
 // ==========================
 searchInput.addEventListener("input", () => {
   const q = searchInput.value.trim().toLowerCase();
-
-  if (q.length === 0) {
+  if (!q) {
     renderItems(data);
-    officialPlanetList.style.display = "flex";  // ✅ show planets again
-    moonList.style.display = "none";            // moons hidden by default
-    detailsPanel.style.display = "none";        // ✅ hide details if search cleared
     return;
   }
 
-  let results = [];
-
+  const results = [];
   data.forEach(item => {
-    const matchPlanet =
-      item.name.toLowerCase().includes(q) ||
-      (item.description && item.description.toLowerCase().includes(q));
-
-    const matchedMoons = (item.moons || []).filter(moon =>
-      moon.name.toLowerCase().includes(q) ||
-      (moon.description && moon.description.toLowerCase().includes(q))
-    );
-
-    if (matchPlanet) {
-      results.push(item);
-    } else if (matchedMoons.length > 0) {
-      results.push({
-        ...item,
-        moons: matchedMoons
-      });
-    }
+    const matchPlanet = item.name.toLowerCase().includes(q) || (item.description && item.description.toLowerCase().includes(q));
+    const matchedMoons = (item.moons || []).filter(m => m.name.toLowerCase().includes(q) || (m.description && m.description.toLowerCase().includes(q)));
+    if (matchPlanet) results.push(item);
+    else if (matchedMoons.length) results.push({...item, moons: matchedMoons});
   });
 
-  // ✅ Ensure lists are visible while searching
-  detailsPanel.style.display = "none";
-  officialPlanetList.style.display = "flex";
-  moonList.style.display = "flex";
-
-  renderItems(results, q, true);
+  renderItems(results, q);
 });
-
 
 // ==========================
 // Share Button
@@ -324,18 +228,16 @@ shareBtn.addEventListener("click", async () => {
       await navigator.share({
         title: "Space Explorar",
         text: "Take a tour in space with Space Explorar",
-        url: window.location.href,
+        url: window.location.href
       });
     } catch (err) {
-      console.error("Error sharing:", err);
+      console.error(err);
     }
-  } else {
-    alert("Your browser does not support the Web Share API.");
-  }
+  } else alert("Your browser does not support Web Share API.");
 });
 
 // ==========================
-// Side Menu
+// Side Menu & Dropdown
 // ==========================
 menuBtn.addEventListener("click", () => {
   sideMenu.style.left = "0";
@@ -349,25 +251,22 @@ overlay.addEventListener("click", () => {
   document.body.classList.remove("no-scroll");
 });
 
-// ==========================
-// Init
-// ==========================
-loadData();
+document.querySelectorAll(".dropdown-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const dropdown = btn.parentElement;
+    const content = dropdown.querySelector(".dropdown-content");
 
-
-// Function to remove highlight (<mark>) only from clicked item
-function removeHighlightOnClick(container) {
-  container.addEventListener("click", function (e) {
-    const mark = e.target.closest("mark");
-    if (mark) {
-      // unwrap <mark> and keep its text
-      const textNode = document.createTextNode(mark.textContent);
-      mark.replaceWith(textNode);
+    if (dropdown.classList.contains("active")) {
+      content.style.maxHeight = 0; // close
+      dropdown.classList.remove("active");
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px"; // open dynamically
+      dropdown.classList.add("active");
     }
   });
-}
+});
 
-// Apply to your lists
-removeHighlightOnClick(document.getElementById("officialPlanetList"));
-removeHighlightOnClick(document.getElementById("dwarfPlanetList"));
-removeHighlightOnClick(document.getElementById("moonList"));
+// ==========================
+// Initialize
+// ==========================
+loadData();
