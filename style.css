@@ -46,15 +46,6 @@ body {
   flex-direction: column;
 }
 
-footer {
-  text-align: center;
-  font-size: 12px;
-  color: #000;
-  background: #f0f0fa;
-  user-select: none;
-  margin-top: auto;
-}
-
 .container {
   display: flex;
   flex-direction: column;
