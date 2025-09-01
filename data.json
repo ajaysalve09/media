@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Sun",
+    "type": "official",
+    "alternativeNames": ["Sol", "Sól", "Helios"],
+    "adjectives": ["Solar"],
+    "symbol": "Circle with dot in the middle",
+    "image": "media/Sun.avif",
+    "url": "sun.html",
+    "moons": []
+  },
+  {
+    "name": "Mercury",
+    "type": "official",
+    "pronunciation": "/ˈmɜːrkjʊri/",
+    "adjectives": ["Mercurian", "Mercurial"],
+    "symbol": "☿",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg",
+    "url": "mercury.html",
+    "moons": []
+  },
+  {
+    "name": "Venus",
+    "type": "official",
+    "pronunciation": "/ˈviːnəs/",
+    "named_after": "Roman goddess of love",
+    "adjectives": ["Venusian", "Cytherean (rare)", "Venerean / Venerian"],
+    "symbol": "♀",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg",
+    "url": "venus.html",
+    "moons": []
+  },
+  {
+    "name": "Earth",
+    "type": "official",
+    "alternative_names": ["The World", "The Globe", "Terra", "Tellus", "Gaia"],
+    "adjectives": ["Earthly", "Terrestrial", "Terran", "Tellurian"],
+    "symbol": ["🜨", "♁"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg",
+    "url": "earth.html",
+    "moons": [
+      {
+        "name": "Moon",
+        "type": "moon",
+        "alternative_names": ["Luna", "Selene (poetic)", "Cynthia (poetic)"],
+        "symbol": ["☾", "☽"],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+        "url": "moon.html",
+        "description": "The Moon is Earth's only natural satellite, influencing tides and stabilizing Earth's axis. It orbits our planet at an average distance of about 384,400 km. The lunar surface is covered with craters, mountains, and plains called maria. The Moon has no atmosphere, which allows temperatures to vary drastically between day and night. It plays a crucial role in Earth's environment and has been a focus of human exploration for centuries."
+      }
+    ],
+    "note": "Earth has one moon."
+  },
+  {
+    "name": "Mars",
+    "type": "official",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
+    "url": "mars.html",
+    "moons": [
+      {
+        "name": "Phobos",
+        "type": "moon",
+        "image": "media/Phobos.jpg",
+        "url": "phobos.html"
+      },
+      {
+        "name": "Deimos",
+        "type": "moon",
+        "image": "media/Deimos.jpg",
+        "url": "deimos.html"
+      }
+    ],
+    "note": "Mars has two moons: Phobos and Deimos."
+  },
+  {
+    "name": "Jupiter",
+    "type": "official",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg",
+    "url": "jupiter.html",
+    "moons": [
+      {
+        "name": "Ganymede",
+        "type": "moon",
+        "image": "media/Ganymede.jpg",
+        "url": "ganymede.html"
+      },
+      {
+        "name": "Callisto",
+        "type": "moon",
+        "image": "media/Callisto.jpeg",
+        "url": "callisto.html"
+      },
+      {
+        "name": "Io",
+        "type": "moon",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg",
+        "url": "io.html"
+      },
+      {
+        "name": "Europa",
+        "type": "moon",
+        "image": "media/Europa.png",
+        "url": "europa.html"
+      }
+    ]
+  },
+  {
+    "name": "Saturn",
+    "type": "official",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+    "url": "saturn.html",
+    "description": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, famous for its stunning ring system. The rings are composed mostly of ice and rock particles, ranging from tiny grains to large chunks. Saturn is a gas giant primarily made of hydrogen and helium, with a very low average density. It has over 80 known moons, including Titan, which has a thick atmosphere and liquid methane lakes. Saturn’s fast rotation causes it to appear flattened at the poles, giving it a unique shape.",
+    "Rings": {
+      "Description": "Saturn has a massive and complex ring system composed mainly of ice particles with smaller amounts of rocky debris and dust."
+    },
+    "moons": [
+      {
+        "name": "Titan",
+        "type": "moon",
+        "image": "media/Titan.jpeg",
+        "url": "titan.html"
+      },
+      {
+        "name": "Rhea",
+        "type": "moon",
+        "image": "media/Rhea.jpeg",
+        "url": "rhea.html"
+      }
+    ]
+  },
+  {
+    "name": "Uranus",
+    "type": "official",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg",
+    "url": "uranus.html",
+    "moons": [
+      {
+        "name": "Titania",
+        "type": "moon",
+        "image": "media/Titania.jpeg",
+        "url": "titania.html"
+      },
+      {
+        "name": "Oberon",
+        "type": "moon",
+        "image": "media/Oberon.jpeg",
+        "url": "oberon.html"
+      }
+    ]
+  },
+  {
+    "name": "Neptune",
+    "type": "official",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg",
+    "url": "neptune.html",
+    "moons": [
+      {
+        "name": "Triton",
+        "type": "moon",
+        "image": "media/Triton.jpeg",
+        "url": "triton.html"
+      }
+    ]
+  },
+  {
+    "name": "Pluto",
+    "type": "official",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Nh-pluto-in-true-color_2x_JPEG-edit-frame.jpg",
+    "url": "pluto.html",
+    "moons": [
+      {
+        "name": "Charon",
+        "type": "moon",
+        "image": "media/Charon.jpg",
+        "url": "cheron.html"
+      }
+    ]
+  },
+  {
+    "name": "Eris",
+    "type": "official",
+    "image": "media/Eris.avif",
+    "url": "eris.html",
+    "moons": [
+      {
+        "name": "Dysnomia",
+        "type": "moon",
+        "image": "media/Dysnomia.webp",
+        "url": "dysnomia.html"
+      }
+    ]
+  },
+  {
+    "name": "Haumea",
+    "type": "official",
+    "image": "media/Haumea.avif",
+    "url": "haumea.html",
+    "moons": [
+      {
+        "name": "Hi'iaka",
+        "type": "moon",
+        "image": "media/Hi'iaka.jfif",
+        "url": "hi'iaka.html",
+        "satellite_of": "Haumea"
+      },
+      {
+        "name": "Namaka",
+        "type": "moon",
+        "image": "media/Namaka.webp",
+        "url": "namaka.html",
+        "satellite_of": "Haumea"
+      }
+    ]
+  },
+  {
+    "name": "Makemake",
+    "type": "official",
+    "image": "media/Makemake.png",
+    "url": "makemake.html",
+    "moons": [
+      {
+        "name": "MK2",
+        "type": "moon",
+        "image": "media/Mk2.jpg",
+        "url": "mk2.html",
+        "note": "Makemake’s only known moon."
+      }
+    ]
+  },
+  {
+    "name": "Ceres",
+    "type": "official",
+    "image": "media/Ceres.jpg",
+    "url": "ceres.html"
+  }
+]

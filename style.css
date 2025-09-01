@@ -1,6 +1,39 @@
 /* Global css */
 
 * {
+<<<<<<< HEAD
+=======
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+html, body {
+  height: 100%;
+>>>>>>> 34d4f700f498e2cf0b6754df1fc0dec455ed78bf
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,11 +46,16 @@
 }
 
 body {
+<<<<<<< HEAD
   font-family: Arial, sans-serif;
+=======
+  font-family: sans-serif;
+>>>>>>> 34d4f700f498e2cf0b6754df1fc0dec455ed78bf
   background: #fff;
   color: #000;
 }
 
+<<<<<<< HEAD
 .feed {
   margin: 4em 0;
 }
@@ -237,6 +275,87 @@ body {
 .post-caption {
   padding: 0 10px 10px 10px;
   font-size: 14px;
+=======
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 4px 4px 2px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6em 0.4em;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.header-left h3 {
+  font-size: 1em;
+  font-weight: 410;
+  margin: 0.4em;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f0f0fa;
+  border-radius: 2em;
+  padding: 0 0.8em 0 0.6em;
+  width: 96vw;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 0 2px #cce0ff;
+  background: #fff;
+}
+
+.search-bar .menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-right: 0.4em;
+  color: #000;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 1em 0;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.search-bar .search-icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: #000;
+}
+
+.quote-container {
+  padding: 1em 0.8em;
+  margin: 0.8em 0 0;
+  text-align: center;
+>>>>>>> 34d4f700f498e2cf0b6754df1fc0dec455ed78bf
 }
 
 .post-time {
@@ -245,6 +364,7 @@ body {
   color: #888;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -775,6 +895,242 @@ input:checked + .slider:before {
 
 .logout:hover {
   background-color: #f0f4ff;
+=======
+.intro-info {
+  color: #0066ff;
+  text-align: center;
+  font-size: 1.25rem;
+  display: contents;
+}
+
+.intro-info p {
+  text-align: justify;
+  color: #000;
+  margin: 0;
+  font-size: 14px;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -260px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+  z-index: 1100;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+}
+
+.menu-logo {
+  height: 2em;
+  width: 2em;
+  margin-right: 10px;
+}
+
+.menu-header h3 {
+  color: #000;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.menu-links {
+  flex-grow: 1;
+}
+
+.menu-footer {
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.menu-footer a {
+  font-family: sans-serif;
+  padding: 12px 20px;
+  font-size: 15px;
+  color: rgb(66, 68, 73);
+  display: block;
+  transition: 0.2s;
+  margin: 0.4em;
+  border-radius: 2em;
+}
+
+.menu-footer a:hover {
+  background: #d1e3ff;
+}
+
+.side-menu a {
+  font-family: sans-serif;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgb(66, 68, 73);
+  display: block;
+  transition: 0.2s;
+  margin: 0.4em;
+  border-radius: 2em;
+}
+
+.side-menu a i {
+  margin-right: 1.4em;
+}
+
+.side-menu a:hover {
+  background: #d1e3ff;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: none;
+  z-index: 1000;
+}
+
+#overlay.active {
+  display: block;
+}
+
+.dropdown {
+  display: block;
+  width: 100%;
+}
+
+.dropdown-btn {
+  background: none;
+  gap: 1.4em;
+  border: none;
+  width: 95%;
+  padding: 12px 20px;
+  margin: 0.4em;
+  font-size: 15px;
+  color: rgb(66, 68, 73);
+  font-family: sans-serif;
+  cursor: pointer;
+  border-radius: 2em;
+  transition: background 0.2s;
+  display: flex;
+}
+
+.dropdown-btn:hover {
+  background: #d1e3ff;
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  padding-left: 10px;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown-content a {
+  padding: 10px 25px;
+  font-size: 15px;
+  border-radius: 1.5em;
+  text-decoration: none;
+  color: rgb(66, 68, 73);
+  display: flex;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: #f0f4ff;
+}
+
+.dropdown.active .dropdown-content {
+  max-height: 500px;
+}
+
+.caret {
+  transition: transform 0.2s ease;
+}
+
+.dropdown.active .caret {
+  transform: rotate(180deg);
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 0.4em 0 0 0.4em;
+  color: #000;
+  text-align: left;
+  padding-bottom: 5px;
+  font-weight: 410;
+}
+
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 0.2em;
+  scrollbar-color: #eee;
+  font-weight: 400;
+}
+
+.list::-webkit-scrollbar {
+  height: 1px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #EEE;
+}
+
+.horizontal-list {
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.moons-list {
+  background: #fff;
+  padding: 0 0.2em;
+}
+
+.list .item {
+  flex: 0 0 auto;
+  padding: 0.4em 0;
+  border-radius: 4px;
+  min-width: 5.4em;
+  text-align: center;
+  background: transparent;
+}
+
+.list .item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.list .item span {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+}
+
+.list .item span:hover {
+  color: #0066ff !important;
+}
+
+.list .item.selected span {
+  color: #0066ff !important;
+>>>>>>> 34d4f700f498e2cf0b6754df1fc0dec455ed78bf
 }
 
 
