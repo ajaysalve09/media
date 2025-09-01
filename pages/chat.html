@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="header">
+    <a href="contact.html"><i class="fas fa-arrow-left"></i></a>
+    <a href="user.html" class="user-link">
+      <img id="chatAvatar" src="https://picsum.photos/50?random=1" alt="User">
+      <h2><span class="username" id="chatName"></span></h2>
+    </a>
+<div class="right">
+    <a href="tel:+1234567890"><i class="fas fa-phone"></i></a>
+    <a href="#" style="color:#0084ff;">
+      <i class="fas fa-video"></i>
+    </a>
+  </div>
+</div>
+
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input">
+    <button><i class="far fa-smile"></i></button>
+    <input type="text" id="messageInput" placeholder="Message...">
+    <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<script src="../js/chat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

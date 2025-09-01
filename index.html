@@ -1,70 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Solar System Info</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
-
 <body>
-<header>
-  <div class="header-left">
-    <h4>Solar Explorer</h4>
-  </div>
-  <div class="header-right">
-    <div class="search-wrapper">
-      <input type="text" id="search" placeholder="Search to Explore...">
-      <button id="searchToggle" class="search-icon-btn" aria-label="Search">
-        <i class="fas fa-search"></i>
-      </button>
-      <button id="searchClose" class="search-close-btn" aria-label="Close">×</button>
+  <header class="header" id="mainHeader">
+     <h2>Explore</h2>
+    <a href="pages/notification.html"><i class="far fa-bell"></i></a>
+  </header>
+
+<main class="feed">
+  <!-- Post 1 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=11" alt="User Avatar" class="avatar">
+      <span class="username">user_one</span>
     </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=11" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>user_one</strong> Exploring the world 🌍
+    </div>
+    <div class="post-time">1h ago</div>
   </div>
-</header>
-<main>
 
-<div class="container">
-  <div id="planetList" class="list horizontal-list"></div>
-  <div id="moonList" class="list horizontal-list moons-list" style="display: none;"></div>
-</div>
-
-<div id="introInfo" class="intro-info">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg" alt="Solar System" />
-
-  <div class="quote-container">
-    <p class="quote">
-      "I don't think the human race will survive the next thousand years, unless we spread into space."</p>
-      <br>
-      <p class="quote">
-      "There are too many accidents that can befall life on a single planet. But I'm an optimist.
-      We will reach out to the stars."
-    </p>
-    <br>
-    <p class="author">— Stephen Hawking</p>
+  <!-- Post 2 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=12" alt="User Avatar" class="avatar">
+      <span class="username">traveler_girl</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=12" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>traveler_girl</strong> Sunshine vibes ☀️
+    </div>
+    <div class="post-time">3h ago</div>
   </div>
-</div>
 
+  <!-- Post 3 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=13" alt="User Avatar" class="avatar">
+      <span class="username">foodie</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=13" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>foodie</strong> Best burger in town 🍔
+    </div>
+    <div class="post-time">5h ago</div>
+  </div>
 
-<div id="details" class="details">
-  <h4 id="detailName"></h4>
-  <img id="detailImage" src="" alt=""/>
-  <p id="detailIntro"></p>
-  <div id="detailSections"></div>
-</div>
+  <!-- Post 4 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=14" alt="User Avatar" class="avatar">
+      <span class="username">nature_lover</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=14" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>nature_lover</strong> Lost in the woods 🌲
+    </div>
+    <div class="post-time">7h ago</div>
+  </div>
 
+  <!-- Post 5 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=15" alt="User Avatar" class="avatar">
+      <span class="username">fitness_freak</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=15" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>fitness_freak</strong> Early morning workout 🏋️‍♂️
+    </div>
+    <div class="post-time">10h ago</div>
+  </div>
+
+  <!-- Post 6 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=16" alt="User Avatar" class="avatar">
+      <span class="username">artist</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=16" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>artist</strong> Colors of imagination 🎨
+    </div>
+    <div class="post-time">12h ago</div>
+  </div>
+
+  <!-- Post 7 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=17" alt="User Avatar" class="avatar">
+      <span class="username">tech_guy</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=17" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>tech_guy</strong> Just built a new PC 🖥️
+    </div>
+    <div class="post-time">15h ago</div>
+  </div>
+
+  <!-- Post 8 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=18" alt="User Avatar" class="avatar">
+      <span class="username">gamer</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=18" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>gamer</strong> Late night gaming 🎮
+    </div>
+    <div class="post-time">18h ago</div>
+  </div>
+
+  <!-- Post 9 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=19" alt="User Avatar" class="avatar">
+      <span class="username">pet_lover</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=19" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>pet_lover</strong> My dog is the cutest 🐶
+    </div>
+    <div class="post-time">20h ago</div>
+  </div>
+
+  <!-- Post 10 -->
+  <div class="post">
+    <div class="post-header">
+      <img src="https://picsum.photos/80?random=20" alt="User Avatar" class="avatar">
+      <span class="username">music_fan</span>
+    </div>
+    <div class="post-image">
+      <img src="https://picsum.photos/500/300?random=20" alt="Post Image">
+    </div>
+    <div class="post-actions">
+      <i class="far fa-heart"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-share-square"></i>
+    </div>
+    <div class="post-caption">
+      <strong>music_fan</strong> Vibes with new playlist 🎧
+    </div>
+    <div class="post-time">1d ago</div>
+  </div>
 </main>
- <footer>
-  <div class="footer-buttons">
-    <a href="intro.html" class="feedback-btn">Home</a>
-    <a href="qna.html" class="feedback-btn">LearnX</a>
-    <a href="feedback.html" class="feedback-btn">Feedback</a>
-  </div>
-  <p>© 2025 Solar Explorar. All rights reserved.</p>
-</footer>
 
+<nav class="bottom-nav">
+  <a href="/"><i class="fas fa-home"></i></a>
+  <a href="#" id="openSearch"><i class="fas fa-search"></i></a>
+  <a href="pages/upload.html"><i class="far fa-plus-square"></i></a>
+  <a href="pages/contact.html"><i class="far fa-comment"></i></a>
+  <a href="pages/profile.html"><i class="far fa-user-circle"></i></a>
+</nav>
 
 <script src="script.js"></script>
 </body>

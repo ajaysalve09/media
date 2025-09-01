@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Explore</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="header" id="mainHeader">
+    <a href="profile.html"><i class="fas fa-arrow-left"></i></a>
+     <h2>Setting</h2>
+  </div>
+  
+  <div class="settings-container">
+    <div class="settings-section">
+      <h2>Account</h2>
+      <div class="setting-item"><span><i class="fas fa-user"></i>Change Username</span><i class="fas fa-chevron-right"></i></div>
+      <div class="setting-item"><span><i class="fas fa-envelope"></i>Change Email</span><i class="fas fa-chevron-right"></i></div>
+      <div class="setting-item"><span><i class="fas fa-lock"></i>Change Password</span><i class="fas fa-chevron-right"></i></div>
+      <div class="setting-item"><span><i class="fas fa-link"></i>Linked Accounts</span><i class="fas fa-chevron-right"></i></div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Privacy</h2>
+      <div class="setting-item"><span><i class="fas fa-user-secret"></i>Private Account</span>
+        <label class="switch">
+          <input type="checkbox" id="privateAccount">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="setting-item"><span><i class="fas fa-ban"></i>Blocked Users</span><i class="fas fa-chevron-right"></i></div>
+      <div class="setting-item"><span><i class="fas fa-eye-slash"></i>Activity Status</span>
+        <label class="switch">
+          <input type="checkbox" id="activityStatus" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Notifications</h2>
+      <div class="setting-item"><span><i class="fas fa-bell"></i>Push Notifications</span>
+        <label class="switch">
+          <input type="checkbox" id="pushNotifications" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="setting-item"><span><i class="fas fa-envelope-open"></i>Email Notifications</span>
+        <label class="switch">
+          <input type="checkbox" id="emailNotifications">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Appearance</h2>
+      <div class="setting-item"><span><i class="fas fa-moon"></i>Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="darkMode">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+  <div class="settings-section">
+      <h2>Support</h2>
+      <div class="setting-item"><span><i class="fas fa-question-circle"></i>Help Center</span><i class="fas fa-chevron-right"></i></div>
+      <div class="setting-item"><span><i class="fas fa-flag"></i>Report a Problem</span><i class="fas fa-chevron-right"></i></div>
+      <div class="setting-item"><span><i class="fas fa-file-alt"></i>Terms & Privacy</span><i class="fas fa-chevron-right"></i></div>
+      <div class="setting-item logout"><a href="../ac/login.html"><span><i class="fas fa-sign-out-alt"></i>Logout</span></a></div>
+  </div>
+  </div>
+
+<nav class="bottom-nav">
+  <a href="/"><i class="fas fa-home"></i></a>
+  <a href="#" id="openSearch"><i class="fas fa-search"></i></a>
+  <a href="upload.html"><i class="far fa-plus-square"></i></a>
+  <a href="contact.html"><i class="far fa-comment"></i></a>
+  <a href="profile.html"><i class="far fa-user-circle"></i></a>
+</nav>
+
+<script src="../js/setting.js"></script>  
+<script src="script.js"></script>  
+</body>
+</html>

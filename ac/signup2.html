@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+    <div class="form-box">
+       <img src="logo.avif" alt="Logo">
+      <h4>Create an account</h4>
+      <form id="signupForm">
+       <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+      <div id="signupError"></div>
+      </form>
+    </div>
+  </div>
+  </div>
+   <div class="footer-signup">
+    <button id="signup" onclick="window.location.href='login.html'">I already have an account</button>
+  </div>
+
+<script type="module"> 
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { 
+    getAuth, 
+    updateProfile, 
+    EmailAuthProvider, 
+    linkWithCredential 
+  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  // Your Firebase Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAZF-nmmO9M0dM2GOTUZ1d6pVulHTOF5ig",
+    authDomain: "explore-app-cf813.firebaseapp.com",
+    projectId: "explore-app-cf813",
+    storageBucket: "explore-app-cf813.appspot.com",
+    messagingSenderId: "820998359374",
+    appId: "1:820998359374:web:715238727dd42b1782761f",
+    measurementId: "G-H97KMZS44M"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const form = document.getElementById("signupForm");
+  form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const fullName = document.getElementById("fullName").value;
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const signupBtn = form.querySelector("button");
+  const errorDiv = document.getElementById("signupError");
+
+  errorDiv.textContent = ""; // clear previous error
+  signupBtn.textContent = "Signing up...";
+  signupBtn.disabled = true;
+
+  try {
+    const user = auth.currentUser; // user signed in with phone
+
+    if (!user) {
+      errorDiv.textContent = "Please verify your phone number first!";
+      signupBtn.textContent = "Sign Up";
+      signupBtn.disabled = false;
+      return;
+    }
+
+    const credential = EmailAuthProvider.credential(email, password);
+    await linkWithCredential(user, credential);
+    await updateProfile(user, { displayName: username });
+
+    errorDiv.style.color = "green";
+    errorDiv.textContent = "Account created successfully!";
+    window.location.href = "../index.html";
+  } catch (error) {
+    errorDiv.style.color = "red";
+    errorDiv.textContent = "Invalid details, please try again"; // friendly message
+    signupBtn.textContent = "Sign Up";
+    signupBtn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

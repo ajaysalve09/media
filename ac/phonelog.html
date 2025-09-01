@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+    <img src="logo.avif" alt="Logo">
+    <h3>Login with phone</h3>
+      <form id="phoneLoginForm">
+
+        <div id="phoneContainer">
+          <div style="display:flex; gap:5px; align-items: center;">
+            <select id="countryCode" required>
+              <option value="+1" selected>+1</option>
+              <option value="+91">+91</option>
+              <option value="+44">+44</option>
+              <option value="+61">+61</option>
+              <option value="+81">+81</option>
+              <option value="+49">+49</option>
+            </select>
+            <input type="text" id="phoneNumber" placeholder="Enter number" required>
+          </div>
+          <div id="recaptcha-container" style="margin:10px 0;"></div>
+          <button type="button" id="sendOtpBtn">Send OTP</button>
+        </div>
+        <div id="otpContainer" style="display:none;">
+          <input type="text" id="otpInput" placeholder="Enter OTP" style="margin-top:10px;">
+          <button type="button" id="verifyOtpBtn">Verify OTP</button>
+        </div>
+        <div id="phoneLoginError"></div>
+      </form>
+  </div>
+  </div>
+ <div class="footer-signup">
+    <div class="extra-links">
+    <a href="login.html">Login with Email</a>
+    </div>
+    <button id="signup" onclick="window.location.href='signup.html'">Create new account</button>
+ </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import { 
+      getAuth, 
+      RecaptchaVerifier, 
+      signInWithPhoneNumber 
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAZF-nmmO9M0dM2GOTUZ1d6pVulHTOF5ig",
+      authDomain: "explore-app-cf813.firebaseapp.com",
+      projectId: "explore-app-cf813",
+      storageBucket: "explore-app-cf813.firebasestorage.app",
+      messagingSenderId: "820998359374",
+      appId: "1:820998359374:web:b4fed7251abbaadf82761f",
+      measurementId: "G-4N90LJS7L6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    let confirmationResult;
+
+    // Setup invisible reCAPTCHA
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+      'size': 'invisible'
+    });
+
+    // Send OTP
+    document.getElementById("sendOtpBtn").addEventListener("click", async (e) => {
+      const countryCode = document.getElementById("countryCode").value;
+      const phoneInput = document.getElementById("phoneNumber").value.trim();
+      const phoneNumber = countryCode + phoneInput;
+      const errorDiv = document.getElementById("phoneLoginError");
+      const sendBtn = e.target;
+
+      errorDiv.textContent = "";
+      sendBtn.textContent = "Sending OTP...";
+      sendBtn.disabled = true;
+
+      if (!/^\+?[0-9]{10,15}$/.test(phoneNumber)) {
+        errorDiv.textContent = "Please enter a valid number";
+        sendBtn.textContent = "Send OTP";
+        sendBtn.disabled = false;
+        return;
+      }
+
+      try {
+        confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, window.recaptchaVerifier);
+        errorDiv.textContent = "OTP sent! Please check your phone.";
+
+        // hide phone input, show OTP container
+        document.getElementById("phoneContainer").style.display = "none";
+        document.getElementById("otpContainer").style.display = "block";
+
+      } catch (error) {
+        errorDiv.textContent = "Failed to send OTP. Try again.";
+      }
+
+      sendBtn.textContent = "Send OTP";
+      sendBtn.disabled = false;
+    });
+
+    // Verify OTP
+    document.getElementById("verifyOtpBtn").addEventListener("click", async (e) => {
+      const otp = document.getElementById("otpInput").value.trim();
+      const errorDiv = document.getElementById("phoneLoginError");
+      const verifyBtn = e.target;
+
+      errorDiv.textContent = "";
+      verifyBtn.textContent = "Logging in...";
+      verifyBtn.disabled = true;
+
+      try {
+        await confirmationResult.confirm(otp);
+        window.location.href = "../index.html";
+      } catch (error) {
+        errorDiv.textContent = "Invalid OTP, please try again";
+        verifyBtn.textContent = "Verify OTP";
+        verifyBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

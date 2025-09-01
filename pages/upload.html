@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Post</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="header" id="mainHeader">
+    <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
+    <h2>Creat post</h2>
+  </div>
+<div class="post-container">
+
+  <div class="user-info">
+    <img src="https://picsum.photos/50" alt="User">
+    <span>Username</span>
+  </div>
+
+  <label class="upload-label" for="photoInput">Click to upload photo</label>
+  <input type="file" id="photoInput" accept="image/*">
+  <img id="photoPreview" class="photo-preview" alt="Photo Preview">
+
+  <textarea id="caption" rows="4" placeholder="Write a caption..."></textarea>
+
+  <div class="buttons">
+    <button class="draft-btn action-btn" onclick="saveDraft()">Save Draft</button>
+    <button class="discard-btn action-btn" onclick="discardPost()">Discard</button>
+    <button class="post-btn action-btn" onclick="publishPost()">Post</button>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <a href="/"><i class="fas fa-home"></i></a>
+  <a href="#" id="openSearch"><i class="fas fa-search"></i></a>
+  <a href="upload.html"><i class="far fa-plus-square"></i></a>
+  <a href="contact.html"><i class="far fa-comment"></i></a>
+  <a href="profile.html"><i class="far fa-user-circle"></i></a>
+</nav>
+
+<script src="../js/upload.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
