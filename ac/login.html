@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="../style/login.css">
 </head>
 <body>
   <div class="container">
@@ -27,56 +27,45 @@
     <button id="signup" onclick="window.location.href='signup.html'">Create new account</button>
   </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-    import { 
-      getAuth, 
-      signInWithEmailAndPassword
-    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+<script type="module">
+  import { auth, showMessage } from "../js/appConfig.js";
+  import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAZF-nmmO9M0dM2GOTUZ1d6pVulHTOF5ig",
-      authDomain: "explore-app-cf813.firebaseapp.com",
-      projectId: "explore-app-cf813",
-      storageBucket: "explore-app-cf813.firebasestorage.app",
-      messagingSenderId: "820998359374",
-      appId: "1:820998359374:web:b4fed7251abbaadf82761f",
-      measurementId: "G-4N90LJS7L6"
-    };
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let inputValue = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const loginBtn = e.target.querySelector("button");
+    const errorDiv = document.getElementById("loginError");
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    loginBtn.textContent = "Logging in...";
+    loginBtn.disabled = true;
+    errorDiv.textContent = "";
 
-    // Login
-    document.getElementById("loginForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      let inputValue = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-      const loginBtn = e.target.querySelector("button");
-      const errorDiv = document.getElementById("loginError");
+    try {
+      let email = inputValue;
 
-      loginBtn.textContent = "Logging in...";
-      loginBtn.disabled = true;
-      errorDiv.textContent = ""; // clear previous error
-
-      try {
-        let email = inputValue;
-
-        // optional username mapping
-        if (!inputValue.includes("@")) {
-          if (/^\w+$/.test(inputValue)) {
-            if (inputValue === "ajay") email = "ajay123@example.com";
-          }
+      // Optional username mapping
+      if (!inputValue.includes("@")) {
+        if (/^\w+$/.test(inputValue)) {
+          if (inputValue === "ajay") email = "ajay123@example.com";
         }
-
-        await signInWithEmailAndPassword(auth, email, password);
-        window.location.href = "../index.html";
-      } catch (error) {
-        errorDiv.textContent = "Invalid details, please try again";
-        loginBtn.textContent = "Log In";
-        loginBtn.disabled = false;
       }
-    });
-  </script>
+
+      await signInWithEmailAndPassword(auth, email, password);
+
+      // ✅ Store session in localStorage
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userEmail", email);
+
+      window.location.href = "../index.html";
+    } catch (error) {
+      showMessage("loginError", "Invalid details, please try again");
+      loginBtn.textContent = "Log In";
+      loginBtn.disabled = false;
+    }
+  });
+</script>
+
 </body>
 </html>

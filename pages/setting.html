@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-auth-compat.js"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Settings - Explore</title>
+  <title>Settings</title>
+  <link rel="stylesheet" href="../style/setting.css">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -71,7 +78,7 @@
       <div class="setting-item"><span><i class="fas fa-question-circle"></i>Help Center</span><i class="fas fa-chevron-right"></i></div>
       <div class="setting-item"><span><i class="fas fa-flag"></i>Report a Problem</span><i class="fas fa-chevron-right"></i></div>
       <div class="setting-item"><span><i class="fas fa-file-alt"></i>Terms & Privacy</span><i class="fas fa-chevron-right"></i></div>
-      <div class="setting-item logout"><a href="../ac/login.html"><span><i class="fas fa-sign-out-alt"></i>Logout</span></a></div>
+      <div class="setting-item"><button id="logoutBtn"><span><i class="fas fa-sign-out-alt"></i>Logout</span></button></div>
   </div>
   </div>
 
@@ -84,6 +91,5 @@
 </nav>
 
 <script src="../js/setting.js"></script>  
-<script src="script.js"></script>  
 </body>
 </html>

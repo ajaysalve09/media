@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phone Sign-Up</title>
-  <link rel="stylesheet" href="login.css">
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc4drMrAAAAAPDu3LWE6-FlwTQVzJMkA_VCZItU"></script>
+  <title>Phone verify</title>
+  <link rel="stylesheet" href="../style/login.css">
 </head>
 <body>
   <div class="container">
     <div class="form-box">
-       <img src="logo.avif" alt="Logo">
-      <h3>Varify mobile first to sign up</h3>
-      <div id="phone-input-section">
+      <img src="logo.avif" alt="Logo">
+      <h3>Verify mobile first to sign up</h3>
 
-       <div id="phoneContainer">
-        <div style="display:flex; gap:5px; align-items: center;">
-          <select id="countryCode" required>
-            <option value="+1" selected>+1</option>
-            <option value="+91">+91</option>
-            <option value="+44">+44</option>
-            <option value="+61">+61</option>
-            <option value="+81">+81</option>
-            <option value="+49">+49</option>
-          </select>
-          <input type="tel" id="phone-number" placeholder="Enter number">
-        </div> </div>
+      <div id="phone-input-section">
+        <div id="phoneContainer">
+          <div style="display:flex; gap:5px; align-items: center;">
+            <select id="countryCode" required>
+              <option value="+1" selected>+1</option>
+              <option value="+91">+91</option>
+              <option value="+44">+44</option>
+              <option value="+61">+61</option>
+              <option value="+81">+81</option>
+              <option value="+49">+49</option>
+            </select>
+            <input type="tel" id="phone-number" placeholder="Enter number">
+          </div>
+        </div>
         <button id="send-otp-btn">Send OTP</button>
         <div id="recaptcha-container" style="margin-top: 10px;"></div>
       </div>
@@ -34,135 +34,111 @@
         <input type="text" id="otp-code" placeholder="Enter 6-digit code">
         <button id="verify-otp-btn">Verify & Continue</button>
       </div>
+
       <p id="message-box"></p>
     </div>
   </div>
+
   <div class="footer-signup">
     <button id="signup" onclick="window.location.href='login.html'">I already have an account</button>
   </div>
 
 <script type="module">
-     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-     import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } 
-       from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-     import { getFirestore, doc, setDoc, getDoc, serverTimestamp } 
-       from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+  import { auth, showMessage } from "../js/appConfig.js";
+  import { RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+  // DOM elements
+  const phoneInputSection = document.getElementById('phone-input-section');
+  const otpInputSection = document.getElementById('otp-input-section');
+  const sendOtpBtn = document.getElementById('send-otp-btn');
+  const verifyOtpBtn = document.getElementById('verify-otp-btn');
+  const phoneNumberInput = document.getElementById('phone-number');
+  const otpCodeInput = document.getElementById('otp-code');
+  const messageBox = document.getElementById('message-box');
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAZF-nmmO9M0dM2GOTUZ1d6pVulHTOF5ig",
-      authDomain: "explore-app-cf813.firebaseapp.com",
-      projectId: "explore-app-cf813",
-      storageBucket: "explore-app-cf813.appspot.com",
-      messagingSenderId: "820998359374",
-      appId: "1:820998359374:web:715238727dd42b1782761f",
-      measurementId: "G-H97KMZS44M"
-    };
+  let confirmationResult = null;
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    const phoneInputSection = document.getElementById('phone-input-section');
-    const otpInputSection = document.getElementById('otp-input-section');
-    const sendOtpBtn = document.getElementById('send-otp-btn');
-    const verifyOtpBtn = document.getElementById('verify-otp-btn');
-    const phoneNumberInput = document.getElementById('phone-number');
-    const otpCodeInput = document.getElementById('otp-code');
-    const messageBox = document.getElementById('message-box');
-
-    let confirmationResult = null;
-
-    function showMessage(message, isError = false) {
-      messageBox.textContent = message;
-      messageBox.className = `mt-4 text-center text-sm font-medium ${isError ? 'text-red-600' : 'text-green-600'}`;
+  // Setup invisible reCAPTCHA
+  function setupRecaptcha() {
+    try {
+      window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+        size: 'invisible',
+        callback: () => {
+          console.log('reCAPTCHA solved');
+        },
+        'expired-callback': () => {
+          showMessage("message-box", "reCAPTCHA expired. Please try again.", "error");
+        }
+      });
+      window.recaptchaVerifier.render();
+    } catch (error) {
+      console.error("Error initializing reCAPTCHA:", error);
+      showMessage("message-box", "Could not initialize reCAPTCHA. Refresh the page.", "error");
     }
-
-    function setupRecaptcha() {
-      try {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-          'size': 'invisible'
-        });
-
-      } catch (error) {
-        console.error("Error initializing RecaptchaVerifier:", error);
-        showMessage("Could not initialize reCAPTCHA. Please refresh.", true);
-      }
-    }
-    window.onload = setupRecaptcha;
-
-    // Send OTP
-    sendOtpBtn.addEventListener('click', async () => {
-      const countryCode = document.getElementById("countryCode").value;
-      const phoneInput = phoneNumberInput.value.trim();
-      const phoneNumber = countryCode + phoneInput;   // ✅ same as login
-
-      if (!/^\+?[0-9]{10,15}$/.test(phoneNumber)) {
-        showMessage("Please enter a valid phone number.", true);
-        return;
-      }
-
-      sendOtpBtn.disabled = true;
-      sendOtpBtn.textContent = "Sending...";
-      showMessage("Sending OTP...");
-
-      try {
-        confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, window.recaptchaVerifier);
-        showMessage("OTP sent! Please check your phone.");
-        phoneInputSection.classList.add('hidden');
-        otpInputSection.classList.remove('hidden');
-      } catch (error) {
-        console.error("Error sending OTP:", error);
-        showMessage("Failed to send OTP. Please try again.", true);
-      } finally {
-        sendOtpBtn.disabled = false;
-        sendOtpBtn.textContent = "Send OTP";
-      }
-    });
-
-    // Verify OTP
-    verifyOtpBtn.addEventListener('click', async () => {
-      const otpCode = otpCodeInput.value;
-      if (!otpCode || otpCode.length !== 6) {
-        showMessage("Please enter the 6-digit code.", true);
-        return;
-      }
-
-      verifyOtpBtn.disabled = true;
-      verifyOtpBtn.textContent = "Verifying...";
-      showMessage("Verifying code...");
-
-try {
-  const result = await confirmationResult.confirm(otpCode);
-  const user = result.user;
-
-  if (user.metadata.creationTime !== user.metadata.lastSignInTime) {
-    showMessage("Phone number already in use", true);
-    return;
   }
 
-  // ✅ Store user data in Firestore
-  await setDoc(doc(db, "users", user.uid), {
-    phone: user.phoneNumber,
-    createdAt: serverTimestamp(),
+  window.onload = setupRecaptcha;
+
+  // Send OTP
+  sendOtpBtn.addEventListener('click', async () => {
+    const countryCode = document.getElementById("countryCode").value;
+    const phoneInput = phoneNumberInput.value.trim();
+    const phoneNumber = countryCode + phoneInput;
+
+    if (!/^\+?[0-9]{10,15}$/.test(phoneNumber)) {
+      showMessage("message-box", "Please enter a valid phone number.", "error");
+      return;
+    }
+
+    sendOtpBtn.disabled = true;
+    sendOtpBtn.textContent = "Sending...";
+    showMessage("message-box", "Sending OTP...", "success");
+
+    try {
+      confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, window.recaptchaVerifier);
+      showMessage("message-box", "OTP sent! Please check your phone.", "success");
+      phoneInputSection.classList.add('hidden');
+      otpInputSection.classList.remove('hidden');
+    } catch (error) {
+      console.error("Error sending OTP:", error);
+      showMessage("message-box", "Failed to send OTP. Try again.", "error");
+      window.recaptchaVerifier.clear();
+    } finally {
+      sendOtpBtn.disabled = false;
+      sendOtpBtn.textContent = "Send OTP";
+    }
   });
 
-  showMessage("Phone verified & saved in Firebase!");
-  window.location.href = "signup2.html";
+  // Verify OTP
+  verifyOtpBtn.addEventListener('click', async () => {
+    const otpCode = otpCodeInput.value.trim();
+    if (!otpCode || otpCode.length !== 6) {
+      showMessage("message-box", "Please enter the 6-digit code.", "error");
+      return;
+    }
 
-} catch (error) {
-  console.error("Error verifying OTP:", error);
-  if (error.code === "auth/account-exists-with-different-credential" || 
-      error.code === "auth/credential-already-in-use") {
-    showMessage("Phone number already in use", true);
-  } else {
-    showMessage("Invalid or expired code. Please try again.", true);
-  }
+    verifyOtpBtn.disabled = true;
+    verifyOtpBtn.textContent = "Verifying...";
+    showMessage("message-box", "Verifying code...", "success");
 
-} finally {
-    verifyOtpBtn.disabled = false;
-    verifyOtpBtn.textContent = "Verify & Continue";
-}
-});
+    try {
+      const result = await confirmationResult.confirm(otpCode);
+      const user = result.user; 
+      showMessage("message-box", `Phone verified! Welcome, ${user.phoneNumber}`, "success");
+      window.location.href = "signup2.html"; 
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+      if (error.code === "auth/account-exists-with-different-credential" ||
+          error.code === "auth/credential-already-in-use") {
+        showMessage("message-box", "Phone number already in use.", "error");
+      } else {
+        showMessage("message-box", "Invalid or expired code. Try again.", "error");
+      }
+    } finally {
+      verifyOtpBtn.disabled = false;
+      verifyOtpBtn.textContent = "Verify & Continue";
+    }
+  });
 </script>
+
 </body>
 </html>

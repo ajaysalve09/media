@@ -99,13 +99,13 @@ i {
   justify-content: center;
   gap: 4em;
   margin: 4em 0 1em;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
 }
  
 .extra-links a {
   text-decoration: none;
-  color: #0066ff;
+  color: #000;
 
 }
 

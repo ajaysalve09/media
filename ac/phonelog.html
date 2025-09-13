@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phone Login</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="../style/login.css">
 </head>
 <body>
   <div class="container">
@@ -41,90 +41,84 @@
     <a href="login.html">Login with Email</a>
     </div>
     <button id="signup" onclick="window.location.href='signup.html'">Create new account</button>
- </div>
+  </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-    import { 
-      getAuth, 
-      RecaptchaVerifier, 
-      signInWithPhoneNumber 
-    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+<script type="module">
+  import { auth, showMessage } from "../js/appConfig.js";
+  import { RecaptchaVerifier, signInWithPhoneNumber } 
+    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAZF-nmmO9M0dM2GOTUZ1d6pVulHTOF5ig",
-      authDomain: "explore-app-cf813.firebaseapp.com",
-      projectId: "explore-app-cf813",
-      storageBucket: "explore-app-cf813.firebasestorage.app",
-      messagingSenderId: "820998359374",
-      appId: "1:820998359374:web:b4fed7251abbaadf82761f",
-      measurementId: "G-4N90LJS7L6"
-    };
+  let confirmationResult;
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+  // Setup invisible reCAPTCHA
+  window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+    size: "invisible",
+  });
 
-    let confirmationResult;
+  // Send OTP
+  document.getElementById("sendOtpBtn").addEventListener("click", async (e) => {
+    const countryCode = document.getElementById("countryCode").value;
+    const phoneInput = document.getElementById("phoneNumber").value.trim();
+    const phoneNumber = countryCode + phoneInput;
+    const errorDiv = document.getElementById("phoneLoginError");
+    const sendBtn = e.target;
 
-    // Setup invisible reCAPTCHA
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-      'size': 'invisible'
-    });
+    errorDiv.textContent = "";
+    sendBtn.textContent = "Sending OTP...";
+    sendBtn.disabled = true;
 
-    // Send OTP
-    document.getElementById("sendOtpBtn").addEventListener("click", async (e) => {
-      const countryCode = document.getElementById("countryCode").value;
-      const phoneInput = document.getElementById("phoneNumber").value.trim();
-      const phoneNumber = countryCode + phoneInput;
-      const errorDiv = document.getElementById("phoneLoginError");
-      const sendBtn = e.target;
-
-      errorDiv.textContent = "";
-      sendBtn.textContent = "Sending OTP...";
-      sendBtn.disabled = true;
-
-      if (!/^\+?[0-9]{10,15}$/.test(phoneNumber)) {
-        errorDiv.textContent = "Please enter a valid number";
-        sendBtn.textContent = "Send OTP";
-        sendBtn.disabled = false;
-        return;
-      }
-
-      try {
-        confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, window.recaptchaVerifier);
-        errorDiv.textContent = "OTP sent! Please check your phone.";
-
-        // hide phone input, show OTP container
-        document.getElementById("phoneContainer").style.display = "none";
-        document.getElementById("otpContainer").style.display = "block";
-
-      } catch (error) {
-        errorDiv.textContent = "Failed to send OTP. Try again.";
-      }
-
+    if (!/^\+?[0-9]{10,15}$/.test(phoneNumber)) {
+      showMessage("phoneLoginError", "Please enter a valid number");
       sendBtn.textContent = "Send OTP";
       sendBtn.disabled = false;
-    });
+      return;
+    }
 
-    // Verify OTP
-    document.getElementById("verifyOtpBtn").addEventListener("click", async (e) => {
-      const otp = document.getElementById("otpInput").value.trim();
-      const errorDiv = document.getElementById("phoneLoginError");
-      const verifyBtn = e.target;
+    try {
+      confirmationResult = await signInWithPhoneNumber(
+        auth,
+        phoneNumber,
+        window.recaptchaVerifier
+      );
 
-      errorDiv.textContent = "";
-      verifyBtn.textContent = "Logging in...";
-      verifyBtn.disabled = true;
+      showMessage("phoneLoginError", "OTP sent! Please check your phone.", "success");
 
-      try {
-        await confirmationResult.confirm(otp);
-        window.location.href = "../index.html";
-      } catch (error) {
-        errorDiv.textContent = "Invalid OTP, please try again";
-        verifyBtn.textContent = "Verify OTP";
-        verifyBtn.disabled = false;
-      }
-    });
-  </script>
+      // Switch UI
+      document.getElementById("phoneContainer").style.display = "none";
+      document.getElementById("otpContainer").style.display = "block";
+
+    } catch (error) {
+      showMessage("phoneLoginError", "Invalid or not registered number.");
+    }
+
+    sendBtn.textContent = "Send OTP";
+    sendBtn.disabled = false;
+  });
+
+  // Verify OTP
+  document.getElementById("verifyOtpBtn").addEventListener("click", async (e) => {
+    const otp = document.getElementById("otpInput").value.trim();
+    const verifyBtn = e.target;
+
+    showMessage("phoneLoginError", "");
+    verifyBtn.textContent = "Logging in...";
+    verifyBtn.disabled = true;
+
+    try {
+      const result = await confirmationResult.confirm(otp);
+
+      // ✅ Save session
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userPhone", result.user.phoneNumber);
+
+      window.location.href = "../index.html";
+    } catch (error) {
+      showMessage("phoneLoginError", "Invalid OTP, please try again");
+      verifyBtn.textContent = "Verify OTP";
+      verifyBtn.disabled = false;
+    }
+  });
+</script>
+
 </body>
 </html>

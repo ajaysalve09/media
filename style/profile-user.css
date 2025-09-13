@@ -1,0 +1,127 @@
+/* profile.html & user.html css */
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding-bottom: 3em;
+}
+
+.posts img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+} 
+
+.profile {
+  margin-top: 60px;
+  padding: 1em;
+  background: #fff;
+}
+
+.profile-info {
+  display: flow;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name-category {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats div span {
+  font-weight: 600;
+  display: block;
+}
+
+.stats div p {
+  margin: 4px 0 0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bio {
+  margin-top: 1em;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+.edit-button {
+  margin-top: 0.4em;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5em;
+}
+
+.stats {
+  display: flex;
+  gap: 1em;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #0066ff;
+  color: #fff;
+}
+
+.follow-button {
+  background-color: #0066ff;
+  color: #fff;
+}
+
+.message-btn {
+  background-color: #eee;
+  color: #333;
+}

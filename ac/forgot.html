@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forgot Password</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="../style/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -21,53 +21,40 @@
     <button id="signup" onclick="window.location.href='login.html'"> <i class="fas fa-arrow-left"></i> Back to login</button>
   </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-    import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+<script type="module">
+  import { auth, showMessage, isValidEmail } from "../js/appConfig.js";
+  import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAZF-nmmO9M0dM2GOTUZ1d6pVulHTOF5ig",
-      authDomain: "explore-app-cf813.firebaseapp.com",
-      projectId: "explore-app-cf813",
-      storageBucket: "explore-app-cf813.firebasestorage.app",
-      messagingSenderId: "820998359374",
-      appId: "1:820998359374:web:b4fed7251abbaadf82761f",
-      measurementId: "G-4N90LJS7L6"
-    };
+  document.getElementById("sendOtpBtn").addEventListener("click", async () => {
+    const email = document.getElementById("resetEmail").value.trim();
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-document.getElementById("sendOtpBtn").addEventListener("click", async () => {
-  const email = document.getElementById("resetEmail").value.trim();
-  const errorDiv = document.getElementById("resetError");
-  errorDiv.textContent = "";
-  // errorDiv.style.color = "red";
-
-  if (!email) {
-    errorDiv.textContent = "Please enter your email";
-    return;
-  }
-
-  try {
-    await sendPasswordResetEmail(auth, email);
-    // errorDiv.style.color = "green";
-    errorDiv.textContent = "Email sent! Check your inbox.";
-  } catch (error) {
-    // Map Firebase error codes to friendly messages
-    switch (error.code) {
-      case "auth/invalid-email":
-        errorDiv.textContent = "Invalid email, please try again";
-        break;
-      case "auth/user-not-found":
-        errorDiv.textContent = "No user found with this email";
-        break;
-      default:
-        errorDiv.textContent = "Something went wrong, try again";
+    if (!email) {
+      showMessage("resetError", "Please enter your email");
+      return;
     }
-  }
-});
 
-  </script>
+    if (!isValidEmail(email)) {
+      showMessage("resetError", "Invalid email format");
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      showMessage("resetError", "Email sent! Check your inbox.", "success");
+    } catch (error) {
+      switch (error.code) {
+        case "auth/invalid-email":
+          showMessage("resetError", "Invalid email, please try again");
+          break;
+        case "auth/user-not-found":
+          showMessage("resetError", "No user found with this email");
+          break;
+        default:
+          showMessage("resetError", "Something went wrong, try again");
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
